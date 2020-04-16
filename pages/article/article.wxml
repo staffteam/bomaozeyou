@@ -53,7 +53,7 @@
         <view class='r'>
           <view class='title lines' data-id="{{item.id}}" data-time="{{item.time}}" bindtap="bmClick">{{item.title}}</view>
           <view class='c'>
-            <view class='zd' wx-if="{{item.IsTop}}">置顶</view>
+            <view class='zd' wx-if="{{item.isTop}}">置顶</view>
           </view>
           <view class='b'>
             <view class='time-zx'>{{item.time}}</view>
