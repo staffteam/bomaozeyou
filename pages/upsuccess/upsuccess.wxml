@@ -1,0 +1,8 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<view class='paySuccess' >
+  <view class='t'><image src='/assets/images/pic_pay.png' mode="widthFix" ></image>
+  <view>上传成功</view></view>
+  <view class='b' >
+    <view bindtap='nextform' >返回首页</view>
+  </view>
+</view>

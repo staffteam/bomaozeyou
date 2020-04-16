@@ -1,0 +1,2 @@
+<!--pages/mackHelp/mackHelp.wxml-->
+<image src="/assets/images/mackhelp.png" mode="widthFix" style='display:block;'></image>

@@ -1,0 +1,19 @@
+<!--pages/accountPaid/accountPaid.wxml-->
+<view class='tips' wx-if="{{istips}}">
+  退款说明：如有特殊原因需要退款请联系客服。
+  <text class='iconfont iconcha' bindtap='tipsClose'></text>
+</view>
+<view class='list'>
+  <view class='li' wx:for="{{orderData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+    <view class='title'>{{item.activity_title}}</view>
+    <view class='f'>报名费： <text>￥{{item.price}}/人</text></view>
+    <view class='r'>报名人数：<text>{{item.count}}</text> </view>
+    <view class='t'>
+      <view class='l'>
+        付款日期： <text>{{item.time}}</text></view>
+      <view class='r'>
+        已支付 <text>￥{{item.total_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

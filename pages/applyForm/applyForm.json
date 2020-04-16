@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "city-picker": "../../component/city-picker/city-picker"
+  },
+  "navigationBarTitleText": "博茂择优"
+}

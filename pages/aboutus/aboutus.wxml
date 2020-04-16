@@ -1,0 +1,15 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view class='li'  bindtap="makeLink">
+  <view class='l'>在线客服</view>
+  <view class='r'>
+    <text class='iconfont iconyou1'></text>
+  </view>
+</view>
+<view class='li'  bindtap="makePhone">
+  <view class='l'>电话客服</view>
+  <view class='r'>
+    <text>{{phone}}</text>
+    <text class='iconfont iconyou1'></text>
+  </view>
+</view>
+<view class="tips">{{service_time}}</view>

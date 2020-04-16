@@ -1,0 +1,92 @@
+<!--pages/applyList/applyList.wxml-->
+<view class='apply-head' wx-if="{{!isScroll}}">
+  <view class='apply-search'>
+    <text class='iconfont iconsousuo'></text>
+    <input placeholder='搜索关键字' confirm-type="search" bindconfirm="searchClick" bindinput="searchInput" value="{{searchValue}}"></input>
+  </view>
+  <view class='apply-type' bindtap="selClick">
+    <text class='sel'>{{applyType}}</text>
+    <text class='iconfont {{isSel?"iconshang":"iconshang3"}}'></text>
+  </view>
+</view>
+<view class='apply-screen {{isScroll?"not-search":""}}'>
+  <view class='li'>
+    <navigator url="../location/location" hover-class="navigator-hover">
+      <text class="iconfont icondingweiweizhi"></text> {{city}}
+    </navigator>
+  </view>
+  <view class='li' bindtap="cityShowClick">
+    <text class='region'>{{citySite}}</text>
+    <text class='iconfont {{isCity?"iconshang":"iconshang3"}}'></text>
+  </view>
+  <view class='li' bindtap="kindShowClick">
+    <text class='region'>种类筛选</text>
+  </view>
+</view>
+
+<view class='type-sel' style="display:{{isSel?'block':'none'}};">
+  <view class='back' id="back" bindtap="selClose" wx-if="{{selDown=='down'}}"></view>
+  <view class='content {{selDown}}'>
+    <view class='l'>
+      <scroll-view style="height: 100%;" scroll-y>
+        <view class='li {{item.id===typeid?"on":""}}' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+      </scroll-view>
+    </view>
+    <view class='r'>
+      <scroll-view style="height: 100%;" scroll-y>
+        <view class='li {{item.id===picid ?"on":""}}' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<view class='type-sel type-sel-city {{isScroll?"not-search":""}}' style="display:{{isCity?'block':'none'}};">
+  <view class='back' id="back" bindtap="cityClose" wx-if="{{cityDown=='down'}}"></view>
+  <view class='content {{cityDown}}'>
+    <scroll-view class='citylist' style="height: 100%;" scroll-y>
+      <view class='li {{item.ID===districtid?"on":""}}' data-name="{{item.Name}}" data-id="{{item.ID}}" data-parentid="{{item.ParentID}}" bindtap="cityClick" wx:for="{{cityData}}" wx:key="{{item.ID}}" wx:for-index="index" wx:for-item="item">{{item.Name}}</view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class='kind-sel' style="display:{{isKind?'block':'none'}};">
+  <view class='back' id="back" bindtap="kindClose" wx-if="{{kindLeft=='left'}}"></view>
+  <view class='content {{kindLeft}}'>
+    <view class='title'>种类筛选</view>
+    <scroll-view class='citylist' scroll-y>
+      <view class='li {{kindids[item.id]?"on":""}}' data-id="{{item.id}}" data-name="{{item.name}}" bindtap="kindClick" wx:for="{{kindData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+    </scroll-view>
+    <view class='btn'>
+      <view class='close' bindtap="kindDel" >清空筛选</view>
+      <view class='finish' bindtap="kindSave">完成</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='apply-content {{isScroll?"not-search":""}}'>
+  <scroll-view style="height: 100%;" upper-threshold="1" bindscroll="applyScroll" bindscrolltoupper="spplyTopScroll" bindscrolltolower="footerScroll" scroll-y>
+    <view class='apply-list' data-id="{{item.id}}" data-type="{{item.type}}" data-time="{{item.istime}}" bindtap="applyClick" wx:for="{{applyData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">
+      <view class='img'>
+        <image src='{{item.img_url}}' lazy-load="true" mode="aspectFill" />
+      </view>
+      <view class='else'>
+        <view class='title line'>{{item.title}}</view>
+        <view class='desc'>
+          <view class='l type{{applyListType[item.classfy_name]}}'>{{item.classfy_name}}</view>
+          <view class='r line'>{{item.desc}}</view>
+        </view>
+        <view class='time'>
+          <view class='l'>报名时间：{{item.start_time}} 至 {{item.end_time}}</view>
+          <view class='r'>￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="loading" wx:if="{{isfooter}}">
+      <view wx-if="{{!notData}}">
+        <image src="/assets/images/loading.gif" mode="widthFix"></image> 加载中...</view>
+      <view wx-if="{{notData}}">暂无更多数据</view>
+    </view>
+
+  </scroll-view>
+</view>

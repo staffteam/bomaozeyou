@@ -1,0 +1,289 @@
+<!--pages/applyForm/applyForm.wxml-->
+<view class='apply-form'>
+	<view class='info'>
+		<view class='title lines'>{{info.title}}</view>
+		<view class='time'>
+			<text class='iconfont iconshijian'></text> 报名时间：{{info.start_time}} 至 {{info.end_time}}
+		</view>
+	</view>
+	<view class='back'></view>
+	<view class='public-info'>
+		<view class='title'>请选择地址</view>
+		<view class='form'>
+			<view class='list'>
+				<text>地址</text>
+				<view class="picker" bindtap="showCityPicker">
+					<text class='line' style='{{cityVal=="请选择"?"color:#777;":""}}'>{{cityVal}}</text>
+					<text class='iconfont iconyou1'></text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class='public-info' wx-if="{{!isgrade}}">
+		<view class='title'>年级选择</view>
+		<view class='form'>
+			<view class='list'>
+				<text>年级</text>
+				<view class="picker" bindtap="pickerGradeOpen">
+					<text class='line' style='{{gradeVal=="请选择"?"color:#777;":""}}'>{{gradeVal}}</text>
+					<text class='iconfont iconyou1'></text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- <view class='public-info' wx-if="{{info.IsShowInfo}}">
+    <view class='title'>签到地址选择</view>
+    <view class='form'>
+      <view class='list'>
+        <text>签到地址</text>
+        <view class="picker" data-name="form.address" data-list="addressData" bindtap="pickerOpen">
+          <text class='line' style='{{form.address=="请选择"?"color:#777;":""}}'>{{form.address}}</text>
+          <text class='iconfont iconyou1'></text>
+        </view>
+      </view>
+    </view>
+  </view> -->
+	<!-- 艺术类 -->
+	<view class='public-info' wx-if="{{info.IsShowInfo}}">
+		<view class='title'>作品信息</view>
+		<view class='form'>
+			<view class='list'>
+				<text>作品类别</text>
+				<view class="picker" data-name="form.worksType" data-list="classfyWorksData" bindtap="pickerOpen">
+					<text style='{{form.address=="请选择"?"color:#777;":""}}'>{{form.worksType}}</text>
+					<text class='iconfont iconyou1'></text>
+				</view>
+			</view>
+			<view class='list'>
+				<text>作品形式</text>
+				<view class="picker" data-name="form.workForm" data-list="classfyGroupData" bindtap="pickerOpen">
+					<text style='{{form.address=="请选择"?"color:#777;":""}}'>{{form.workForm}}</text>
+					<text class='iconfont iconyou1'></text>
+				</view>
+			</view>
+			<view class='list'>
+				<text>作品名称</text>
+				<input value='{{form.name}}' data-id="form.name" bindinput="oninputs" placeholder='请输入'></input>
+			</view>
+			<view class='list'>
+				<text>作品时长</text>
+				<view class="picker" bindtap="pickerTimeOpen">
+					<text class='line' style='{{form.date=="请选择"?"color:#777;":""}}'>{{form.date}}</text>
+					<text class='iconfont iconyou1'></text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!--  -->
+	<!-- 学科类 -->
+	<view class='public-info' wx-if="{{info.IsTutor}}">
+		<view class='title'>辅导老师信息</view>
+		<view class='form'>
+			<view class='list'>
+				<text>辅导老师姓名</text>
+				<input value='{{form.coachName}}' data-id="form.coachName" bindinput="oninputs" placeholder='请输入'></input>
+			</view>
+			<view class='list'>
+				<text>辅导老师电话</text>
+				<input value='{{form.coachPhone}}' data-id="form.coachPhone" bindinput="oninputs" placeholder='请输入'></input>
+			</view>
+		</view>
+	</view>
+	<!--  -->
+	<view class='add-pothunter'>
+		<view class='btn' bindtap="addPothunter">添加参赛人</view>
+		<text wx-if="{{checkPothunter.length==0}}">请确保姓名、证件号填写正确</text>
+		<view class='add-list' wx-if="{{checkPothunter.length>0}}">
+			<view class='li' wx:for="{{checkPothunter}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+				<view class='l {{item.check?"on":""}}' data-id="{{item.id}}" bindtap="checkAddData">
+					<text class='iconfont iconjian'></text>
+				</view>
+				<view class='c'>
+					<text>{{item.name}}</text>
+					<text>身份证{{item.xxidentity}}</text>
+				</view>
+				<view class='del' data-id="{{item.id}}" wx-if="{{item.check}}" bindtap="delAddListData">
+					<text>删除</text>
+				</view>
+			</view>
+		</view>
+	</view>
+  <view class='public-info' wx-if="{{activityData.length>0}}">
+		<view class='title'>请选择报名类别</view>
+		<view class='form'>
+			<view class='list'>
+				<text>类别</text>
+				<view class="picker" bindtap="pickerActivityOpen">
+					<text class='line' style='{{activityVal=="请选择"?"color:#777;":""}}'>{{activityVal}}</text>
+					<text class='iconfont iconyou1'></text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class='settle'>
+		<view class='t'>
+			<view class='l'>报名费</view>
+			<view class='r'>
+				<text>¥{{_price}}</text>
+				<text>x{{checkPothunter.length}} 人</text>
+			</view>
+		</view>
+		<view class='b'>
+			<view class='l'>总额</view>
+			<view class='r'>
+				¥{{_price_}}
+			</view>
+		</view>
+	</view>
+	<view class='protocol'>
+		<label>
+			<view class='checks {{isproto?"on":""}}'>
+				<text class='iconfont icondui'></text>
+			</view>
+			<checkbox-group bindchange="protocolClick">
+				<checkbox value='0' color="#3CD8FB" checked="{{isproto}}"></checkbox>
+			</checkbox-group>
+			点击付款表示您已阅读并同意
+		</label>
+		<text bindtap='protocolLink'>协议</text>
+	</view>
+	<view class='footer-hegiht'></view>
+	<view class='footer-btn'>
+		<view class="d" bindtap="awaitClick">待付款</view>
+		<view class='l' bindtap="settleClick">立即付款</view>
+	</view>
+
+	<view class='open {{isOpen?"show":"hide"}}'>
+		<view class='open-back {{isOpen?"show":"hide"}} ' bindtap="closeOpen"></view>
+		<view class='content {{isDown?"down":""}}'>
+			<view class='t'>
+				<view class='l' bindtap="closeOpen">取消</view>
+				<view class='r' bindtap="saveOpen">确定</view>
+			</view>
+			<picker-view class='open-list' indicator-style="height: 50px;" value="{{openVal}}" bindchange="openChange">
+				<picker-view-column>
+					<view wx:for="{{openData}}" style="line-height: 50px;">{{item}}</view>
+				</picker-view-column>
+			</picker-view>
+		</view>
+	</view>
+
+	<view class='open {{isGradeOpen?"show":"hide"}}'>
+		<view class='open-back {{isGradeOpen?"show":"hide"}} ' bindtap="closeGradeOpen"></view>
+		<view class='content {{isGradeDown?"down":""}}'>
+			<view class='t'>
+				<view class='l' bindtap="closeGradeOpen">取消</view>
+				<view class='r' bindtap="saveGradeOpen">确定</view>
+			</view>
+			<picker-view class='open-list' indicator-style="height: 50px;" value="{{gradeOpenVal}}" bindchange="gradeOpenChange">
+				<picker-view-column>
+					<view wx:for="{{gradeA}}" style="line-height: 50px;">{{item}}</view>
+				</picker-view-column>
+				<picker-view-column>
+					<view wx:for="{{gradeB}}" style="line-height: 50px;">{{item}}</view>
+				</picker-view-column>
+			</picker-view>
+		</view>
+	</view>
+
+	<view class='open {{isActivityOpen?"show":"hide"}}'>
+		<view class='open-back {{isActivityOpen?"show":"hide"}} ' bindtap="closeActivityOpen"></view>
+		<view class='content {{isActivityDown?"down":""}}'>
+			<view class='t'>
+				<view class='l' bindtap="closeActivityOpen">取消</view>
+				<view class='r' bindtap="saveActivityOpen">确定</view>
+			</view>
+			<picker-view class='open-list' indicator-style="height: 50px;" value="{{activityOpenVal}}" bindchange="activityOpenChange">
+				<picker-view-column>
+					<view wx:for="{{activityData}}" style="line-height: 50px;">{{item}}</view>
+				</picker-view-column>
+			</picker-view>
+		</view>
+	</view>
+
+	<view class='open {{isTimeOpen?"show":"hide"}}'>
+		<view class='open-back {{isTimeOpen?"show":"hide"}} ' bindtap="closeTimeOpen"></view>
+		<view class='content {{isTimeDown?"down":""}}'>
+			<view class='t'>
+				<view class='l' bindtap="closeTimeOpen">取消</view>
+				<view class='r' bindtap="saveTimeOpen">确定</view>
+			</view>
+			<picker-view class='open-list' indicator-style="height: 50px;" value="{{timeOpenVal}}" bindchange="timeOpenChange">
+				<picker-view-column data-index="1">
+					<view wx:for="{{timeA}}" style="line-height: 50px;">{{item}}</view>
+				</picker-view-column>
+				<picker-view-column data-index="2">
+					<view wx:for="{{timeB}}" style="line-height: 50px;">{{item}}</view>
+				</picker-view-column>
+			</picker-view>
+		</view>
+	</view>
+
+	<view class='open pothunterOpen {{isAdd?"show":"hide"}}'>
+		<view class='open-back {{isAdd?"show":"hide"}} ' bindtap="checkPothunterClose"></view>
+		<view class='content {{isAddDown?"down":""}}'>
+			<view class='t'>
+				<view class='l' bindtap="checkPothunterClose">取消</view>
+				<view class='r' bindtap="checkPothunterSave">确定</view>
+			</view>
+			<view class='b'>
+				<view class='new-pothunter' bindtap="addPothnter">
+					<text class='iconfont iconadd'></text>新增参赛人</view>
+			</view>
+			<scroll-view scroll-y="true" class='list'>
+				<view class='li' wx:for="{{pothunterData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+					<view>
+						<label>
+							<view class='checks {{item.checked?"on":""}}'>
+								<text class='iconfont icondui'></text>
+							</view>
+							<checkbox-group bindchange="pothunterChange" data-id="{{item.id}}">
+								<checkbox value='{{item.id}}' color="#3CD8FB" checked="{{item.checked}}"></checkbox>
+							</checkbox-group>
+						</label>
+						<view class='c'>
+							<text class='title'>{{item.name}}</text>
+							<text class='identity'>身份证{{item.xxidentity}}</text>
+						</view>
+						<view class='r'>
+							<text class='iconfont iconbianji' data-id="{{item.id}}" bindtap="editPothunter"></text>
+							<text class='iconfont iconlajitong' data-id="{{item.id}}" bindtap="delPothunter"></text>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+
+</view>
+
+<view class='hint-open {{isHintShow?"show":""}}'>
+	<view class='back' bindtap='obligation'></view>
+	<view class='content'>
+		<view class='close' bindtap='obligation'>
+			<text class='iconfont iconcha'></text>
+		</view>
+		<view class='title'>提示</view>
+		<view class='desc'>
+			请在
+			<text>我的『 待付款 』</text>里完成支付
+		</view>
+		<view class='btn' bindtap='obligation'>确定</view>
+	</view>
+</view>
+
+<view class='hint-open {{isVShow?"show":""}}'>
+	<view class='back' bindtap='obligationV'></view>
+	<view class='content'>
+		<view class='close' bindtap='obligationV'>
+			<text class='iconfont iconcha'></text>
+		</view>
+		<view class='title'>提示</view>
+		<view class='desc'>
+			{{vtext}}
+		</view>
+		<view class='btn' bindtap='obligationV'>{{vbtn}}</view>
+	</view>
+</view>
+
+<city-picker id="city-picker" provinces="{{provinces}}" value="{{cityPickerValue}}" issShow="{{cityPickerIssShow}}" isShow="{{cityPickerIsShow}}" bindsureclick="cityPickerOnSureClick" bindcancelclick="cityPickerOnCancelClick" />

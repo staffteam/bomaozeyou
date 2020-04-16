@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "footer-nav": "/component/footerNav/footerNav"
+  },
+  "navigationBarTitleText": "活动发布"
+}

@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/applyList/applyList",
+    "pages/search/search",
+    "pages/article/article",
+    "pages/grade/grade",
+    "pages/center/center",
+    "pages/location/location",
+    "pages/applyDetails/applyDetails",
+    "pages/applyForm/applyForm",
+    "pages/gradeDetails/gradeDetails",
+    "pages/collect/collect",
+    "pages/message/message",
+    "pages/aboutus/aboutus",
+    "pages/feedback/feedback",
+    "pages/articleDetails/articleDetails",
+    "pages/addPothnter/addPothnter",
+    "pages/msgDetails/msgDetails",
+    "pages/paySuccess/paySuccess",
+    "pages/entryPermit/entryPermit",
+    "pages/delayPayment/delayPayment",
+    "pages/accountPaid/accountPaid",
+    "pages/permitDetails/permitDetails",
+    "pages/sign/sign",
+    "pages/searchDetails/searchDetails",
+    "pages/feedbackForm/feedbackForm",
+    "pages/memberInfo/memberInfo",
+    "pages/mackHelp/mackHelp",
+    "pages/protocol/protocol",
+    "pages/upWorks/upWorks",
+    "pages/myWorks/myWorks",
+    "pages/upsuccess/upsuccess",
+    "pages/worksList/worksList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "博茂择优",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "博茂择优想获取您的位置"
+    }
+  }
+}

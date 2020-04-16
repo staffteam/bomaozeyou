@@ -1,0 +1,81 @@
+/* pages/feedback/feedback.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.feedback {
+  margin: 40rpx 0;
+  background-color: white;
+}
+
+.feedback .title {
+  height: 104rpx;
+  line-height: 104rpx;
+  background: rgba(255, 255, 255, 1);
+  padding: 0 32rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+}
+
+.feedback .li {
+  line-height: 104rpx;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 1);
+  padding: 0 32rpx;
+  border-top: 1px solid #e5e5e5;
+}
+
+.feedback .li view.t {
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+  height: 104rpx;
+  line-height: 104rpx;
+  float: left;
+}
+
+.feedback .li text {
+  font-size: 26rpx;
+  float: right;
+  display: block;
+  transform: rotate(0deg);
+  transition: 0.3s transform;
+}
+
+.feedback .li text.on {
+  transform: rotate(90deg);
+}
+
+.feedback .li view.desc {
+  width: 100%;
+  float: left;
+  padding: 20rpx 0 30rpx 0;
+  display: none;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.feedback .li view.desc.on {
+  display: block;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 100rpx;
+  color: #1CB0F6;
+  font-size:32rpx;
+}
+.footer text{
+  font-size: 40rpx;
+  position: relative;
+  top: 2rpx;
+  margin-right: 10rpx;
+}

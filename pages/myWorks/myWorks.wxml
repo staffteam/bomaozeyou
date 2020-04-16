@@ -1,0 +1,33 @@
+<view class="my-works">
+	<view class="back"></view>
+	<view class="works-list" wx:for="{{worksData}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+		<view class="t">
+			<view class="l">
+				<image src="{{item.activityImg}}" mode="aspectFill"></image>
+			</view>
+			<view class="r">
+				<view class="title">
+					{{item.activityName}}
+				</view>
+				<view class="name">
+					{{item.studentName}}
+					<view class="type type{{typeJson[item.uploadStatus]}}">
+						{{item.uploadStatus}}
+					</view>
+				</view>
+				<view class="time">
+					截止时间：{{item.uploadEndTime}}
+				</view>
+			</view>
+		</view>
+		<view class="b b{{typeJson[item.uploadStatus]}}">
+			<view class="btn" bindtap="goUp" data-type="{{item.uploadStatus}}" data-id="{{item.studentId}}">{{btnJson[item.uploadStatus]}}</view>
+		</view>
+	</view>
+	<view class="loading" wx:if="{{isfooter}}">
+		<view wx-if="{{!notData}}">
+			<image src="/assets/images/loading.gif" mode="widthFix"></image> 加载中...
+		</view>
+		<view wx-if="{{notData}}">暂无更多数据</view>
+	</view>
+</view>

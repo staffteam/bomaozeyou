@@ -1,0 +1,101 @@
+<!--pages/addPothnter/addPothnter.wxml-->
+<view class='add-pothnter'>
+  <view class='form'>
+
+    <view class='list'>
+      <text>学生照片</text>
+      <view class="picker" bindtap="clickImage">
+        <view class='top-img'>
+          <image mode="widthFix" src="{{form[0].img_url}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='list'>
+      <text>姓名</text>
+      <input value='{{form[0].name}}' disabled></input>
+    </view>
+    <view class='list'>
+      <text>性别</text>
+      <input value='{{form[0].sex}}' disabled></input>
+    </view>
+    <view class='list'>
+      <text>年龄</text>
+      <input value='{{form[0].age}}' disabled></input>
+    </view>
+    <!-- <view class='list notline'>
+      <text>民族</text>
+      <input value='{{form.nation}}' disabled></input>
+    </view> -->
+    <view class='formLine'></view>
+    <view class='list'>
+      <text>身份证号</text>
+      <input value='{{form[0].id_card_no}}' disabled></input>
+    </view>
+    <view class='list'>
+      <text>学校名称</text>
+      <input value='{{form[0].school}}' disabled></input>
+    </view>
+    <view class='list'>
+      <text>班级</text>
+      <input value='{{form[0].class_name}}' disabled></input>
+    </view>
+    <view class='list notline'>
+      <text>报名年级</text>
+      <input value='{{form[0].grade}}' disabled></input>
+    </view>
+    <!-- <view class='list'>
+      <text>报名编码</text>
+      <input value='{{form.apply_code}}' disabled></input>
+    </view> -->
+
+    <view wx:for="{{form}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <view class='formLine'></view>
+      <view class='list title'>
+        <!-- <text>活动名称</text> -->
+        <view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.activity_title}}</view>
+      </view>
+      <view class='list' wx-if="{{item.test_score!='' && item.test_score!=null}}">
+        <!-- <text>测试成绩</text> -->
+        <input  style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.test_score}}' disabled></input>
+      </view>
+      <view class='list title' wx-if="{{item.test_score!='' && item.test_score!=null}}">
+        <!-- <text>说明</text> -->
+        <view  style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.test_remark || ''}}</view>
+      </view>
+      <view class='list' wx-if="{{item.first_contest_score!='' && item.first_contest_score!=null}}">
+        <!-- <text>初赛成绩</text> -->
+        <input  style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.first_contest_score}}' disabled></input>
+      </view>
+      <view class='list title' wx-if="{{item.first_contest_score!='' && item.first_contest_score!=null}}">
+        <!-- <text>说明</text> -->
+        <view  style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.first_contest_remark || ''}}</view>
+      </view>
+      <view class='list' wx-if="{{item.playoff_score!='' && item.playoff_score!=null}}">
+        <!-- <text>复赛成绩</text> -->
+        <input  style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.playoff_score}}' disabled></input>
+      </view>
+      <view class='list title' wx-if="{{item.playoff_score!='' && item.playoff_score!=null}}">
+        <!-- <text>说明</text> -->
+        <view  style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.playoff_remark || ''}}</view>
+      </view>
+      <view class='list' wx-if="{{item.final_score!='' && item.final_score!=null}}">
+        <!-- <text>决赛成绩</text> -->
+        <input  style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.final_score}}' disabled></input>
+      </view>
+      <view class='list title' wx-if="{{item.final_score!='' && item.final_score!=null}}">
+        <!-- <text>说明</text> -->
+        <view  style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.final_remark || ''}}</view>
+      </view>
+      <view class='list' wx-if="{{item.national_finals_score!='' && item.national_finals_score!=null}}">
+        <!-- <text>总决赛成绩</text> -->
+        <input  style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.national_finals_score}}' disabled></input>
+      </view>
+      <view class='list title' wx-if="{{item.national_finals_score!='' && item.national_finals_score!=null}}">
+        <!-- <text>说明</text> -->
+        <view  style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.national_finals_remark || ''}}</view>
+      </view>
+    </view>
+    <!-- <view class='submit' bindtap='saveImageToPhotosAlbum'>保存至手机</view> -->
+  </view>
+</view>
+<!-- <canvas canvas-id='share' style='width:375px;height:580px'  hidden='{{canvasHidden}}'></canvas> -->

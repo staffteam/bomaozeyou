@@ -1,0 +1,27 @@
+<!--pages/message/message.wxml-->
+<view class="ul">
+  <view class='li' data-id="{{item.id}}" data-status="{{item.status}}" bindtap="msgClick" wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item" wx-if="{{!item.status}}">
+    <view class='t'>
+      <view class='l line'>
+        <image src='/assets/images/icon_news_1.png' wx-if="{{item.status}}"></image>
+        <image src='/assets/images/icon_news_2.png' wx-if="{{!item.status}}"></image>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='r'>
+        {{item.time}}
+      </view>
+    </view>
+    <view class='desc lines'>
+      {{item.desc}}
+      <!-- <import src="/wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:item.content.nodes}}" /> -->
+    </view>
+    <!-- <view class='b'>
+      <text>查看详情</text>
+      <text class='iconfont iconyou1'></text>
+    </view> -->
+  </view>
+</view>
+<view class="loading" wx:if="{{articleListData.length==0}}">
+  <view>暂无更多数据</view>
+</view>

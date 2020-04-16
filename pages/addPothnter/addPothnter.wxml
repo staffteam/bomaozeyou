@@ -1,0 +1,191 @@
+<!--pages/addPothnter/addPothnter.wxml-->
+<view class='add-pothnter'>
+  <view class='tips'>为避免报名失败，请确保以下填写内容与真实信息保持一致。</view>
+  <view class='form'>
+    <view class='list'>
+      <text>学生照片</text>
+      <view class="picker" bindtap="clickImage">
+        <text wx-if="{{imgUrl==''}}" style='color:#777;'>从相册中选择</text>
+        <view class='top-img' wx-if="{{imgUrl!=''}}">
+          <image mode="widthFix" src="{{imgUrl}}"></image>
+        </view>
+        <text class='iconfont iconyou1'></text>
+      </view>
+    </view>
+    <view class='list'>
+      <text>姓名</text>
+      <input value='{{form.Name}}' data-id="form.Name" bindinput="onInputs" placeholder='请输入姓名'></input>
+    </view>
+    <view class='list'>
+      <text>性别</text>
+      <view class="picker" data-name="form.Sex" data-list="SexData" bindtap="pickerOpen">
+        <text style="{{form.Sex=='请选择'?'color:#777;':''}}">{{form.Sex}}</text>
+        <text class='iconfont iconyou1'></text>
+      </view>
+    </view>
+    <view class='list list-after'>
+      <text>年龄</text>
+      <input value='{{form.Age}}' data-id="form.Age" bindinput="onInputs" placeholder='请输入年龄'></input>
+      <view class='after'>岁</view>
+    </view>
+    <view class='list list-after notline'>
+      <text>民族</text>
+      <input value='{{form.Nation}}' data-id="form.Nation" bindinput="onInputs" placeholder='请输入民族'></input>
+      <view class='after'>族</view>
+    </view>
+    <view class='formLine'></view>
+    <view class='list'>
+      <text>身份证号</text>
+      <input value='{{form.IDCardNo}}' data-id="form.IDCardNo" bindinput="onInputs" placeholder='请输入身份证号'></input>
+    </view>
+    <view class='list'>
+      <text>所在学校</text>
+      <input value='{{form.School}}' data-id="form.School" bindinput="onInputs" placeholder='请输入学校名称'></input>
+    </view>
+    <view class='list'>
+      <text>所在班级</text>
+      <view class="picker" data-name="form.Class" data-list="ClassData" bindtap="pickerOpen">
+        <text style="{{form.Class=='请选择'?'color:#777;':''}}">{{form.Class}}</text>
+        <text class='iconfont iconyou1'></text>
+      </view>
+    </view>
+    <view class='list'>
+      <text>联系电话</text>
+      <input value='{{form.Phone}}' data-id="form.Phone" bindinput="onInputs" placeholder='请务必填写正确以备接收参赛信息'></input>
+    </view>
+    <view class='list'>
+      <text>所在省市</text>
+      <view class="picker" bindtap="showCityPicker">
+        <text style="{{city=='请选择'?'color:#777;':''}}">{{city}}</text>
+        <text class='iconfont iconyou1'></text>
+      </view>
+    </view>
+    <view class='list'>
+      <text>详细地址</text>
+      <input value='{{form.Address}}' data-id="form.Address" bindinput="onInputs" placeholder='以便后续参赛选手荣誉奖项邮寄'></input>
+    </view>
+    <view class='formLine'></view>
+    <city-picker id="city-picker" issShow="{{issShow3}}" value="{{cityPickerValue}}" isShow="{{cityPickerIsShow}}" bindsureclick="cityPickerOnSureClick" bindcancelclick="cityPickerOnCancelClick" />
+
+    <!-- 体育类 -->
+    <view hidden="{{!isData.IsBodyInfo}}">
+      <view class='list'>
+        <text>身高</text>
+        <input value='{{form.Height}}' data-id="form.Height" bindinput="onInputs" placeholder='请输入身高（单位CM）'></input>
+      </view>
+      <view class='list'>
+        <text>体重</text>
+        <input value='{{form.Weight}}' data-id="form.Weight" bindinput="onInputs" placeholder='请输入体重（单位KG）'></input>
+      </view>
+      <view class='list'>
+        <text>身体状况</text>
+        <input value='{{form.BodyStatus}}' data-id="form.BodyStatus" bindinput="onInputs" placeholder='例如：健康'></input>
+      </view>
+      <view class='list notline'>
+        <text>有无特殊疾病</text>
+        <input value='{{form.IsDisease}}' data-id="form.IsDisease" bindinput="onInputs" placeholder='如有，请注明'></input>
+      </view>
+    </view>
+    <!--  -->
+
+    <!-- 其他类 -->
+    <view hidden="{{!isData.IsStuDetailInfo}}">
+      <view class='list'>
+        <text>中文名拼音</text>
+        <input value='{{form.NamePinying}}' data-id="form.NamePinying" bindinput="onInputs" placeholder='请输入中文名拼音'></input>
+      </view>
+      <view class='list'>
+        <text>国籍</text>
+        <input value='{{form.Country}}' data-id="form.Country" bindinput="onInputs" placeholder='请输入国籍'></input>
+      </view>
+      <view class='list'>
+        <text>出生地</text>
+        <input value='{{form.Birthplace}}' data-id="form.Birthplace" bindinput="onInputs" placeholder='请输入出生地'></input>
+      </view>
+      <view class='list '>
+        <text>户口所在地</text>
+        <input value='{{form.HuKouAddress}}' data-id="form.HuKouAddress" bindinput="onInputs" placeholder='请输入户口所在地'></input>
+      </view>
+      <view class='list '>
+        <text>微信号</text>
+        <input value='{{form.WechatNo}}' data-id="form.WechatNo" bindinput="onInputs" placeholder='请输入微信号'></input>
+      </view>
+      <view class='list '>
+        <text>邮箱</text>
+        <input value='{{form.Email}}' data-id="form.Email" bindinput="onInputs" placeholder='请输入邮箱'></input>
+      </view>
+      <view class='list '>
+        <text>监护人姓名</text>
+        <input value='{{form.GuardianName}}' data-id="form.GuardianName" bindinput="onInputs" placeholder='请输入监护人姓名'></input>
+      </view>
+      <view class='list '>
+        <text>监护人电话</text>
+        <input value='{{form.GuardianPhone}}' data-id="form.GuardianPhone" bindinput="onInputs" placeholder='请输入监护人电话'></input>
+      </view>
+      <view class='list '>
+        <text>曾获奖项</text>
+        <textarea value='{{form.Awards}}' data-id="form.Awards" bindinput="onInputs" placeholder='请输入曾获奖项'></textarea>
+      </view>
+    </view>
+    <view class='formLine'></view>
+    <!--  -->
+    <!-- 科创类 -->
+    <view hidden="{{!isData.IsPassportInfo}}">
+      <view class='list '>
+        <text>护照号码</text>
+        <input value='{{form.PassportNo}}' data-id="form.PassportNo" bindinput="onInputs" placeholder='请输入护照号码'></input>
+      </view>
+      <view class='list '>
+        <text>护照签发日</text>
+        <view class="picker" bindtap="showDatePicker2">
+          <text style="{{form.Sex=='请选择'?'color:#777;':''}}">{{form.PassportIssueTime}}</text>
+          <text class='iconfont iconyou1'></text>
+        </view>
+        <date-picker id="date-picker" value="{{datePickerValue2}}" issShow="{{isshow2}}" isShow="{{datePickerIsShow2}}" bindsureclick="datePickerOnSureClick2" bindcancelclick="datePickerOnCancelClick2" />
+      </view>
+      <view class='list '>
+        <text>护照签发地</text>
+        <input value='{{form.PassportIssueAt}}' data-id="form.PassportIssueAt" bindinput="onInputs" placeholder='请输入护照签发地'></input>
+      </view>
+      <view class='list notline'>
+        <text>护照有效期</text>
+        <view class="picker" bindtap="showDatePicker">
+          <text style="{{form.Sex=='请选择'?'color:#777;':''}}">{{form.PassportExpiryTime}}</text>
+          <text class='iconfont iconyou1'></text>
+        </view>
+        <date-picker id="date-picker" value="{{datePickerValue}}" issShow="{{isshow}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" bindcancelclick="datePickerOnCancelClick" />
+      </view>
+    </view>
+    <!--  -->
+
+    <view class='submit' bindtap='onsubmit'>保存</view>
+  </view>
+</view>
+<view class='open {{isOpen?"show":"hide"}}'>
+  <view class='open-back {{isOpen?"show":"hide"}} '  bindtap="closeOpen"></view>
+  <view class='content {{isDown?"down":""}}'>
+    <view class='t'>
+      <view class='l' bindtap="closeOpen">取消</view>
+      <view class='r' bindtap="saveOpen">确定</view>
+    </view>
+    <picker-view class='open-list' indicator-style="height: 50px;" value="{{openVal}}" bindchange="openChange">
+      <picker-view-column>
+        <view wx:for="{{openData}}" style="line-height: 50px;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+
+<view class='hint-open {{isVShow?"show":""}}'>
+  <view class='back' bindtap='obligationV'></view>
+  <view class='content'>
+    <view class='close' bindtap='obligationV'>
+      <text class='iconfont iconcha'></text>
+    </view>
+    <view class='title'>提示</view>
+    <view class='desc'>
+      {{vtext}}
+    </view>
+    <view class='btn' bindtap='obligationV'>{{vbtn}}</view>
+  </view>
+</view>

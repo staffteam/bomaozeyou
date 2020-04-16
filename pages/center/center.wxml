@@ -1,0 +1,91 @@
+<!--pages/center/center.wxml-->
+
+<view class='center'>
+  <button class="userLogin" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  <view class='back'></view>
+  <view class='top'>
+    <view class='head'  >
+      <view class='l'>
+        <view class='head-img'>
+          <image src='{{userInfo.avatarUrl || "/assets/images/top.png"}}' mode="widthFix"></image>
+        </view>
+        <view class='head-name'>
+          <view class='name'>{{userInfo.nickName}}</view>
+        </view>
+      </view>
+      <!-- <text class='iconfont iconyou1'></text> -->
+    </view>
+    <view class='list'>
+      <view class='li' bindtap='waitClick'>
+        <view class='img'>
+          <view class='imgs'><image src='/assets/images/icon_wait.png' mode="widthFix"></image></view>
+          <mp-badge class="badges" content="{{nums}}" wx-if="{{nums>0}}"></mp-badge>
+        </view>
+        <view class='title'>待付款</view>
+      </view>
+      <view class='li' bindtap='yetClick'>
+        <view class='img'>
+          <view class='imgs'><image src='/assets/images/icon_paid.png' mode="widthFix"></image></view>
+          <!-- <text wx-if="{{paidnum>0}}">{{paidnum}}</text> -->
+        </view>
+        <view class='title'>已付款</view>
+      </view>
+      <view class='li' bindtap='entryClick'>
+        <view class='img' >
+          <view class='imgs'><image src='/assets/images/icon_papers.png' mode="widthFix"></image></view>
+          <!-- <text wx-if="{{papersnum>0}}">{{papersnum}}</text> -->
+        </view>
+        <view class='title'>报名凭证</view>
+      </view>
+    </view>
+  </view>
+  <view class='center-list'>
+    <view class="ul">
+      <view class='li' data-id="{{item.id}}" bindtap="centerListClick" wx:for="{{centerList}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+        <view class='l'>
+          <text class='iconfont {{item.icon}}'></text>
+          <text>{{item.title}}</text>
+        </view>
+        <text class='iconfont iconyou1'></text>
+      </view>
+      <view class='li'>
+        <button open-type="share"></button>
+        <view class='l'>
+          <text class='iconfont iconicon-test2'></text>
+          <text>分享小程序</text>
+        </view>
+        <text class='iconfont iconyou1'></text>
+      </view>
+      <view class='li' bindtap='scanCode' wx-if="{{issuper}}" >
+        <view class='l'>
+          <text class='iconfont icon552dc065f0478'></text>
+          <text>扫一扫</text>
+        </view>
+        <text class='iconfont iconyou1'></text>
+      </view>
+    </view>
+  </view>
+  <view class='article-list'>
+    <view class='title'>
+      <image src="/assets/images/tj.png" mode="widthFix"></image>
+    </view>
+    <view class="ul">
+      <view class='li' data-id="{{item.id}}" bindtap="applyClick" wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+        <view class='l'>
+          <image src="{{item.img_url}}" mode="aspectFill"></image>
+        </view>
+        <view class='r'>
+          <view class='title lines'>{{item.title}}</view>
+          <view class='c'>
+            <view class='type Activity'>活动</view>
+          </view>
+          <view class='b'>
+            <view class='time-zx'>{{item.start_time}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>{{tipss}}</view>
+  <footer-nav pages="3" nums="{{nums}}"></footer-nav>
+</view>

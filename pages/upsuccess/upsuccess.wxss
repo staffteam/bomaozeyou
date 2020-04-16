@@ -1,0 +1,38 @@
+/* pages/paySuccess/paySuccess.wxss */
+
+.paySuccess {
+}
+
+.paySuccess .t {
+  margin: 204rpx auto 0 189rpx;
+}
+
+.paySuccess .t image {
+  width: 331rpx;
+}
+
+.paySuccess .t view {
+  padding-left: 106rpx;
+  font-size: 40rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 56rpx;
+}
+
+.paySuccess .b {
+  margin-top: 113rpx;
+  text-align: center;
+}
+
+.paySuccess .b view:first-child {
+  width: 330rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(33, 192, 254, 1) 0%, rgba(48, 175, 255, 1) 100%);
+  border-radius: 47rpx;
+  font-size: 36rpx;
+  color: rgba(255, 255, 255, 1);
+  line-height: 88rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+
+

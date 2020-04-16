@@ -1,0 +1,16 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view class='li'  bindtap="makePhone">
+  <view class='l'>手机号</view>
+  <view class='r'>
+    <text>{{phone || '待完善'}}</text>
+    <text class='iconfont iconyou1'></text>
+  </view>
+</view>
+
+<mp-dialog title="更换手机号" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" >
+   <view class='p' ><input placeholder='请输入新手机号' ></input></view>
+   <view class='c' >
+    <input placeholder='请输入验证码' ></input>
+    <view class='getcode' bindtap='getcode' >获取验证码</view>
+   </view>
+</mp-dialog>

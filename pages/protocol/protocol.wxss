@@ -1,0 +1,14 @@
+/* pages/protocol/protocol.wxss */
+.protocol{
+  padding: 32rpx;
+}
+.protocol .title{
+  font-size: 36rpx;
+  color: #333;
+  line-height: 50rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.protocol .content{
+  margin-top: 20rpx;
+}

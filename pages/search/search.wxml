@@ -1,0 +1,30 @@
+<!--pages/search/search.wxml-->
+<view>
+  <view class="search-head">
+    <view class='l'>
+      <text class='iconfont iconsousuo'></text>
+      <input placeholder='搜索关键字' confirm-type="search" auto-focus="true" bindconfirm="searchClick" bindinput="searchInput" value="{{searchValue}}"></input>
+    </view>
+    <view class='r' bindtap="historyClose" >
+      <navigator url="../index/index" open-type="navigateBack" hover-class="other-navigator-hover">取消</navigator>
+    </view>
+  </view>
+  <view class='search-h'></view>
+  <view class='search-history' wx-if="{{historyData.length>0}}">
+    <view class='title'>
+      <text>搜索记录</text>
+      <view class='close' bindtap="historyClose">清空</view>
+    </view>
+    <view class='content'>
+      <text bindtap="historyClick" data-title="{{item}}" wx:for="{{historyData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item}}</text>
+    </view>
+  </view>
+  <view class='search-history notbor' wx-if="{{hotData.length>0}}">
+    <view class='title'>
+      <text>热门搜索</text>
+    </view>
+    <view class='content'>
+      <text bindtap="hotClick" wx:for="{{hotData}}" data-title="{{item.Title}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.Title}}</text>
+    </view>
+  </view>
+</view>

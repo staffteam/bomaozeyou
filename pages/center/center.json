@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "footer-nav": "/component/footerNav/footerNav",
+    "mp-badge": "/component/weui-miniprogram/badge/badge"
+  },
+  "navigationBarTitleText": "我的"
+}

@@ -1,0 +1,11 @@
+<!--pages/articleDetails/articleDetails.wxml-->
+<view class="article-details">
+  <view class="title">{{articleData.title}}</view>
+  <view class="desc">
+    <view class="l"><text>时间：</text>{{articleData.time}}</view>
+  </view>
+  <view class="content">
+    <import src="/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:articleData.content.nodes}}" />
+  </view>
+</view>

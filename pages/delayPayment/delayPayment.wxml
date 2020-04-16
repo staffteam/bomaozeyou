@@ -1,0 +1,59 @@
+<!--pages/delayPayment/delayPayment.wxml-->
+<view class='delay-order'>
+  <view class="ul">
+
+    <view class='li' wx:for="{{orderData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <movable-area class="item-touch">
+        <movable-view x="{{item.x}}" direction="horizontal" inertia="true" out-of-bounds="true" class="item-touch-list">
+          <label>
+            <view class='checks {{item.checked?"on":""}}'>
+              <text class='iconfont icondui'></text>
+            </view>
+            <checkbox-group id='{{item.id}}' data-id="{{item.ID}}" bindchange="orderClick">
+              <checkbox value='{{item.ID}}' color="#3CD8FB" checked="{{item.checked}}"></checkbox>
+            </checkbox-group>
+          </label>
+          <view class='l' data-id="{{item.id}}" bindtap='orderClick'>
+            <image src="{{item.img_url}}" mode="aspectFill"></image>
+          </view>
+          <view class='r'>
+            <view class='title lines' data-id="{{item.id}}" bindtap='orderClick'>{{item.activity_title}}</view>
+            <view class='b'>
+              <view>￥{{item.total_price}}</view>
+              <view>x{{item.count}} 人</view>
+            </view>
+          </view>
+          <!-- <view class='d' data-id="{{item.id}}" bindtap='orderDel'>
+            <text class='iconfont iconlajitong'></text>
+          </view> -->
+          </movable-view>
+          <view class="item-touch-tool" data-id="{{item.id}}" bindtap='orderDel'>删除</view>
+      </movable-area>
+    </view>
+    <view class="loading" wx:if="{{isfooter}}">
+      <view wx-if="{{!notData}}">
+        <image src="/assets/images/loading.gif" mode="widthFix"></image> 加载中...</view>
+      <view wx-if="{{notData}}">暂无更多数据</view>
+    </view>
+  </view>
+</view>
+
+<view class='footer-h'></view>
+<view class='footer-n'>
+  <label>
+    <view class='checks {{allChecked?"on":""}}'>
+      <text class='iconfont icondui'></text>
+    </view>
+    <checkbox-group bindchange="allClick">
+      <checkbox value='allChecked' color="#3CD8FB"></checkbox>
+    </checkbox-group>
+    全选
+  </label>
+  <view class='r' bindtap='payments'>
+    <view>结算({{allLength}})</view>
+  </view>
+  <view class='l'>
+    合计：
+    <text>￥{{allPrice}}</text>
+  </view>
+</view>

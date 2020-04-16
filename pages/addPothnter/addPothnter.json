@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "date-picker": "../../component/date-picker/date-picker",
+    "city-picker": "../../component/city-picker-two/city-picker"
+  }
+}

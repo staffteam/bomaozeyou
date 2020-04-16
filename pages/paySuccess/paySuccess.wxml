@@ -1,0 +1,9 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<view class='paySuccess' >
+  <view class='t'><image src='/assets/images/pic_pay.png' mode="widthFix" ></image>
+  <view>付款成功</view></view>
+  <view class='b' >
+    <view bindtap='showpermit' >查看报名凭证</view>
+    <view bindtap='nextform' >继续报名</view>
+  </view>
+</view>

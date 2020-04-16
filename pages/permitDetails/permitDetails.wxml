@@ -1,0 +1,77 @@
+<!--pages/permitDetails/permitDetails.wxml-->
+
+<view class='permit-details' id="wrapper">
+  <view class='back draw'>
+    <image mode="widthFix" src="/assets/images/bg.png"></image>
+  </view>
+  <view class='content draw'>
+    <view class='content-back draw'>
+      <image mode="widthFix" class='draw' src="/assets/images/voucher_bg.png"></image>
+    </view>
+    <view class='content-text draw'>
+      <view class='title draw' style='font-size:{{is28?"31rpx":"35rpx"}};' >{{info.activity_title}}</view>
+      <view class='top draw'>
+        <image mode="widthFix" class='draw' src='{{info.img_url}}'></image>
+      </view>
+      <view class='info draw'>
+        <view class='list draw'>
+          <image mode="widthFix" class='draw' src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>
+            <text class='w26'>姓名：{{info.name}}</text> 
+          </view>
+          <image mode="widthFix" class='draw' src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>
+            <text class='w26'>性别：{{info.sex}}</text>
+          </view>
+        </view>
+        <view class='list draw'>
+          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>
+            <text class='w26'>年龄：{{info.age}}</text>
+          </view>
+          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>
+            <text class='w26'>民族：{{info.nation}}</text>
+          </view>
+        </view>
+        <view class='list draw' style='margin-top:10rpx;'>
+          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
+          <view  class='draw'><text><text style='display:inline-block;width:10rpx;'></text>学校或
+          单位名称：</text><text>{{info.school}}</text></view>
+        </view>
+        <view class='list draw'>
+          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>报名级别：{{info.activity_class_name}}</view>
+        </view>
+        <view class='list draw'>
+          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>报名编码：{{info.applycode}}</view>
+        </view>
+      </view>
+      <view class='b draw'>
+        <view class='l draw'>
+          <image class='draw' mode="widthFix" src="{{wechartImgUrl}}"></image>
+        </view>
+        <view class='r draw'>
+          <view class='draw'>{{tips}}</view>
+          <view class='btn' bindtap='saveImageToPhotosAlbum'>保存凭证</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<canvas canvas-id="print" class="print" hidden='{{isprint}}'></canvas>
+
+<view class='hint-open {{isVShow?"show":""}}'>
+  <view class='back' bindtap='obligationV'></view>
+  <view class='content'>
+    <view class='close' bindtap='obligationV'>
+      <text class='iconfont iconcha'></text>
+    </view>
+    <view class='title'>提示</view>
+    <view class='desc'>
+      {{vtext}}
+    </view>
+    <view class='btn' bindtap='obligationV'>{{vbtn}}</view>
+  </view>
+</view>

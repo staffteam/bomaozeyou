@@ -1,0 +1,80 @@
+/* pages/accountPaid/accountPaid.wxss */
+
+.tips {
+  width: 750rpx;
+  height: 68rpx;
+  background: rgba(28, 176, 246, 0.1);
+  font-size: 24rpx;
+  color: rgba(28, 176, 246, 1);
+  line-height: 68rpx;
+  padding: 0 32rpx;
+}
+
+.tips text {
+  float: right;
+  font-size: 24rpx;
+  color: rgba(28, 176, 246, 1);
+}
+
+page {
+  background-color: #f7f7f7;
+}
+
+.list .li {
+  margin: 32rpx;
+  padding: 32rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 6rpx;
+}
+
+.list .li .title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.list .li .f, .list .li>.r {
+  font-size: 28rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+  margin-top: 13rpx;
+}
+
+.list .li .f text, .list .li>.r text {
+  color: rgba(102, 102, 102, 1);
+}
+
+.list .li>.r {
+  margin-top: 0;
+}
+
+.list .li>.t {
+  /* margin-top: 13rpx; */
+  overflow: hidden;
+}
+
+.list .li>.t .l {
+  font-size: 28rpx;
+  color: rgba(153,153,153,1);
+  line-height: 42rpx;
+}
+
+.list .li>.t .l text {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 42rpx;
+}
+
+.list .li>.t .r {
+  font-size: 28rpx;
+  color: rgba(153,153,153,1);
+  line-height: 42rpx;
+}
+
+.list .li>.t .r text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: rgba(242, 71, 36, 1);
+  line-height: 42rpx;
+}

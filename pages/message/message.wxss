@@ -1,0 +1,62 @@
+/* pages/message/message.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+.ul{
+  padding-bottom: 32rpx;
+}
+.ul .li {
+  width: 686rpx;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 6rpx;
+  padding: 32rpx;
+  /* padding-bottom: 0; */
+  margin-top: 32rpx;
+}
+
+.ul .li .t {
+  overflow: hidden;
+}
+
+.ul .li .t .l {
+  float: left;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  width: 62%;
+}
+
+.ul .li .t .l image {
+  width: 50rpx;
+  float: left;
+  height: 50rpx;
+  margin-right: 24rpx;
+}
+
+.ul .li .t .r {
+  float: right;
+  font-size: 28rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 50rpx;
+}
+
+.ul .li .desc {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+}
+.ul .li .b{
+  border-top:1px solid #eee;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size:28rpx;
+  margin-top:22rpx;
+}
+.ul .li .b .iconfont{
+  font-size: 26rpx;
+  color: #999;
+  float: right;
+}

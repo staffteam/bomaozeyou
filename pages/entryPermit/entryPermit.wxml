@@ -1,0 +1,36 @@
+<!--pages/collect/collect.wxml-->
+<view class='nav'>
+  <view class='li {{item.id == status?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+    {{item.title}}
+  </view>
+</view>
+<view class='nav-h' ></view>
+<view class='article-list'>
+  <view class="ul">
+    <view class='li' data-id="{{item.id}}" wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <view class='title line'>
+        <text class='type type{{item.classfy_id}}'>{{item.classfy_name}}</text> {{item.activity_title}}</view>
+      <view class='c'>
+        <view class='l'>
+          <image src="{{item.img_url}}" mode="widthFix"></image>
+        </view>
+        <view class='r'>
+          <view class='name'>姓名：
+            <text>{{item.name}}</text>
+          </view>
+          <view class='name'>级别：
+            <text>{{item.activity_class_name}}</text>
+          </view>
+          <view class='name'>编码：
+            <text>{{item.apply_code}}</text>
+          </view>
+        </view>
+        <view class='b'>
+          <view bindtap='showVoucher' data-id="{{item.id}}">查看凭证</view>
+          <view bindtap='showArticle' data-id="{{item.activity_id}}">查看活动</view>
+        </view>
+      </view>
+    </view>
+    <view class="not-null" wx-if="{{articleListData.length==0}}">暂无数据</view>
+  </view>
+</view>

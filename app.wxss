@@ -1,0 +1,64 @@
+/**app.wxss**/
+@import "./assets/fonts/iconfont";
+
+view,text{
+  box-sizing: border-box;
+  -webkit-tab-highlight-color: rgba(0,0,0,0); 
+}
+image{
+  width: 100%;
+}
+.notsel {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 30px;
+}
+.button-hover,.navigator-hover{
+  background-color: rgba(0,0,0,0);
+  opacity: 1;
+}
+.loading {
+  text-align: center;
+  padding: 20rpx 0;
+  color: #999;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  height: 70rpx;
+}
+
+.loading view {
+  display: inline-block;
+}
+
+.loading view image {
+  width: 30rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+button.userLogin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+  display: block;
+  opacity: 0;
+}

@@ -1,0 +1,92 @@
+/* pages/search/search.wxss */
+
+.search-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  height: 70rpx;
+}
+
+.search-h {
+  height: 70rpx;
+}
+
+.search-head .l {
+  height: 70rpx;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 35rpx;
+  width: 79%;
+  margin-left: 4%;
+  float: left;
+  padding: 10rpx 30rpx;
+}
+
+.search-head .l text {
+  font-size: 30rpx;
+  float: left;
+  display: block;
+  color: #999;
+  line-height: 50rpx;
+  height: 50rpx;
+}
+
+.search-head .l input {
+  font-size: 28rpx;
+  color: #999;
+  margin-left: 40rpx;
+  height: 50rpx;
+}
+
+.search-head .r {
+  width: 17%;
+  float: right;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.search-history {
+  padding: 48rpx 0 36rpx 0;
+  width: 92%;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+.search-history.notbor{
+  border-bottom: 0px;
+}
+.search-history .title text {
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+}
+
+.search-history .title .close {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #999;
+  line-height: 50rpx;
+  float: right;
+}
+
+.search-history .content {
+  margin-top: 28rpx;
+  overflow: hidden;
+  margin-left:-12rpx;
+  width: calc(100% + 24rpx);
+}
+
+.search-history .content text {
+  display: block;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 32rpx;
+  padding: 12rpx 24rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  margin:12rpx;
+  float:left;
+}

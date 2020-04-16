@@ -1,0 +1,87 @@
+/* pages/grade/grade.wxss */
+
+.grade .back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.grade .back image {
+  margin-top: -50rpx;
+  display: block;
+}
+
+.form {
+  position: relative;
+  width: 686rpx;
+  margin: 0 auto;
+  margin-top: 270rpx;
+  box-shadow: 0px 0px 40rpx 0px rgba(0, 0, 0, 0.05);
+  border-radius: 10rpx;
+  background: url(data:image/png;base64,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) no-repeat left top;
+  background-size: 132rpx 99rpx;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 9;
+  padding: 30rpx;
+}
+.form .tip{
+  font-size:26rpx;
+  padding: 30rpx 0 0;
+  color:rgba(33, 192, 254, 1);
+}
+.form .item {
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.form .item text {
+  font-size: 32rpx;
+  color: rgba(102, 102, 102, 1);
+  line-height: 88rpx;
+  display: block;
+  float: left;
+  width: 130rpx;
+}
+
+.form .item  input {
+  float: right;
+  margin-top: 19rpx;
+  width: calc(100% - 180rpx);
+  height: 50rpx;
+  font-size: 28rpx;
+}
+
+.form .code {
+}
+
+.form .code input {
+  float: left;
+  margin-left: 50rpx;
+  width: calc(100% - 310rpx);
+}
+
+.form .code #checkCode {
+  width: 100rpx;
+  float: right;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  color: #999;
+  text-align: center;
+  font-family: Arial;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.btn {
+  width: 686rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(33, 192, 254, 1) 0%, rgba(48, 175, 255, 1) 100%);
+  border-radius: 47rpx;
+  margin: 80rpx auto;
+  font-size: 36rpx;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  line-height: 88rpx;
+}

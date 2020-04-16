@@ -1,0 +1,39 @@
+<!--pages/articleDetails/articleDetails.wxml-->
+<view class="article-details">
+  <view class="title">{{articleData.title}}</view>
+  <view class="desc">
+    <view class="l"><text>作者：</text>{{articleData.author}}</view>
+    <!-- <view class="l">时间：{{articleData.time}}</view> -->
+    <view class="r">
+      <view class="flow">
+        <text class="iconfont iconliulanliang"></text>{{articleData.stat}}</view>
+      <view class="share">
+        <button open-type="share"></button>
+        <text class='iconfont iconfenxiang' style='font-size:35rpx;'></text>
+      </view>
+      <view class='collect {{articleData.IsFavorite?"on":""}}' style='position:reletive;top:-4rpx;' bindtap="collect" wx:if="{{articleData.IsFavorite!==undefined}}">
+        <text class='iconfont {{articleData.IsFavorite?"iconshoucang2":"iconwuxiaoxing-kong"}}'></text>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <import src="/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:articleData.content.nodes}}" />
+  </view>
+  <view class="recommend">
+    <view class='title'>
+      <text>推荐阅读</text>
+    </view>
+    <view class="recommend-list">
+      <view class="li" data-id="{{item.id}}" bindtap="recommendClick" wx:for="{{recommendData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+        <view class="l">
+          <view class="title lines">{{item.title}}</view>
+          <view class="time ">{{item.publisher_time}}</view>
+        </view>
+        <view class="r">
+          <image src="{{item.img_url}}" data-index="{{index}}"  binderror="picError" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

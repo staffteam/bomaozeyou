@@ -1,0 +1,38 @@
+<!--pages/upWorks/upWorks.wxml-->
+<view class='nav'>
+	<view class='li {{item.id === navon?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+		{{item.title}}
+	</view>
+</view>
+<view class="nav-h"></view>
+<view class="up-works">
+	<view class="t" wx:if="{{navon==1}}">
+		<view class="up-list" wx:for="{{filelist}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+			<view class="img" bindtap="showDetail" data-file="{{item.file}}">
+				<image src="{{item.file}}" mode="aspectFill"></image>
+			</view>
+			<view class="del" bindtap="delFile" data-id="{{item.id}}" data-file="{{item.file}}">-</view>
+		</view>
+		<view class="up" bindtap="upfile">
+			<text>+</text>
+		</view>
+	</view>
+	<view class="t t-video" wx:if="{{navon==2}}">
+		<view class="video-list" wx:for="{{videolist}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+			<view class="videos" data-file="{{item.file}}">
+				<video src="{{item.file}}" controls></video>
+			</view>
+			<view class="del" bindtap="delVideo" data-id="{{item.id}}" data-file="{{item.file}}">-</view>
+		</view>
+		<view class="upvideo" bindtap="upvideo">
+			<text>{{videolist.length>0?'继续上传':'上传视频'}}</text>
+		</view>
+	</view>
+	<view class="hint">
+		<view class="title">注意事项</view>
+		<view class="desc">{{hint}}</view>
+	</view>
+	<view class="btn">
+		<view bindtap="submitFile">提交</view>
+	</view>
+</view>

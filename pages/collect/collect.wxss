@@ -1,0 +1,163 @@
+/* pages/collect/collect.wxss */
+
+.nav {
+  height: 94rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -1px 0px 0px rgba(229, 229, 229, 1);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+page {
+  background-color: #f7f7f7;
+}
+
+.nav .li {
+  width: 40%;
+  display: inline-block;
+  line-height: 94rpx;
+  font-size: 32rpx;
+  position: relative;
+}
+
+.nav .li.on {
+  color: #1cb0f6;
+}
+
+.nav .li.on::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 96rpx;
+  height: 6rpx;
+  background: rgba(28, 176, 246, 1);
+  border-radius: 3rpx;
+}
+.article-list{
+  position: relative;
+  z-index: 9;
+  padding-bottom: 30rpx;
+  padding-top: 100rpx;
+}
+.article-list>.title{
+  width:80%;
+  margin:0 auto;
+  padding: 50rpx 0 20rpx 0;
+}
+.article-list .ul{
+  width: 686rpx;
+  margin:0 auto;
+}
+.article-list .ul .li {
+  margin-top: 32rpx;
+  overflow: hidden;
+}
+
+.article-list .ul .li .l {
+  width: 312rpx;
+  height: 192rpx;
+  border-radius: 6rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.article-list .ul .li .l image {
+  width: 100%;
+  height: 100%;
+}
+
+.article-list .ul .li .r {
+  margin-left: 336rpx;
+}
+
+.article-list .ul .li .r .title {
+  font-size: 30rpx;
+  font-weight: 600;
+  line-height: 36rpx;
+}
+
+.article-list .ul .li .r .c {
+  height: 35rpx;
+  margin-top: 10rpx;
+}
+
+.article-list .ul .li .r .c .zd {
+  width: 60rpx;
+  height: 35rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 6rpx;
+  border: 1px solid rgba(242, 71, 36, 1);
+  font-size: 20rpx;
+  color: rgba(242, 71, 36, 1);
+  line-height: 35rpx;
+  text-align: center;
+  margin-right: 10rpx;
+  float: left;
+}
+
+.article-list .ul .li .r .c .type {
+  width: 60rpx;
+  height: 35rpx;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 35rpx;
+  display: inline-block;
+  color: white;
+  float: left;
+}
+
+.article-list .ul .li .r .c .type.Activity {
+  background: linear-gradient(90deg, rgba(250, 125, 74, 1) 0%, rgba(242, 71, 36, 1) 100%);
+}
+
+.article-list .ul .li .r .c .type.News {
+  background: linear-gradient(90deg, rgba(33, 192, 254, 1) 0%, rgba(48, 175, 255, 1) 100%);
+}
+.article-list .ul .li .r .b{
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+.article-list .ul .li .r .b .time-bm {
+  font-size: 26rpx;
+  color: rgba(242, 71, 36, 1);
+  line-height: 40rpx;
+  float: left;
+}
+
+.article-list .ul .li .r .b .time-zx {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(155, 155, 155, 1);
+  line-height: 40rpx;
+  float: left;
+}
+.article-list .ul .li .r .b .share{
+  float: right;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+  position: relative;
+}
+.article-list .ul .li .r .b button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: block;
+  opacity: 0;
+}
+.not-data{
+  padding:50rpx;
+  color: #999;
+  text-align: center;
+  font-size: 28rpx;
+}

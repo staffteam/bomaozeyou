@@ -1,0 +1,9 @@
+<!--pages/paySuccess/paySuccess.wxml-->
+<view class='paySuccess' wx-if="{{issuccess}}" >
+  <view class='t'><image src='/assets/images/pic_pay.png' mode="widthFix" ></image>
+  <view>签到成功</view></view>
+  <view class='b' >
+    <view bindtap='showpermit' >继续扫码</view>
+    <view bindtap='nextform' >返回首页</view>
+  </view>
+</view>

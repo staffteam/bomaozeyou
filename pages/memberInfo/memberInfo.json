@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-dialog": "../../component/weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText": "账号管理"
+}
