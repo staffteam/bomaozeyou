@@ -199,4 +199,7 @@ Page({
       });
     });
   },
+  onShareAppMessage(){
+    
+  }
 })

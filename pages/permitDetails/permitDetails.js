@@ -104,7 +104,7 @@ Page({
           ctx.fillText(`学校或`, _w * 0.26, _w * 0.769, _w * 0.7)
           ctx.fillText(`单位名称：${vm.data.info.school}`, _w * 0.25, _w * 0.82, _w * 0.7)
           ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.21, _w * 0.86, _w * 0.03, _w * 0.03) //绘制图片
-          ctx.fillText(`报名级别：${vm.data.info.activity_class_name}`, _w * 0.25, _w * 0.888, _w * 0.7)
+          ctx.fillText(`报名年级：${vm.data.info.group}`, _w * 0.25, _w * 0.888, _w * 0.7)
 
           ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.21, _w * 0.93, _w * 0.03, _w * 0.03) //绘制图片
           ctx.fillText(`报名编码：${vm.data.info.applycode}`, _w * 0.25, _w * 0.958, _w * 0.7)
