@@ -21,7 +21,7 @@
 			</view>
 		</view>
 		<view class="b b{{typeJson[item.uploadStatus]}}">
-			<view class="btn" bindtap="goUp" data-type="{{item.uploadStatus}}" data-id="{{item.studentId}}">{{btnJson[item.uploadStatus]}}</view>
+			<view class="btn" bindtap="goUp" data-type="{{item.uploadStatus}}" data-id="{{item.studentId}}" data-activityid="{{item.activityId}}">{{btnJson[item.uploadStatus]}}</view>
 		</view>
 	</view>
 	<view class="loading" wx:if="{{isfooter}}">

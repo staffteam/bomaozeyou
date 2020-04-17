@@ -77,7 +77,8 @@ Page({
   goUp(e) {
     let {
       type,
-      id
+      id,
+      activityid
     } = e.currentTarget.dataset;
     if (type == '已截止') {
       wx.navigateTo({
@@ -85,7 +86,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: `../upWorks/upWorks?type=${type}&id=${id}`
+        url: `../upWorks/upWorks?type=${type}&id=${id}&activityid=${activityid}`
       })
     }
   },

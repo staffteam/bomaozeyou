@@ -410,7 +410,7 @@ Page({
     wx.request({
       url: `${app.$prot.api}/api/Article/GetUploadWorksHint`,
       data:{
-        activityId:options.id
+        activityId: options.activityid
       },
       success(res) {
         if (res.statusCode == '200') {
