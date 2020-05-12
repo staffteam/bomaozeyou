@@ -1,7 +1,7 @@
 <!--pages/feedback/feedback.wxml-->
 <view class='feedback'>
   <view class='title'>常见问题</view>
-  <view class="li" data-id="{{item.id}}" bindtap="recommendClick" wx:for="{{recommendData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+  <view class="li" data-id="{{item.id}}" bindtap="recommendClick" wx:for="{{recommendData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
     <view class='t'>{{item.title}}</view>
     <text class='iconfont iconyou1 {{item.on?"on":""}}'></text>
     <view class='desc {{item.on?"on":""}}'>

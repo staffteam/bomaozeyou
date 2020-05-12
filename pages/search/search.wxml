@@ -16,7 +16,7 @@
       <view class='close' bindtap="historyClose">清空</view>
     </view>
     <view class='content'>
-      <text bindtap="historyClick" data-title="{{item}}" wx:for="{{historyData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item}}</text>
+      <text bindtap="historyClick" data-title="{{item}}" wx:for="{{historyData}}" wx:key="index" wx:for-index="index" wx:for-item="item">{{item}}</text>
     </view>
   </view>
   <view class='search-history notbor' wx-if="{{hotData.length>0}}">
@@ -24,7 +24,7 @@
       <text>热门搜索</text>
     </view>
     <view class='content'>
-      <text bindtap="hotClick" wx:for="{{hotData}}" data-title="{{item.Title}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.Title}}</text>
+      <text bindtap="hotClick" wx:for="{{hotData}}" data-title="{{item.Title}}" wx:key="index" wx:for-index="index" wx:for-item="item">{{item.Title}}</text>
     </view>
   </view>
 </view>

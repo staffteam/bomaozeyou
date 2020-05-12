@@ -3,7 +3,7 @@
   <view class='tips'>为避免报名失败，请确保以下填写内容与真实信息保持一致。</view>
   <view class='form'>
     <view class='list'>
-      <text>学生照片</text>
+      <text>照片</text>
       <view class="picker" bindtap="clickImage">
         <text wx-if="{{imgUrl==''}}" style='color:#777;'>从相册中选择</text>
         <view class='top-img' wx-if="{{imgUrl!=''}}">
@@ -38,11 +38,12 @@
       <text>身份证号</text>
       <input value='{{form.IDCardNo}}' data-id="form.IDCardNo" bindinput="onInputs" placeholder='请输入身份证号'></input>
     </view>
-    <view class='list'>
-      <text>所在学校</text>
-      <input value='{{form.School}}' data-id="form.School" bindinput="onInputs" placeholder='请输入学校名称'></input>
+    <view class='list' wx:if="{{isData.IsSchool}}">
+      <text style="line-height:42rpx; text-indent:10rpx;padding:10rpx 0 10rpx 32rpx;">  学校或
+      单位名称</text>
+      <input value='{{form.School}}' data-id="form.School" bindinput="onInputs" placeholder='学校或单位名称'></input>
     </view>
-    <view class='list'>
+    <view class='list' wx:if="{{isData.IsSchool}}">
       <text>所在班级</text>
       <view class="picker" data-name="form.Class" data-list="ClassData" bindtap="pickerOpen">
         <text style="{{form.Class=='请选择'?'color:#777;':''}}">{{form.Class}}</text>

@@ -29,12 +29,12 @@
   <view class='content {{selDown}}'>
     <view class='l'>
       <scroll-view style="height: 100%;" scroll-y>
-        <view class='li {{item.id===typeid?"on":""}}' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+        <view class='li {{item.id===typeid?"on":""}}' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="index" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
       </scroll-view>
     </view>
     <view class='r'>
       <scroll-view style="height: 100%;" scroll-y>
-        <view class='li {{item.id===picid ?"on":""}}' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+        <view class='li {{item.id===picid ?"on":""}}' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="index" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
       </scroll-view>
     </view>
   </view>
@@ -44,7 +44,7 @@
   <view class='back' id="back" bindtap="cityClose" wx-if="{{cityDown=='down'}}"></view>
   <view class='content {{cityDown}}'>
     <scroll-view class='citylist' style="height: 100%;" scroll-y>
-      <view class='li {{item.ID===districtid?"on":""}}' data-name="{{item.Name}}" data-id="{{item.ID}}" data-parentid="{{item.ParentID}}" bindtap="cityClick" wx:for="{{cityData}}" wx:key="{{item.ID}}" wx:for-index="index" wx:for-item="item">{{item.Name}}</view>
+      <view class='li {{item.ID===districtid?"on":""}}' data-name="{{item.Name}}" data-id="{{item.ID}}" data-parentid="{{item.ParentID}}" bindtap="cityClick" wx:for="{{cityData}}" wx:key="ID" wx:for-index="index" wx:for-item="item">{{item.Name}}</view>
     </scroll-view>
   </view>
 </view>
@@ -54,7 +54,7 @@
   <view class='content {{kindLeft}}'>
     <view class='title'>种类筛选</view>
     <scroll-view class='citylist' scroll-y>
-      <view class='li {{kindids[item.id]?"on":""}}' data-id="{{item.id}}" data-name="{{item.name}}" bindtap="kindClick" wx:for="{{kindData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+      <view class='li {{kindids[item.id]?"on":""}}' data-id="{{item.id}}" data-name="{{item.name}}" bindtap="kindClick" wx:for="{{kindData}}" wx:key="index" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
     </scroll-view>
     <view class='btn'>
       <view class='close' bindtap="kindDel" >清空筛选</view>
@@ -66,7 +66,7 @@
 
 <view class='apply-content {{isScroll?"not-search":""}}'>
   <scroll-view style="height: 100%;" upper-threshold="1" bindscroll="applyScroll" bindscrolltoupper="spplyTopScroll" bindscrolltolower="footerScroll" scroll-y>
-    <view class='apply-list' data-id="{{item.id}}" data-type="{{item.type}}" data-time="{{item.istime}}" bindtap="applyClick" wx:for="{{applyData}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item">
+    <view class='apply-list' data-id="{{item.id}}" data-type="{{item.type}}" data-time="{{item.istime}}" bindtap="applyClick" wx:for="{{applyData}}" wx:key="index" wx:for-index="index" wx:for-item="item">
       <view class='img'>
         <image src='{{item.img_url}}' lazy-load="true" mode="aspectFill" />
       </view>

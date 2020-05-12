@@ -100,7 +100,9 @@
   line-height: 35rpx;
   color: #666;
 }
-
+.content-text .b .r>.draw{
+  min-height: 175rpx;
+}
 .content-text .b .r .btn {
   width: 270rpx;
   height: 78rpx;

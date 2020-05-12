@@ -1,13 +1,13 @@
 <!--pages/collect/collect.wxml-->
 <view class='nav'>
-  <view class='li {{item.id == status?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+  <view class='li {{item.id == status?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
     {{item.title}}
   </view>
 </view>
 <view class='nav-h' ></view>
 <view class='article-list'>
   <view class="ul">
-    <view class='li' data-id="{{item.id}}" wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+    <view class='li' data-id="{{item.id}}" wx:for="{{articleListData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
       <view class='title line'>
         <text class='type type{{item.classfy_id}}'>{{item.classfy_name}}</text> {{item.activity_title}}</view>
       <view class='c'>

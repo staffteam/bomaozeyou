@@ -3,7 +3,7 @@
   <view class='form'>
 
     <view class='list'>
-      <text>学生照片</text>
+      <text>照片</text>
       <view class="picker" bindtap="clickImage">
         <view class='top-img'>
           <image mode="widthFix" src="{{form[0].img_url}}"></image>
@@ -32,7 +32,8 @@
       <input value='{{form[0].id_card_no}}' disabled></input>
     </view>
     <view class='list'>
-      <text>学校名称</text>
+      <text style="line-height:42rpx; text-indent:10rpx;padding:10rpx 0 10rpx 32rpx;">  学校或
+      单位名称</text>
       <input value='{{form[0].school}}' disabled></input>
     </view>
     <view class='list'>
@@ -48,7 +49,7 @@
       <input value='{{form.apply_code}}' disabled></input>
     </view> -->
 
-    <view wx:for="{{form}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+    <view wx:for="{{form}}" wx:key="id" wx:for-index="index" wx:for-item="item">
       <view class='formLine'></view>
       <view class='list title'>
         <!-- <text>活动名称</text> -->

@@ -9,7 +9,7 @@ Page({
   data: {
     navData:[
       { id: "Activity", title:"活动报名"},
-      { id: "News", title: "活动资讯" }
+      { id: "News", title: "项目资讯" }
     ],
     articleType: {
       "Activity": "报名",

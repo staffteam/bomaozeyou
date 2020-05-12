@@ -940,5 +940,26 @@ export default {
         }
       }
     })
+  },
+  getAuthCode(o) {
+    wx.showLoading({
+      title: '请稍后',
+    });
+    wx.request({
+      url: `${api}/api/Member/GetAuthCode`,
+      data: {
+        phone: o.data.phone,
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
+        wx.hideLoading();
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
   }
-}
+} 

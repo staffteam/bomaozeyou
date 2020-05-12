@@ -12,7 +12,7 @@ Page({
     info: {},
     wechartImgUrl: '',
     isprint: true,
-    tips: '提示：请自行打印报名凭证后凭报名凭证参赛，具体考试时间及地点会以短信的方式通知您或请留意博茂择优官方公众号及小程序内信息',
+    tips: '',
     isVShow: false,
     vtext: '签到成功',
     vbtn: '确定',
@@ -100,11 +100,13 @@ Page({
           ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.56, _w * 0.67, _w * 0.03, _w * 0.03) //绘制图片
           ctx.fillText(`民族：${vm.data.info.nation}`, _w * 0.60, _w * 0.698, _w * 0.7)
 
+         
           ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.21, _w * 0.74, _w * 0.03, _w * 0.03) //绘制图片
-          ctx.fillText(`学校或`, _w * 0.26, _w * 0.769, _w * 0.7)
-          ctx.fillText(`单位名称：${vm.data.info.school}`, _w * 0.25, _w * 0.82, _w * 0.7)
-          ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.21, _w * 0.86, _w * 0.03, _w * 0.03) //绘制图片
-          ctx.fillText(`报名年级：${vm.data.info.group}`, _w * 0.25, _w * 0.888, _w * 0.7)
+          ctx.fillText(`报名年级：${vm.data.info.group}`,_w * 0.25, _w * 0.769, _w * 0.7 )
+
+          ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.21, _w * 0.81, _w * 0.03, _w * 0.03 ) //绘制图片
+          ctx.fillText(`学校或`, _w * 0.26, _w * 0.837, _w * 0.7)
+          ctx.fillText(`单位名称：${vm.data.info.school}`, _w * 0.25, _w * 0.89, _w * 0.7)
 
           ctx.drawImage('/assets/images/voucher_circle.png', _w * 0.21, _w * 0.93, _w * 0.03, _w * 0.03) //绘制图片
           ctx.fillText(`报名编码：${vm.data.info.applycode}`, _w * 0.25, _w * 0.958, _w * 0.7)
@@ -204,6 +206,7 @@ Page({
           data.data.img_url = app.$prot.api + data.data.img_url;
           vm.setData({
             info: data.data,
+            tips:data.data.hint || '提示：请自行打印报名凭证后凭报名凭证参赛，具体考试时间及地点会以短信的方式通知您或请留意博茂择优官方公众号及小程序内信息',
             wechartImgUrl: 'data:image/png;base64,' + data.data.qrcode.split('"')[1],
             is28: data.data.activity_title!=null && data.data.activity_title.length > 28
           })

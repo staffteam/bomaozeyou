@@ -7,7 +7,7 @@
   <!-- 轮播 -->
   <view class='article-list'>
     <view class="ul">
-      <view class='li' wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <view class='li' wx:for="{{articleListData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
         <view class='l' data-id="{{item.id}}" data-keycode="{{item.keyCode}}" bindtap="bmClick">
           <image src="{{item.img_url}}" mode="aspectFill"></image>
         </view>

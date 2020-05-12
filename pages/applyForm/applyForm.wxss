@@ -206,6 +206,7 @@ page {
 .public-info .form .list {
   height: 104rpx;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 
 .public-info .form .list>text {
@@ -216,7 +217,18 @@ page {
   padding-left: 32rpx;
   display: block;
 }
-
+.public-info .form .list .get-code{
+  position: absolute;
+  right: 32rpx;
+  top: 0;
+  line-height: 104rpx;
+  font-size: 28rpx;
+  color: #1cb0f6;
+  z-index: 99;
+}
+.public-info .form .list .get-code.on{
+  color: #999999;
+}
 .public-info .form .list .picker {
   margin-left: 260rpx;
   width:calc(100% - 260rpx);

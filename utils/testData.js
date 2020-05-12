@@ -2,7 +2,7 @@ export default {
   //报名列表测试数据
   apply: {
     "data": [{
-        "img_url": "/assets/images/banner.png",
+        "img_url": "/assets/images/banner.jpg",
         "title": "2019-2020联合国高阶政商领袖计划",
         "desc": "联合国高阶政商领袖计划由联合国下属组织机",
         "type": "0",
@@ -12,7 +12,7 @@ export default {
         "id": "0"
       },
       {
-        "img_url": "/assets/images/banner.png",
+        "img_url": "/assets/images/banner.jpg",
         "title": "2019-2020联合国高阶政商领袖计划",
         "desc": "联合国高阶政商领袖计划由联合国下属组织机",
         "type": "1",
@@ -22,7 +22,7 @@ export default {
         "id": "1"
       },
       {
-        "img_url": "/assets/images/banner.png",
+        "img_url": "/assets/images/banner.jpg",
         "title": "2019-2020联合国高阶政商领袖计划",
         "desc": "联合国高阶政商领袖计划由联合国下属组织机",
         "type": "2",
@@ -32,7 +32,7 @@ export default {
         "id": "2"
       },
       {
-        "img_url": "/assets/images/banner.png",
+        "img_url": "/assets/images/banner.jpg",
         "title": "2019-2020联合国高阶政商领袖计划",
         "desc": "联合国高阶政商领袖计划由联合国下属组织机",
         "type": "3",
@@ -46,7 +46,7 @@ export default {
   },
   applyDetail: {
     data: {
-      "img_url": "/assets/images/banner.png",
+      "img_url": "/assets/images/banner.jpg",
       "title": "2019-2020联合国高阶政商领袖计划",
       "desc": "联合国高阶政商领袖计划由联合国下属组织机",
       "type": "3",

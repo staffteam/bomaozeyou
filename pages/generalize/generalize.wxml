@@ -1,0 +1,25 @@
+<view class="generalize" >
+  <view class="t" >
+    <view class="title" >累计收入（元）</view>
+    <view class="income" >{{income}}</view>
+    <view class="btn" >
+      <view class="l" >
+        待提现(元)：{{extract}}
+      </view>
+      <view class="r" >
+        <view class="r-btn" >提现</view>
+      </view>
+    </view>
+  </view>
+  <view class="c" >
+    <view class="list" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item" >
+      <view class="icon">
+        <image src="{{item.icon}}" ></image>
+      </view>
+      <view class="title" >{{item.title}}</view>
+    </view>
+  </view>
+  <view class="b" bindtap="generalizeCenter">
+    <image src="/assets/images/tg.jpg" mode="widthFix" ></image>
+  </view>
+</view>

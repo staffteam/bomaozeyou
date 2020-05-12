@@ -2,9 +2,9 @@
 <view class='delay-order'>
   <view class="ul">
 
-    <view class='li' wx:for="{{orderData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
-      <movable-area class="item-touch">
-        <movable-view x="{{item.x}}" direction="horizontal" inertia="true" out-of-bounds="true" class="item-touch-list">
+    <view class='li' wx:for="{{orderData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
+      <view class="item-touch">
+        <view class="item-touch-list">
           <label>
             <view class='checks {{item.checked?"on":""}}'>
               <text class='iconfont icondui'></text>
@@ -23,12 +23,11 @@
               <view>x{{item.count}} 人</view>
             </view>
           </view>
-          <!-- <view class='d' data-id="{{item.id}}" bindtap='orderDel'>
+          <view class='d' data-id="{{item.id}}" bindtap='orderDel'>
             <text class='iconfont iconlajitong'></text>
-          </view> -->
-          </movable-view>
-          <view class="item-touch-tool" data-id="{{item.id}}" bindtap='orderDel'>删除</view>
-      </movable-area>
+          </view>
+          </view>
+      </view>
     </view>
     <view class="loading" wx:if="{{isfooter}}">
       <view wx-if="{{!notData}}">

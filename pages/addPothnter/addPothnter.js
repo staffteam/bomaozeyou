@@ -1656,10 +1656,11 @@ Page({
       IsPassportInfo: false,
       IsBodyInfo: false,
       IsStuDetailInfo: false,
-      IsShowInfo: false
+      IsShowInfo: false,
+      IsSchool:false
     }
   },
-  showDatePicker: function(e) {
+  showDatePicker: function (e) {
     this.setData({
       datePickerIsShow: true,
       isshow: true
@@ -1668,7 +1669,7 @@ Page({
   /**
    * 城市选择确认
    */
-  cityPickerOnSureClick: function(e) {
+  cityPickerOnSureClick: function (e) {
     this.setData({
       issShow3: false
     })
@@ -1682,7 +1683,7 @@ Page({
   /**
    * 城市选择取消
    */
-  cityPickerOnCancelClick: function(event) {
+  cityPickerOnCancelClick: function (event) {
     this.setData({
       issShow3: false
     })
@@ -1699,7 +1700,7 @@ Page({
       cityPickerValue: this.data.cityPickerValue
     });
   },
-  datePickerOnSureClick: function(e) {
+  datePickerOnSureClick: function (e) {
     this.setData({
       isshow: false
     })
@@ -1712,7 +1713,7 @@ Page({
     }, 100)
   },
 
-  datePickerOnCancelClick: function(event) {
+  datePickerOnCancelClick: function (event) {
     this.setData({
       isshow: false
     })
@@ -1723,14 +1724,14 @@ Page({
     }, 100)
   },
 
-  showDatePicker2: function(e) {
+  showDatePicker2: function (e) {
     this.setData({
       datePickerIsShow2: true,
       isshow2: true
     });
   },
 
-  datePickerOnSureClick2: function(e) {
+  datePickerOnSureClick2: function (e) {
     this.setData({
       isshow2: false
     })
@@ -1743,7 +1744,7 @@ Page({
     }, 100)
   },
 
-  datePickerOnCancelClick2: function(event) {
+  datePickerOnCancelClick2: function (event) {
     this.setData({
       isshow2: false
     })
@@ -1812,7 +1813,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     let vm = this;
     // if (options.typeid){
     //   app.$prot.getActivity({
@@ -1833,7 +1834,8 @@ Page({
       ['isData.IsPassportInfo']: options.IsPassportInfo == 'true',
       ['isData.IsBodyInfo']: options.IsBodyInfo == 'true',
       ['isData.IsStuDetailInfo']: options.IsStuDetailInfo == 'true',
-      ['isData.IsShowInfo']: options.IsShowInfo == 'true'
+      ['isData.IsShowInfo']: options.IsShowInfo == 'true',
+      ['isData.IsSchool']: options.IsSchool == 'true'
     });
     if (options.id) {
       app.$prot.getUserDetalis({
@@ -1927,7 +1929,7 @@ Page({
     }
   },
   // 点击头像 显示底部菜单
-  clickImage: function() {
+  clickImage: function () {
     var vm = this;
     let list = ['上传头像', '查看头像'];
     if (this.data.imgUrl == "") {
@@ -1948,7 +1950,7 @@ Page({
     })
   },
   // 查看原图
-  viewImage: function() {
+  viewImage: function () {
     var vm = this;
     wx.previewImage({
       current: '', // 当前显示图片的http链接
@@ -1956,13 +1958,13 @@ Page({
     })
   },
   // 上传头像
-  changeImage: function() {
+  changeImage: function () {
     var vm = this;
     wx.chooseImage({
       count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function(res) {
+      success: function (res) {
         wx.showLoading({
           title: '上传中...',
         })
@@ -1970,10 +1972,10 @@ Page({
         var tempFilePaths = res.tempFilePaths[0];
         util.uploadFile(`${app.$prot.api}api/Member/UploadPicture?sessionKey=${wx.getStorageSync('sessionKey')}`, tempFilePaths, 'imgFile', {
           'picid': 0
-        }, function(res) {
+        }, function (res) {
           wx.hideLoading();
-          res = typeof(res) === 'string' ? JSON.parse(res) : res;
-          var data = typeof(res) === 'string' ? JSON.parse(res) : res;
+          res = typeof (res) === 'string' ? JSON.parse(res) : res;
+          var data = typeof (res) === 'string' ? JSON.parse(res) : res;
           vm.setData({
             imgUrl: app.$prot.imgApi + data.data.Src,
             ['form.PicID']: data.data.pid,
@@ -2052,16 +2054,25 @@ Page({
       Sex: Sex == "男",
       Age,
       Nation,
-      School,
       PicID,
       IDCardNo,
-      Class,
       Phone,
       Address: vm.data.city ? vm.data.city + ' ' + Address : '',
     };
-    if (Name == "" || Sex == "请选择" || Age == "" || Nation == "" || School == "" || PicID == "" || IDCardNo == "" || Class == "" || Phone == "" || Address == "") {
+    if (Name == "" || Sex == "请选择" || Age == "" || Nation == "" || PicID == "" || IDCardNo == "" || Phone == "" || Address == "") {
       this.vTips('报名信息不完善，是否立即完善信息？');
       return false;
+    }
+    if (this.data.isData.IsSchool && (School == '' || Class == '')) {
+      this.vTips('报名信息不完善，是否立即完善信息？');
+      return false;
+    }
+    if(this.data.isData.IsSchool){
+      _obj = {
+        ..._obj,
+        School,
+        Class
+      }
     }
     if (!/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/.test(IDCardNo) && !/^([A-Z]\d{6,10}(\(\w{1}\))?)$/.test(IDCardNo) && !/^\d{8}|^[a-zA-Z0-9]{10}|^\d{18}$/.test(IDCardNo)) {
       this.vTips('身份证号格式错误', '确定');
@@ -2135,7 +2146,7 @@ Page({
             mask: true,
             icon: 'success',
             duration: 1000,
-            success: function() {
+            success: function () {
               wx.navigateBack({
                 delta: 1
               })
@@ -2155,49 +2166,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

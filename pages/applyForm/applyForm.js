@@ -8,6 +8,7 @@ Page({
    */
   data: {
     cityVal: '请选择',
+    CreatorText: "获取验证码",
     cityPickerValue: [0, 0, 0],
     cityPickerIsShow: false,
     cityPickerIssShow: false,
@@ -25,6 +26,8 @@ Page({
       date: '请选择',
       coachName: '',
       coachPhone: '',
+      CreatorPhone: "",
+      CreatorCode: ""
       // address: '请选择'
     },
     addressMaxData: [],
@@ -79,7 +82,53 @@ Page({
     activityData: [],
     activityOpenHostVal: [],
     activityClassID: "",
-    isNotChange: false
+    isNotChange: false,
+    codeTime: null,
+    authCode: ""
+  },
+  //获取验证码
+  getCode() {
+    let vm = this;
+    if (this.data.CreatorText != '获取验证码' && this.data.CreatorText != '重新获取验证码') return;
+    let phone = this.data.form.CreatorPhone;
+    if (phone == '') {
+      this.vTips('请输入联系电话', '确定');
+    } else if (!/^1[3456789]\d{9}$/.test(phone)) {
+      this.vTips('联系电话格式错误', '确定');
+    } else {
+      app.$prot.getAuthCode({
+        data: {
+          phone
+        },
+        success(res) {
+          wx.showToast({
+            title: '发送成功',
+          });
+          vm.setData({
+            CreatorText: '60s后重新获取',
+            authCode: res.data
+          });
+          let i = 59;
+          let codeTime = setInterval(_ => {
+            if (i == 0) {
+              clearInterval(vm.data.codeTime);
+              vm.setData({
+                CreatorText: '重新获取验证码'
+              });
+            } else {
+              i--;
+              vm.setData({
+                CreatorText: i + 's后重新获取'
+              });
+            }
+          }, 1000);
+          vm.setData({
+            codeTime: codeTime
+          });
+        }
+      })
+    }
+
   },
   //关闭选择类别
   closeActivityOpen() {
@@ -262,14 +311,14 @@ Page({
       cityid: this.data.cityPickerValue[1],
       countyid: this.data.cityPickerValue[2]
     };
-    if(type == 'grade'){
+    if (type == 'grade') {
       objs.gradeid = vm.data.grade;
     }
-    if(type == 'works'){
+    if (type == 'works') {
       objs.gradeid = vm.data.grade;
       objs.workid = vm.data.classfyWorksJson[vm.data.form.worksType];
     }
-    if(type == 'group'){
+    if (type == 'group') {
       objs.gradeid = vm.data.grade;
       objs.workid = vm.data.classfyWorksJson[vm.data.form.worksType];
       objs.groupid = vm.data.classfyGroupJson[vm.data.form.workForm];
@@ -717,18 +766,17 @@ Page({
       }, 300)
     }
   },
-  //添加参赛人
+  //添加个人信息
   addPothnter() {
-    console.log(`IsPassportInfo=${this.data.info.IsPassportInfo}&IsBodyInfo=${this.data.info.IsBodyInfo}&IsStuDetailInfo=${this.data.info.IsStuDetailInfo}&IsShowInfo=${this.data.info.IsShowInfo}`);
     wx.navigateTo({
-      url: `../addPothnter/addPothnter?IsPassportInfo=${this.data.info.IsPassportInfo}&IsBodyInfo=${this.data.info.IsBodyInfo}&IsStuDetailInfo=${this.data.info.IsStuDetailInfo}&IsShowInfo=${this.data.info.IsShowInfo}`
+      url: `../addPothnter/addPothnter?IsPassportInfo=${this.data.info.IsPassportInfo}&IsBodyInfo=${this.data.info.IsBodyInfo}&IsStuDetailInfo=${this.data.info.IsStuDetailInfo}&IsShowInfo=${this.data.info.IsShowInfo}&IsSchool=${this.data.info.IsSchool}`
     })
   },
   //编辑参赛人
   editPothunter(o) {
     let id = o.currentTarget.dataset.id;
     wx.navigateTo({
-      url: `../addPothnter/addPothnter?IsPassportInfo=${this.data.info.IsPassportInfo}&IsBodyInfo=${this.data.info.IsBodyInfo}&IsStuDetailInfo=${this.data.info.IsStuDetailInfo}&IsShowInfo=${this.data.info.IsShowInfo}&id=${id}`
+      url: `../addPothnter/addPothnter?IsPassportInfo=${this.data.info.IsPassportInfo}&IsBodyInfo=${this.data.info.IsBodyInfo}&IsStuDetailInfo=${this.data.info.IsStuDetailInfo}&IsShowInfo=${this.data.info.IsShowInfo}&id=${id}&IsSchool=${this.data.info.IsSchool}`
     })
   },
   //删除参赛人
@@ -825,9 +873,9 @@ Page({
       isDown: false
     })
     this.getGetPrice();
-    if(this.data.openCNmae == 'form.worksType' && this.data.form.worksType!='请选择'){
+    if (this.data.openCNmae == 'form.worksType' && this.data.form.worksType != '请选择') {
       this.activityClassfy('works');
-    }else if(this.data.openCNmae == 'form.workForm' && this.data.form.workForm!='请选择'){
+    } else if (this.data.openCNmae == 'form.workForm' && this.data.form.workForm != '请选择') {
       this.activityClassfy('group');
     }
     setTimeout(() => {
@@ -861,11 +909,6 @@ Page({
       this.vTips('请先阅读并同意协议', '确定');
       return false;
     }
-    if (this.data.isstop) {
-      this.vTips('正在计算价格，请稍后');
-      vm.getGetPrice();
-      return false;
-    }
     let {
       worksType,
       workForm,
@@ -873,6 +916,8 @@ Page({
       date,
       coachName,
       coachPhone,
+      CreatorCode,
+      CreatorPhone
       // address
     } = this.data.form;
     if (((worksType == '请选择' || workForm == '请选择' || name == '' || date == '') && vm.data.info.IsShowInfo) || (this.data.gradeVal == '请选择' && !this.data.isgrade)) {
@@ -891,10 +936,31 @@ Page({
       this.vTips('辅导老师电话格式有误', '确定');
       return false;
     }
+    if (CreatorPhone == '') {
+      this.vTips('请输入联系电话', '确定');
+      return false;
+    }
+    if (CreatorPhone != '' && !/^1[3456789]\d{9}$/.test(CreatorPhone)) {
+      this.vTips('联系电话格式有误', '确定');
+      return false;
+    }
+    if (CreatorCode == "") {
+      this.vTips('请输入短信验证码', '确定');
+      return false;
+    }
+    if (this.data.authCode != CreatorCode) {
+      this.vTips('短信验证码错误', '确定');
+      return false;
+    }
     // if (vm.data._price_ == '0'){
     //   this.vTips('价格计算异常，请检查各字段是否按要求填写！', '确定');
     //   return false;
     // }
+    if (this.data.isstop) {
+      this.vTips('正在计算价格，请稍后');
+      vm.getGetPrice();
+      return false;
+    }
     wx.showLoading({
       title: '请稍后...',
     });
@@ -921,7 +987,7 @@ Page({
         ActivityClassID: vm.data.activityClassID || 0,
         ActivityID: vm.data.info.id,
         Price: Number(vm.data._price_),
-        // AddressID: addressID
+        Address: vm.data.cityVal
       };
       if (vm.data.info.IsShowInfo) {
         jsons.GroupID = vm.data.classfyGroupJson[vm.data.form.workForm];
@@ -931,6 +997,7 @@ Page({
     });
     let models = {
       ActivityID: vm.data.info.id,
+      CreatorPhone: CreatorPhone,
       Price: Number(vm.data._price_),
       Count: this.data.checkPothunter.length,
       Certificates: _arr,
@@ -1229,11 +1296,11 @@ Page({
           vm.setData({
             _price_: (data.data * vm.data.checkPothunter.length) || 0,
             _price: data.data || 0,
-          })
+          });
+          vm.setData({
+            isstop: false
+          });
         }
-        vm.setData({
-          isstop: false
-        })
       }
     })
   },
@@ -1242,6 +1309,7 @@ Page({
    */
   onShow: function () {
     let vm = this;
+    clearInterval(this.data.codeTime)
     if (!wx.getStorageSync('sessionKey')) {
       app.initend = function () {
         vm.getUserInfo();

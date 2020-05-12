@@ -1,6 +1,6 @@
 <view class="my-works">
 	<view class="back"></view>
-	<view class="works-list" wx:for="{{worksData}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+	<view class="works-list" wx:for="{{worksData}}" wx:for-item="item" wx:for-index="index" wx:key="index">
 		<view class="t">
 			<view class="l">
 				<image src="{{item.activityImg}}" mode="aspectFill"></image>

@@ -1,13 +1,13 @@
 <!--pages/upWorks/upWorks.wxml-->
 <view class='nav'>
-	<view class='li {{item.id === navon?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+	<view class='li {{item.id === navon?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
 		{{item.title}}
 	</view>
 </view>
 <view class="nav-h"></view>
 <view class="up-works">
 	<view class="t" wx:if="{{navon==1}}">
-		<view class="up-list" wx:for="{{filelist}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+		<view class="up-list" wx:for="{{filelist}}" wx:for-item="item" wx:for-index="index" wx:key="index">
 			<view class="img" bindtap="showDetail" data-file="{{item.file}}">
 				<image src="{{item.file}}" mode="aspectFill"></image>
 			</view>
@@ -18,7 +18,7 @@
 		</view>
 	</view>
 	<view class="t t-video" wx:if="{{navon==2}}">
-		<view class="video-list" wx:for="{{videolist}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+		<view class="video-list" wx:for="{{videolist}}" wx:for-item="item" wx:for-index="index" wx:key="index">
 			<view class="videos" data-file="{{item.file}}">
 				<video src="{{item.file}}" controls></video>
 			</view>

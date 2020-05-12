@@ -41,7 +41,7 @@
   </view>
   <view class='center-list'>
     <view class="ul">
-      <view class='li' data-id="{{item.id}}" bindtap="centerListClick" wx:for="{{centerList}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <view class='li' data-id="{{item.id}}" bindtap="centerListClick" wx:for="{{centerList}}" wx:key="id" wx:for-index="index" wx:for-item="item">
         <view class='l'>
           <text class='iconfont {{item.icon}}'></text>
           <text>{{item.title}}</text>
@@ -70,7 +70,7 @@
       <image src="/assets/images/tj.png" mode="widthFix"></image>
     </view>
     <view class="ul">
-      <view class='li' data-id="{{item.id}}" bindtap="applyClick" wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <view class='li' data-id="{{item.id}}" bindtap="applyClick" wx:for="{{articleListData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
         <view class='l'>
           <image src="{{item.img_url}}" mode="aspectFill"></image>
         </view>

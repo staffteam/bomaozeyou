@@ -4,7 +4,7 @@
   <text class='iconfont iconcha' bindtap='tipsClose'></text>
 </view>
 <view class='list'>
-  <view class='li' wx:for="{{orderData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+  <view class='li' wx:for="{{orderData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
     <view class='title'>{{item.activity_title}}</view>
     <view class='f'>报名费： <text>￥{{item.price}}/人</text></view>
     <view class='r'>报名人数：<text>{{item.count}}</text> </view>

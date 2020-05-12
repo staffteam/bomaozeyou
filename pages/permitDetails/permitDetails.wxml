@@ -34,15 +34,16 @@
             <text class='w26'>民族：{{info.nation}}</text>
           </view>
         </view>
+        <view class='list draw'>
+          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
+          <view class='draw'>报名年级：{{info.group}}</view>
+        </view>
         <view class='list draw' style='margin-top:10rpx;'>
           <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
           <view  class='draw'><text><text style='display:inline-block;width:10rpx;'></text>学校或
           单位名称：</text><text>{{info.school}}</text></view>
         </view>
-        <view class='list draw'>
-          <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
-          <view class='draw'>报名年级：{{info.group}}</view>
-        </view>
+        
         <view class='list draw'>
           <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
           <view class='draw'>报名编码：{{info.applycode}}</view>

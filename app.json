@@ -31,7 +31,9 @@
     "pages/upWorks/upWorks",
     "pages/myWorks/myWorks",
     "pages/upsuccess/upsuccess",
-    "pages/worksList/worksList"
+    "pages/worksList/worksList",
+    "pages/generalize/generalize",
+    "pages/generalizeCenter/generalizeCenter"
   ],
   "window": {
     "backgroundTextStyle": "light",

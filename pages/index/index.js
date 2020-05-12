@@ -8,7 +8,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     bannerData: [{
       id: 0,
-      PicUrl: '/assets/images/banner.png'
+      PicUrl: '/assets/images/banner.jpg'
     }],
     homeTips: '/assets/images/home_ts.png',
     bmData: [],

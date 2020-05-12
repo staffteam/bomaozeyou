@@ -24,7 +24,7 @@ Component({
         "pagePath": "pages/article/article",
         "iconPath": "/assets/images/icon_nav_hd_off.png",
         "selectedIconPath": "/assets/images/icon_nav_hd_on.png",
-        "text": "活动发布"
+        "text": "最新发布"
       },
       {
         "pagePath": "pages/grade/grade",

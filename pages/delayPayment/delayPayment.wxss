@@ -58,8 +58,8 @@ page {
 }
 .delay-order .li .r {
   float: left;
-  margin-left: 22rpx;
-  width: 300rpx;
+  margin-left: 12rpx;
+  width: 280rpx;
 }
 
 .delay-order .li .r view.title {
@@ -89,11 +89,14 @@ page {
 
 .delay-order .li .d {
   position: absolute;
-  right: 10rpx;
-  top: 0;
+  right: 15rpx;
+  top: 20rpx;
   color: #999;
 }
-
+.delay-order .li .d text{
+  font-size:30rpx;
+  line-height: 30rpx;
+}
 .footer-h {
   height: 100rpx;
 }
@@ -187,13 +190,12 @@ page {
 .item-touch {
   display: flex;
   position: relative;
-  width: calc(714rpx - 180rpx);
   height: 209rpx;
 }
 
 .item-touch-list {
   z-index: 10;
-  width: 714rpx;
+  width: 100%;
   height: 100%;
   padding: 32rpx 32rpx 32rpx 24rpx;
   background-color: #fff;

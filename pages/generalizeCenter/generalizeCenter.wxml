@@ -1,0 +1,14 @@
+<view class="generalize-center" >
+  <image src="/assets/images/tg_back.jpg" mode="widthFix" ></image>
+  <view class="main" >
+    <view class="title" >
+      <view class="l" ><image src="/assets/images/tg_title_l.png" mode="widthFix" ></image></view>
+      <view class="c" >推广规则</view>
+      <view class="r" ><image src="/assets/images/tg_title_r.png" mode="widthFix" ></image></view>
+    </view>
+    <view class="content" >
+      成为推广员后，每推广给一个好友将会得到2%的邀请奖励，得到的现金可以直接提现。成为推广员后，每推广给一个好友将会得到2%的邀请奖励，得到的现金可以直接提现。
+    </view>
+    <view class="btn" bindtap="generalize" >进入推广中心</view>
+  </view>
+</view>

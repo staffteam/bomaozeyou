@@ -8,8 +8,8 @@ Page({
   data: {
     filelist: [],
     videolist: [],
-    hint:"",
-    upload_count:0,
+    hint: "",
+    upload_count: 0,
     i: 0,
     pid: "",
     navon: '1',
@@ -175,11 +175,11 @@ Page({
             icon: "none"
           })
         } else {
-          if(vm.data.upload_count<(tempFilePaths.length+vm.data.filelist.length+vm.data.videolist.length)){
+          if (vm.data.upload_count < (tempFilePaths.length + vm.data.filelist.length + vm.data.videolist.length)) {
             wx.showToast({
-              title: '超出上传作品个数限制，最多可上传'+vm.data.upload_count+'个作品',
+              title: '超出上传作品个数限制，最多可上传' + vm.data.upload_count + '个作品',
               icon: "none",
-              duration:2500
+              duration: 2500
             })
             return false;
           }
@@ -196,23 +196,44 @@ Page({
       title: '请稍后...',
     });
     wx.chooseVideo({
+      compressed:false,
       success: function (res) {
         wx.hideLoading();
-        var tempFilePath = res.tempFilePath
-        var videolist = vm.data.videolist;
-        if(vm.data.upload_count<(1+vm.data.filelist.length+vm.data.videolist.length)){
-          wx.showToast({
-            title: '超出上传作品个数限制，最多可上传'+vm.data.upload_count+'个作品',
-            icon: "none",
-            duration:2500
-          })
-          return false;
+        var tempFilePath = res.tempFilePath;
+        let is = true;
+        var h = tempFilePath.split('.');
+        if (h[h.length - 1] != 'mp4') {
+          is = false;
         }
-        vm.setData({
-          videolist: [...videolist, {
-            file: tempFilePath
-          }]
-        })
+        if(res.size > 209715200){
+          wx.showToast({
+            title: '视频大小不能大于200M',
+            icon: "none"
+          });
+          return;
+        } 
+        if (is) {
+          var videolist = vm.data.videolist;
+          if (vm.data.upload_count < (1 + vm.data.filelist.length + vm.data.videolist.length)) {
+            wx.showToast({
+              title: '超出上传作品个数限制，最多可上传' + vm.data.upload_count + '个作品',
+              icon: "none",
+              duration: 2500
+            })
+            return false;
+          }
+          vm.setData({
+            videolist: [...videolist, {
+              file: tempFilePath
+            }]
+          })
+        } else {
+          wx.showToast({
+            title: '请上传mp4格式文件',
+            icon: "none"
+          })
+        }
+
       }
     })
   },
@@ -345,7 +366,7 @@ Page({
   },
   submitFile() {
     let vm = this;
-    if (this.data.filelist.length == 0) {
+    if (this.data.filelist.length == 0 && this.data.videolist.length == 0) {
       wx.showToast({
         title: '请选择作品',
         icon: "none"
@@ -409,15 +430,15 @@ Page({
     }
     wx.request({
       url: `${app.$prot.api}/api/Article/GetUploadWorksHint`,
-      data:{
+      data: {
         activityId: options.activityid
       },
       success(res) {
         if (res.statusCode == '200') {
           let data = JSON.parse(res.data);
           vm.setData({
-            hint:data.data.hint,
-            upload_count:data.data.upload_count
+            hint: data.data.hint,
+            upload_count: data.data.upload_count
           })
         }
       }

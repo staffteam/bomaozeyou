@@ -2,5 +2,5 @@
   "usingComponents": {
     "footer-nav": "/component/footerNav/footerNav"
   },
-  "navigationBarTitleText": "活动发布"
+  "navigationBarTitleText": "最新发布"
 }

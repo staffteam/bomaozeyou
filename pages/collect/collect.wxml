@@ -1,12 +1,12 @@
 <!--pages/collect/collect.wxml-->
 <view class='nav'>
-  <view class='li {{item.id === navon?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+  <view class='li {{item.id === navon?"on":""}}' data-id="{{item.id}}" bindtap="navClick" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
     {{item.title}}
   </view>
 </view>
 <view class='article-list'>
     <view class="ul">
-      <view class='li' data-id="{{item.id}}" data-keycode="{{item.keycode}}" bindtap="bmClick" wx:for="{{articleListData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item" wx-if="{{item.keycode==navon}}">
+      <view class='li' data-id="{{item.id}}" data-keycode="{{item.keycode}}" bindtap="bmClick" wx:for="{{articleListData}}" wx:key="id" wx:for-index="index" wx:for-item="item" wx-if="{{item.keycode==navon}}">
         <view class='l'>
           <image src="{{item.img_url}}" mode="aspectFill"></image>
         </view>

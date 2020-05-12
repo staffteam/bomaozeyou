@@ -63,7 +63,7 @@
 				},
 				{
 					"id": -1,
-					"name": "活动发布",
+					"name": "最新发布",
 					"pathName": "pages/article/article",
 					"query": "",
 					"scene": null
@@ -112,7 +112,7 @@
 				},
 				{
 					"id": 8,
-					"name": "添加参赛人",
+					"name": "添加个人信息",
 					"pathName": "pages/addPothnter/addPothnter",
 					"query": "typeid=其他类",
 					"scene": null
@@ -255,6 +255,27 @@
 					"name": "pages/articleDetails/articleDetails",
 					"pathName": "pages/articleDetails/articleDetails",
 					"query": "id=32&type=work",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/delayPayment/delayPayment",
+					"pathName": "pages/delayPayment/delayPayment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "推广",
+					"pathName": "pages/generalize/generalize",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/generalizeCenter/generalizeCenter",
+					"pathName": "pages/generalizeCenter/generalizeCenter",
+					"query": "",
 					"scene": null
 				}
 			]

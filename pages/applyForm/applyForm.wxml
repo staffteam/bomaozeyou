@@ -31,6 +31,21 @@
 			</view>
 		</view>
 	</view>
+
+	<!--  -->
+	<view class='public-info'>
+		<view class='form'>
+			<view class='list'>
+				<text>联系电话</text>
+				<input value='{{form.CreatorPhone}}' data-id="form.CreatorPhone" bindinput="oninputs" placeholder='请输入'></input>
+			</view>
+			<view class='list'>
+				<text>验证码</text>
+				<input value='{{form.CreatorCode}}' data-id="form.CreatorCode" bindinput="oninputs" placeholder='请输入'></input>
+				<view class="get-code {{CreatorText != '获取验证码' && CreatorText != '重新获取验证码'?'on':''}}" bindtap="getCode" >{{CreatorText}}</view>
+			</view>
+		</view>
+	</view>
 	<!-- <view class='public-info' wx-if="{{info.IsShowInfo}}">
     <view class='title'>签到地址选择</view>
     <view class='form'>
@@ -91,10 +106,10 @@
 	</view>
 	<!--  -->
 	<view class='add-pothunter'>
-		<view class='btn' bindtap="addPothunter">添加参赛人</view>
+		<view class='btn' bindtap="addPothunter">添加个人信息</view>
 		<text wx-if="{{checkPothunter.length==0}}">请确保姓名、证件号填写正确</text>
 		<view class='add-list' wx-if="{{checkPothunter.length>0}}">
-			<view class='li' wx:for="{{checkPothunter}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+			<view class='li' wx:for="{{checkPothunter}}" wx:key="id" wx:for-index="index" wx:for-item="item">
 				<view class='l {{item.check?"on":""}}' data-id="{{item.id}}" bindtap="checkAddData">
 					<text class='iconfont iconjian'></text>
 				</view>
@@ -108,7 +123,7 @@
 			</view>
 		</view>
 	</view>
-  <view class='public-info' wx-if="{{activityData.length>0}}">
+	<view class='public-info' wx-if="{{activityData.length>0}}">
 		<view class='title'>请选择报名类别</view>
 		<view class='form'>
 			<view class='list'>
@@ -228,10 +243,10 @@
 			</view>
 			<view class='b'>
 				<view class='new-pothunter' bindtap="addPothnter">
-					<text class='iconfont iconadd'></text>新增参赛人</view>
+					<text class='iconfont iconadd'></text>新增人员</view>
 			</view>
 			<scroll-view scroll-y="true" class='list'>
-				<view class='li' wx:for="{{pothunterData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+				<view class='li' wx:for="{{pothunterData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
 					<view>
 						<label>
 							<view class='checks {{item.checked?"on":""}}'>

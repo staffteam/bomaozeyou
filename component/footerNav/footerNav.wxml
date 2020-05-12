@@ -2,7 +2,7 @@
 <view class='footer-h' ></view>
 <view class='footer-nav'>
   <view class="ul">
-    <view data-picId="{{item.PicId}}" bindtap="footerClick" wx:for="{{footerNavData}}" wx:key="{{item.PicId}}" wx:for-index="index" wx:for-item="item" class="li {{pages==item.PicId?'on':''}}">
+    <view data-picId="{{item.PicId}}" bindtap="footerClick" wx:for="{{footerNavData}}" wx:key="PicId" wx:for-index="index" wx:for-item="item" class="li {{pages==item.PicId?'on':''}}">
       <mp-badge class="badges" content="{{nums}}" wx-if="{{nums && nums!='0' && item.PicId=='3'}}"></mp-badge>
       <view class="img" style='diaplay:none;display:{{isimg?"none":"block"}}'>
         <image src="{{pages==item.PicId?item.onicon:item.officon}}" bindload="isimgc"  mode="widthFix"></image>

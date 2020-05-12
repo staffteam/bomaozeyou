@@ -1,0 +1,59 @@
+.generalize-center {
+  min-height: 100vh;
+  position: relative;
+}
+
+.generalize-center>image {
+  width: 100%;
+  display: block;
+}
+
+.main {
+  position: absolute;
+  top: 58vh;
+}
+
+.main .title {
+  text-align: center;
+}
+
+.main .title .l {
+  width: 47rpx;
+  height: 26rpx;
+  display: inline-block;
+}
+
+.main .title .r {
+  width: 47rpx;
+  height: 26rpx;
+  display: inline-block;
+}
+
+.main .title .c {
+  display: inline-block;
+  font-size: 36rpx;
+  color: #FF6338;
+  font-weight: 600;
+  padding: 0 20rpx;
+}
+
+.main .content {
+  width: 70%;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  letter-spacing: 2rpx;
+  margin: 60rpx auto 0;
+}
+
+.main .btn {
+  margin: 80rpx auto 0;
+  width: 542rpx;
+  height: 83rpx;
+  line-height: 83rpx;
+  background: linear-gradient(180deg, rgba(255, 144, 104, 1) 0%, rgba(255, 75, 31, 1) 100%);
+  box-shadow: 0px 2rpx 24rpx 0px rgba(255, 96, 53, 0.6);
+  border-radius: 60rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: white;
+}

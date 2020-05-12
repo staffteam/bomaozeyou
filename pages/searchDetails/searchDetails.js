@@ -9,7 +9,7 @@ Page({
   data: {
     bannerData: [{
       id: 0,
-      img_url: '/assets/images/banner.png'
+      img_url: '/assets/images/banner.jpg'
     }],
     articleListData: [],
     articleType: {

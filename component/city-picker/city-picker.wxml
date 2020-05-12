@@ -13,17 +13,17 @@
         <view class="city-picker-content-center" catchtouchstart="onTouchmask">
             <picker-view class="city-picker-content-item" indicator-style="height: 70rpx;" value="{{tempProvincePos}}" bindchange="province_onChange">
                 <picker-view-column>
-                    <view wx:for="{{provinces}}" wx:key="{{item.id}}" style="height: 70rpx; text-align:center; font-size: 36rpx; line-height:70rpx; color:#353535;">{{item.name}}</view>
+                    <view wx:for="{{provinces}}" wx:key="id" style="height: 70rpx; text-align:center; font-size: 36rpx; line-height:70rpx; color:#353535;">{{item.name}}</view>
                 </picker-view-column>
             </picker-view>
             <picker-view class="city-picker-content-item" indicator-style="height: 70rpx; " value="{{tempCityPos}}" bindchange="city_onChange">
                 <picker-view-column>
-                    <view wx:for="{{provinces[tempProvincePos].childrens}}" wx:key="{{item.ID}}" style="height: 70rpx; text-align:center;  font-size: 36rpx; line-height:70rpx; color:#353535;">{{item.Name}}</view>
+                    <view wx:for="{{provinces[tempProvincePos].childrens}}" wx:key="ID" style="height: 70rpx; text-align:center;  font-size: 36rpx; line-height:70rpx; color:#353535;">{{item.Name}}</view>
                 </picker-view-column>
             </picker-view>
             <picker-view class="city-picker-content-item" indicator-style="height: 70rpx; " value="{{tempAreaPos}}" bindchange="area_onChange">
                 <picker-view-column>
-                    <view wx:for="{{provinces[tempProvincePos].childrens[tempCityPos].Childrens}}" wx:key="{{item.ID}}" style="height: 70rpx; text-align:center;  font-size: 36rpx; line-height:70rpx; color:#353535;">{{item.Name}}</view>
+                    <view wx:for="{{provinces[tempProvincePos].childrens[tempCityPos].Childrens}}" wx:key="ID" style="height: 70rpx; text-align:center;  font-size: 36rpx; line-height:70rpx; color:#353535;">{{item.Name}}</view>
                 </picker-view-column>
             </picker-view>
         </view>

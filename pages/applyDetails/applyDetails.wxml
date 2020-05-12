@@ -13,12 +13,12 @@
     </view>
      <view class='time'>
       <text class='iconfont icondizhi'></text> 活动地点：
-      <text wx:for="{{detail.address}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="item" >{{item.address+(index<detail.address.length-1?',':'') || '待定'}}</text>
+      <text wx:for="{{detail.address}}" wx:key="index" wx:for-index="index" wx:for-item="item" >{{item.address+(index<detail.address.length-1?',':'') || '待定'}}</text>
     </view>
   </view>
   <view class='desc'>
     <view class='title'>
-      <text>活动简介</text>
+      <text>简介</text>
     </view>
     <view class='content'>
       <import src="/wxParse/wxParse.wxml" />

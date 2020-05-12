@@ -15,7 +15,7 @@
   <!-- 轮播 -->
   <!-- <view class='home-banner'>
     <swiper class="banner" indicator-dots="true" autoplay="true" interval="5000" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="white" circular="true" duration="300">
-      <swiper-item data-id="{{item.id}}" bindtap="bannerClick" wx:for="{{bannerData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <swiper-item data-id="{{item.id}}" bindtap="bannerClick" wx:for="{{bannerData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
         <image src='{{item.PicUrl}}' data-id="{{item.id}}" lazy-load="true" binderror="picError" mode="widthFix" />
       </swiper-item>
     </swiper>
@@ -30,8 +30,11 @@
   <view class='home-bm'>
     <view class='title'>学生报名</view>
     <view class="ul">
-      <view class='li' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
-        <image src="{{classfyImg[item.id]}}" mode="widthFix"></image>
+      <view class='li' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="id" wx:for-index="index" wx:for-item="item" wx-if="{{classfyImg[item.id]}}">
+        <image wx-if="{{classfyImg[item.id]}}" src="{{classfyImg[item.id]}}" mode="widthFix"></image>
+        <view wx-if="{{!classfyImg[item.id]}}" class="all" >
+          <view class="title" >{{item.name}}</view>
+        </view>
       </view>
     </view>
   </view>
@@ -41,7 +44,7 @@
     <view class='main' style='bottom:{{footerSelBottom}}px;transition: {{footerSelTime}}s bottom;'>
       <view class='title'>报名类型</view>
       <view class="content" wx-if="{{bmTypeData.length>0}}">
-        <view class='list' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+        <view class='list' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="id" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
       </view>
       <view class='not' wx-if="{{bmTypeData.length==0}}">暂无选项</view>
     </view>

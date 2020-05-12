@@ -21,7 +21,7 @@ Component({
   data: {
     footerNavData: [
       { PicId: 0, title: '我要报名', onicon: '/assets/images/icon_nav_bm_on.png', officon:'/assets/images/icon_nav_bm_off.png' },
-      { PicId: 1, title: '活动发布', onicon: '/assets/images/icon_nav_hd_on.png', officon: '/assets/images/icon_nav_hd_off.png' },
+      { PicId: 1, title: '最新发布', onicon: '/assets/images/icon_nav_hd_on.png', officon: '/assets/images/icon_nav_hd_off.png' },
       { PicId: 2, title: '成绩查询', onicon: '/assets/images/icon_nav_cz_on.png', officon: '/assets/images/icon_nav_cz_off.png' },
       { PicId: 3, title: '我的参与', onicon: '/assets/images/icon_nav_wd_on.png', officon: '/assets/images/icon_nav_wd_off.png' }
     ],

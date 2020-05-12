@@ -25,7 +25,7 @@
       <text>推荐阅读</text>
     </view>
     <view class="recommend-list">
-      <view class="li" data-id="{{item.id}}" bindtap="recommendClick" wx:for="{{recommendData}}" wx:key="{{item.id}}" wx:for-index="index" wx:for-item="item">
+      <view class="li" data-id="{{item.id}}" bindtap="recommendClick" wx:for="{{recommendData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
         <view class="l">
           <view class="title lines">{{item.title}}</view>
           <view class="time ">{{item.publisher_time}}</view>
