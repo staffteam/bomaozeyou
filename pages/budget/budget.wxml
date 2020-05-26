@@ -1,0 +1,16 @@
+<view class="notice">
+	<view class="list" wx:for="{{noticeData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
+		<view class="l">
+			<view class="title">{{item.title}}</view>
+			<view class="date">{{item.time}}</view>
+		</view>
+		<view class="r on" wx:if="{{item.type==1}}">{{item.money}}</view>
+		<view class="r" wx:if="{{item.type==2}}">{{item.money}}</view>
+	</view>
+	<view class="loading" wx:if="{{isfooter}}">
+		<view wx-if="{{!notData}}">
+			<image src="/assets/images/loading.gif" mode="widthFix"></image> 加载中...
+		</view>
+		<view wx-if="{{notData}}">暂无更多数据</view>
+	</view>
+</view>

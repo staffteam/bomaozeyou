@@ -33,7 +33,10 @@
     "pages/upsuccess/upsuccess",
     "pages/worksList/worksList",
     "pages/generalize/generalize",
-    "pages/generalizeCenter/generalizeCenter"
+    "pages/generalizeCenter/generalizeCenter",
+    "pages/withdraw/withdraw",
+    "pages/withdrawNotice/withdrawNotice",
+    "pages/budget/budget"
   ],
   "window": {
     "backgroundTextStyle": "light",

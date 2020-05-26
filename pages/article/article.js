@@ -26,6 +26,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     searchValue:'',
     articleTag:1,
+    userInfo:{}
   },
   tagClick(e){
     let tag = e.target.dataset.id;
@@ -263,7 +264,8 @@ Page({
     let userInfo = wx.getStorageSync("userInfo");
     if (userInfo) {
       vm.setData({
-        hasUserInfo: true
+        hasUserInfo: true,
+        userInfo:userInfo
       });
     }
     app.loginSuccess = () => {
@@ -332,9 +334,10 @@ Page({
     let keycode = o.target.dataset.keycode;
     let title = o.target.dataset.title;
     let imgUrl = o.target.dataset.imgurl;
+    let userData = wx.getStorageSync('userData');
     let _page = "";
     if (keycode == "Activity") {
-      _page = `/pages/applyDetails/applyDetails?id=${id}`;
+      _page = `/pages/applyDetails/applyDetails?id=${id}&userid=${userData.id}`;
     } else {
       _page = `/pages/articleDetails/articleDetails?id=${id}`
     }

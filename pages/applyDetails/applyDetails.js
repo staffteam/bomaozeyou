@@ -15,7 +15,32 @@ Page({
     applyListType: {},
     detail: {},
     isoutTime: false,
-    istime: ''
+    istime: '',
+    pid: "",
+    userid: "",
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  getUserInfo: function (e) {
+    if (!e.detail.userInfo) return;
+    var vm = this;
+    var userInfo_ = e.detail.userInfo;
+    app.loginRequest(userInfo_, function () {
+      //登录成功回调
+      wx.showToast({
+        title: '登录成功！',
+        mask: true,
+        icon: 'success',
+        duration: 1000,
+        success: function () {
+          vm.setAddData();
+          vm.getApplyData();
+          vm.setData({
+            hasUserInfo: true
+          });
+        }
+      });
+    });
   },
   //service
   onservice() {
@@ -87,16 +112,48 @@ Page({
       })
     }
   },
+  setAddData() {
+    let vm = this;
+    let userData = wx.getStorageSync('userData');
+    if (vm.data.userid && userData) {
+      app.$prot.addPromotion({
+        data: {
+          FromMemberID: vm.data.userid,
+          MemberID: userData.id,
+          ActivityID: vm.data.pid
+        },
+        success(res) {
+          console.log(res.data);
+        }
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     options.grade = options.grade || false;
+    this.setData({
+      pid: options.id,
+      userid: options.userid || "",
+      grade: options.grade || false,
+      istime: options.time || ""
+    })
     if (options.time == '已过期') {
       this.setData({
         isoutTime: true
       })
     }
+    let vm = this;
+    let userData = wx.getStorageSync('userData');
+    if (userData) {
+      vm.getApplyData();
+    }
+    if (options.userid && userData) {
+      vm.setAddData();
+    }
+  },
+  getApplyData() {
     let vm = this;
     app.$prot.getActivity({
       success: data => {
@@ -108,11 +165,9 @@ Page({
           kindData: data.data,
           applyListType: kindids
         });
-
-        console.log(this.data.applyListType);
         app.$prot.getActivityDetail({
           data: {
-            id: options.id
+            id: vm.data.pid
           },
           success(data) {
             var srcTop = new RegExp('src="\\/', "g");
@@ -128,30 +183,25 @@ Page({
               data.data.start_time = start_time_arr[0] + ':' + start_time_arr[1];
               data.data.img_url = app.$prot.api + data.data.img_url;
               vm.setData({
-                applyid: options.id,
+                applyid: vm.data.pid,
                 detail: data.data,
-                grade: options.grade,
-                istime: options.time
               });
-            }else{
+            } else {
               wx.showToast({
                 title: '网络发生异常，请联系管理员',
                 icon: "none"
               })
-              setTimeout(_=>{
+              setTimeout(_ => {
                 wx.navigateBack({
                   delta: 1
                 })
-              },2000)
+              }, 2000)
             }
           }
         })
       }
     });
-
-
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -198,9 +248,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
+    let userData = wx.getStorageSync('userData');
     return {
       title: this.data.detail.title,
-      path: `/pages/applyDetails/applyDetails?id=${this.data.applyid}&time=${this.data.istime}`,
+      path: `/pages/applyDetails/applyDetails?id=${this.data.applyid}&time=${this.data.istime}&userid=${userData.id}`,
       imageUrl: this.data.detail.img_url,
       success: function (res) {
         // 转发成功

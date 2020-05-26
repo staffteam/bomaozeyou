@@ -7,12 +7,12 @@
         待提现(元)：{{extract}}
       </view>
       <view class="r" >
-        <view class="r-btn" >提现</view>
+        <view class="r-btn" bindtap="withdraw" >提现</view>
       </view>
     </view>
   </view>
   <view class="c" >
-    <view class="list" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item" >
+    <view class="list" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item" data-link="{{item.link}}" bindtap="centerListClick" >
       <view class="icon">
         <image src="{{item.icon}}" ></image>
       </view>

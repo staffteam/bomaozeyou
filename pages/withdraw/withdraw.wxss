@@ -1,0 +1,55 @@
+.withdraw {
+  padding: 20rpx 0;
+  background-color: #f7f7f7;
+  height: calc(100vh - 40rpx);
+}
+
+.withdraw .list {
+  height: 104rpx;
+  background-color: white;
+  border-bottom: 1rpx solid #e5e5e5;
+  padding: 0 32rpx;
+}
+
+.withdraw .list .l {
+  font-size: 34rpx;
+  float: left;
+  line-height: 104rpx;
+}
+
+.withdraw .list .r {
+  width: 70%;
+  font-size: 32rpx;
+  color: #999;
+  float: right;
+  line-height: 104rpx;
+  text-align: right;
+}
+
+.withdraw .list .r input {
+  margin-top: 28rpx;
+  font-size: 32rpx;
+  color: #333;
+  display: block;
+  width: 100%;
+  height: 48rpx;
+}
+
+.hint {
+  padding: 20rpx 32rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.btn {
+  width: 686rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: white;
+  margin: 0 auto;
+  background: linear-gradient(90deg, rgba(33, 192, 254, 1) 0%, rgba(48, 175, 255, 1) 100%);
+  border-radius: 47rpx;
+  margin-top: 60rpx;
+}

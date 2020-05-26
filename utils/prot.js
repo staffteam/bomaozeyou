@@ -941,6 +941,72 @@ export default {
       }
     })
   },
+  getPromotionDetail(o) {
+    wx.request({
+      url: `${api}/api/promotion/GetPromotionDetail`,
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  getMemberBalance(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetMemberBalance`,
+      data:{
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  withdrawalSubmit(o) {
+    wx.request({
+      url: `${api}/api/Promotion/WithdrawalSubmit`,
+      method: 'POST',
+      data:{
+        sessionKey: wx.getStorageSync('sessionKey'),
+        Money:o.data.Money
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  addPromotion(o) {
+    wx.request({
+      url: `${api}/api/Promotion/AddPromotion`,
+      method: 'POST',
+      data:{
+        ActivityID: o.data.ActivityID,
+        FromMemberID:o.data.FromMemberID,
+        MemberID:o.data.MemberID
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
   getAuthCode(o) {
     wx.showLoading({
       title: '请稍后',
@@ -953,6 +1019,40 @@ export default {
       },
       success(data) {
         wx.hideLoading();
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  getBalanceDetailList(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetBalanceDetailList`,
+      data: {
+        page: o.data.page,
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  getWithdrawalList(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetWithdrawalList`,
+      data: {
+        page: o.data.page,
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
         if (data.data && typeof(data.data) === 'string') {
           if (!errorFn(JSON.parse(data.data))) return;
           o.success(JSON.parse(data.data));

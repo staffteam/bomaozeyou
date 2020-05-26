@@ -1,0 +1,18 @@
+<view class="withdraw" >
+  <view class="list" >
+    <view class="l" >提现至</view>
+    <view class="r" >微信零钱</view>
+  </view>
+  <view class="list" >
+    <view class="l" >提现用户</view>
+    <view class="r" >{{info.nickName}}</view>
+  </view>
+  <view class="list" >
+    <view class="l" >提现金额</view>
+    <view class="r" >
+      <input value='{{money}}' data-id="money" bindinput="onInputs" placeholder="{{placeholder}}" ></input>
+    </view>
+  </view>
+  <view class="hint" >注：推广订单交易成功后享有现金奖励，可发起提现申请</view>
+  <view class="btn" bindtap="goWithdraw" >确认提现</view>
+</view>

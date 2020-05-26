@@ -277,6 +277,34 @@
 					"pathName": "pages/generalizeCenter/generalizeCenter",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/withdraw/withdraw",
+					"pathName": "pages/withdraw/withdraw",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现通知",
+					"pathName": "pages/withdrawNotice/withdrawNotice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现通知",
+					"pathName": "pages/withdrawNotice/withdrawNotice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动详情111",
+					"pathName": "pages/applyDetails/applyDetails",
+					"query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
+					"scene": null
 				}
 			]
 		}

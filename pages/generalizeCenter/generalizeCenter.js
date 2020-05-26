@@ -1,13 +1,14 @@
 // pages/generalizeCenter/generalizeCenter.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    content: ""
   },
-  generalize(){
+  generalize() {
     wx.redirectTo({
       url: `../generalize/generalize`
     })
@@ -16,7 +17,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let vm = this;
+    app.$prot.getPromotionDetail({
+      success(res) {
+        vm.setData({
+          content: res.data.content
+        })
+      }
+    });
   },
 
   /**
