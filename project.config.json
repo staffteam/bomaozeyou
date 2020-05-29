@@ -4,13 +4,16 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -304,6 +307,20 @@
 					"name": "活动详情111",
 					"pathName": "pages/applyDetails/applyDetails",
 					"query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "推广订单",
+					"pathName": "pages/promoteOrder/promoteOrder",
+					"query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
+					"scene": null
+				},
+				{
+					"id": 37,
+					"name": "授权首页",
+					"pathName": "pages/home/home",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -10,7 +10,7 @@
   <view class="list" >
     <view class="l" >提现金额</view>
     <view class="r" >
-      <input value='{{money}}' data-id="money" bindinput="onInputs" placeholder="{{placeholder}}" ></input>
+      <input type="number" value='{{money}}' data-id="money" bindinput="onInputs" placeholder="{{placeholder}}" ></input>
     </view>
   </view>
   <view class="hint" >注：推广订单交易成功后享有现金奖励，可发起提现申请</view>

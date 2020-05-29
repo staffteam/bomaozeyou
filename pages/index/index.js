@@ -29,6 +29,10 @@ Page({
     hintText:"",
     hintImg:""
   },
+  accountLoad(res){
+  },
+  accountErr(res){
+  },
   cityInit(options) {
     let vm = this;
     vm.setData({
@@ -166,8 +170,17 @@ Page({
       })
     }, 1000)
   },
-  onLoad(){
+  onLoad(options){
     let vm = this;
+    if(options.code){
+      app.$prot.wecwhatAuthorization({
+        data:{
+          code:options.code
+        },
+        success(res){
+        }
+      })
+    }
     this.cityInit();
     app.$prot.getHomeHint({
       success(data){

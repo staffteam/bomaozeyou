@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/index/index",
     "pages/applyList/applyList",
     "pages/search/search",
@@ -36,7 +37,9 @@
     "pages/generalizeCenter/generalizeCenter",
     "pages/withdraw/withdraw",
     "pages/withdrawNotice/withdrawNotice",
-    "pages/budget/budget"
+    "pages/budget/budget",
+    "pages/promoteOrder/promoteOrder",
+    "pages/myInvite/myInvite"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,6 +1,7 @@
 .generalize-center {
   min-height: 100vh;
   position: relative;
+  background-color: #ff9068;
 }
 
 .generalize-center>image {
@@ -10,7 +11,7 @@
 
 .main {
   position: absolute;
-  top: 58vh;
+  top: 93vw;
 }
 
 .main .title {

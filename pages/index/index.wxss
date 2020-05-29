@@ -189,3 +189,8 @@
   color: #1cb0f6;
   border: 1rpx solid #1cb0f6;
 }
+
+official-account{
+  width: 90vw;
+  margin: 10rpx 5vw;
+}

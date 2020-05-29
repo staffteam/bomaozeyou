@@ -1,0 +1,30 @@
+.notice{
+  padding: 20rpx 0;
+  background-color: #f7f7f7;
+  height: calc(100vh - 40rpx);
+}
+.notice .list{
+  overflow: hidden;
+  padding: 28rpx 30rpx;
+  background-color: white;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.notice .list .l{
+  float:left;
+}
+.notice .list .l .title{
+  font-size: 30rpx;
+}
+.notice .list .l .date{
+  margin-top: 8rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+.notice .list .r{
+  float:right;
+  color: #F24724;
+  font-size: 32rpx;
+}
+.notice .list .r.on{
+  color: #01BF7E;
+}

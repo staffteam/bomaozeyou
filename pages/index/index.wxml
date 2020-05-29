@@ -49,5 +49,6 @@
       <view class='not' wx-if="{{bmTypeData.length==0}}">暂无选项</view>
     </view>
   </view>
+  <official-account bindload="accountLoad" binderror="accountErr" ></official-account>
   <footer-nav pages="0" nums="{{nums}}"></footer-nav>
 </view>

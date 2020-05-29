@@ -86,6 +86,7 @@ App({
     userInfo: null
   },
   loginRequest(info, fn) {
+    debugger;
     wx.setStorage({
       key: 'userInfo',
       data: info,

@@ -1,0 +1,2 @@
+<!--pages/home/home.wxml-->
+<web-view src="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe93d74bcc91fd166&redirect_uri=https%3A%2F%2Fxcx.zysn.net%2FMain%2FAuth&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"></web-view>

@@ -1061,5 +1061,55 @@ export default {
         }
       }
     })
+  },
+  getPromotionList(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetPromotionList`,
+      data: {
+        page: o.data.page,
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  getWithdrawalList(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetWithdrawalList`,
+      data: {
+        page: o.data.page,
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  wecwhatAuthorization(o) {
+    wx.request({
+      url: `${api}/api/Member/WechatAuthorization`,
+      data: {
+        code: o.data.code
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
   }
 } 
