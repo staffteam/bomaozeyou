@@ -156,7 +156,6 @@
   font-size: 20rpx;
   text-align: center;
   line-height: 35rpx;
-  display: inline-block;
   color: white;
   float: left;
 }
@@ -173,7 +172,28 @@
   height: 40rpx;
   margin-top: 40rpx;
 }
-
+.article-list .ul .li .r .b.article-b{
+  margin-top: 10px;
+  height: auto;
+}
+.article-list .ul .li .r .b.article-b .time-bm{
+  line-height: 26rpx;
+  float: none;
+}
+.article-list .ul .li .r .b.article-b .share {
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: rgba(242, 71, 36, 1);
+  position: relative;
+  text-align: left;
+  float: none;
+  margin-top: 5px;
+}
+.article-list .ul .li .r .b.article-b .share image{
+  width: 50rpx;
+  float:left;
+  margin-right: 5rpx;
+}
 .article-list .ul .li .r .b .time-bm {
   font-size: 26rpx;
   color: rgba(242, 71, 36, 1);

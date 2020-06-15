@@ -1100,7 +1100,41 @@ export default {
     wx.request({
       url: `${api}/api/Member/WechatAuthorization`,
       data: {
-        code: o.data.code
+        code: o.data.code,
+        userid:o.data.userid
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  getMyCustomerCount(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetMyCustomerCount`,
+      data: {
+        sessionKey: wx.getStorageSync('sessionKey')
+      },
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
+  },
+  getMyCustomer(o) {
+    wx.request({
+      url: `${api}/api/Promotion/GetMyCustomer`,
+      data: {
+        page: o.data.page,
+        sessionKey: wx.getStorageSync('sessionKey')
       },
       success(data) {
         if (data.data && typeof(data.data) === 'string') {

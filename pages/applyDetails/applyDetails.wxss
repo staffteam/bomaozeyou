@@ -161,15 +161,21 @@
 
 .footer .l {
   float: left;
-  overflow: hidden;
+  height: 88rpx;
 }
 
 .footer .l .li {
   float: left;
   margin-right: 70rpx;
   position: relative;
+  text-align: center;
 }
-
+.footer .l .li:first-child{
+  margin-top: -8rpx;
+}
+.footer .l .li image{
+  width: 50rpx;
+}
 official-account {
   position: fixed;
   bottom: 148rpx;
@@ -180,8 +186,8 @@ official-account {
   display: none;
 }
 
-.footer .l .li:first-child .iconfont {
-  font-size: 37rpx;
+.footer .l .li:first-child text:last-child {
+  margin-top: 0;
 }
 
 .footer .l .li .iconfont.iconshoucang2, .footer .l .li.on text {

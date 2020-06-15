@@ -148,6 +148,9 @@ Page({
     let userData = wx.getStorageSync('userData');
     if (userData) {
       vm.getApplyData();
+      vm.setData({
+        hasUserInfo: true
+      });
     }
     if (options.userid && userData) {
       vm.setAddData();

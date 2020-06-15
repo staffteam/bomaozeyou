@@ -36,12 +36,12 @@
             <view class='zd' wx-if="{{item.IsTop}}">置顶</view>
             <view class='type {{item.keycode}}'>{{articleType[item.keycode]}}</view>
           </view>
-          <view class='b'>
+          <view class='b article-b'>
             <view class='time-bm' wx-if="{{item.keycode=='Activity'}}">{{item.end_time}}</view>
             <view class='time-zx' wx-if="{{item.keycode=='News'}}">{{item.publisher_time}}</view>
             <view class='share'>
               <button data-id="{{item.id}}" data-imgurl="{{item.img_url}}" data-title="{{item.title}}" data-keycode="{{item.keycode}}" open-type="share"></button>
-              <text class='iconfont iconfenxiang'></text>
+              <image src="/assets/images/icon_lw.png" mode="widthFix"></image>分享有奖
             </view>
           </view>
         </view>

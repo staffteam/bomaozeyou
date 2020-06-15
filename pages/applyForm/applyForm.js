@@ -932,6 +932,14 @@ Page({
       this.vTips('请选择参赛人', '确定');
       return false;
     }
+    if (coachName == '' && vm.data.info.IsTutor) {
+      this.vTips('请输入辅导老师姓名', '确定');
+      return false;
+    }
+    if (coachPhone == '' && vm.data.info.IsTutor) {
+      this.vTips('请输入辅导老师电话', '确定');
+      return false;
+    }
     if (coachPhone != '' && !/^1[3456789]\d{9}$/.test(coachPhone) && vm.data.info.IsTutor) {
       this.vTips('辅导老师电话格式有误', '确定');
       return false;

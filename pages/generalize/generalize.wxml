@@ -11,6 +11,14 @@
       </view>
     </view>
   </view>
+  <view class="total" bindtap="goTotal" >
+    <view class="title" >累计客户（人）</view>
+    <view class="num" >{{userTotal}}</view>
+    <text class='iconfont iconyou1'></text>
+  </view>
+  <view class="sctx" bindtap="goShopping" >
+    <image src="/assets/images/tgcenter.jpg" mode="widthFix" ></image>
+  </view>
   <view class="c" >
     <view class="list" wx:for="{{navData}}" wx:key="id" wx:for-index="index" wx:for-item="item" data-link="{{item.link}}" bindtap="centerListClick" >
       <view class="icon">
@@ -19,7 +27,27 @@
       <view class="title" >{{item.title}}</view>
     </view>
   </view>
-  <view class="b" bindtap="generalizeCenter">
-    <image src="/assets/images/tg.jpg" mode="widthFix" ></image>
+  <view class='article-list'>
+    <view class='title'>
+      <image src="/assets/images/me_left.png" mode="widthFix"></image>
+      <view>分享以下活动可获得奖励</view>
+      <image src="/assets/images/me_right.png" mode="widthFix"></image>
+    </view>
+    <view class="ul">
+      <view class='li' data-id="{{item.id}}" bindtap="applyClick" wx:for="{{articleListData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
+        <view class='l'>
+          <image src="{{item.img_url}}" mode="aspectFill"></image>
+        </view>
+        <view class='r'>
+          <view class='title lines'>{{item.title}}</view>
+          <view class='c'>
+            <view class='type Activity'>活动</view>
+          </view>
+          <view class='b'>
+            <view class='time-zx'>{{item.start_time}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 </view>

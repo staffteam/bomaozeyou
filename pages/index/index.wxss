@@ -190,7 +190,8 @@
   border: 1rpx solid #1cb0f6;
 }
 
-official-account{
-  width: 90vw;
-  margin: 10rpx 5vw;
+.accounts{
+  width: 92vw;
+  margin: 0 4vw;
+  padding-bottom: 25rpx;
 }

@@ -1,54 +1,59 @@
 <!--index.wxml-->
 <view class="home">
-  <button class="userLogin" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
-  <view class="home-search" bindtap="searchClick">
-    <view class='l'>
-      <navigator url="../location/location" hover-class="navigator-hover">
-        <text class="iconfont icondingweiweizhi"></text> {{city}}
-      </navigator>
-    </view>
-    <view class='r'>
-      <text class='iconfont iconsousuo'></text>
-      <input disabled placeholder='搜索关键字' value="{{searchValue}}"></input>
-    </view>
-  </view>
-  <!-- 轮播 -->
-  <!-- <view class='home-banner'>
+	<button class="userLogin" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+	<view class="home-search" bindtap="searchClick">
+		<view class='l'>
+			<navigator url="../location/location" hover-class="navigator-hover">
+				<text class="iconfont icondingweiweizhi"></text> {{city}}
+			</navigator>
+		</view>
+		<view class='r'>
+			<text class='iconfont iconsousuo'></text>
+			<input disabled placeholder='搜索关键字' value="{{searchValue}}"></input>
+		</view>
+	</view>
+	<!-- 轮播 -->
+	<!-- <view class='home-banner'>
     <swiper class="banner" indicator-dots="true" autoplay="true" interval="5000" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="white" circular="true" duration="300">
       <swiper-item data-id="{{item.id}}" bindtap="bannerClick" wx:for="{{bannerData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
         <image src='{{item.PicUrl}}' data-id="{{item.id}}" lazy-load="true" binderror="picError" mode="widthFix" />
       </swiper-item>
     </swiper>
   </view> -->
-  <view class='home-banner'>
-    <image src="{{hintImg}}" mode="widthFix" />
-  </view>
-  <view class='home-tips'>
-    <image src="{{homeTips}}"></image>
-    <text class='line'>提示：{{hintText}}</text>
-  </view>
-  <view class='home-bm'>
-    <view class='title'>学生报名</view>
-    <view class="ul">
-      <view class='li' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="id" wx:for-index="index" wx:for-item="item" wx-if="{{classfyImg[item.id]}}">
-        <image wx-if="{{classfyImg[item.id]}}" src="{{classfyImg[item.id]}}" mode="widthFix"></image>
-        <view wx-if="{{!classfyImg[item.id]}}" class="all" >
-          <view class="title" >{{item.name}}</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class='footer-sel {{footerSelShow?"on":""}}'>
-    <view class='back' bindtap="bmTypeHide">
-    </view>
-    <view class='main' style='bottom:{{footerSelBottom}}px;transition: {{footerSelTime}}s bottom;'>
-      <view class='title'>报名类型</view>
-      <view class="content" wx-if="{{bmTypeData.length>0}}">
-        <view class='list' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="id" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
-      </view>
-      <view class='not' wx-if="{{bmTypeData.length==0}}">暂无选项</view>
-    </view>
-  </view>
-  <official-account bindload="accountLoad" binderror="accountErr" ></official-account>
-  <footer-nav pages="0" nums="{{nums}}"></footer-nav>
+	<view class='home-banner'>
+		<image src="{{hintImg}}" mode="widthFix" />
+	</view>
+	<view class='home-tips'>
+		<image src="{{homeTips}}"></image>
+		<text class='line'>提示：{{hintText}}</text>
+	</view>
+	<view class='home-bm'>
+		<view class='title'>学生报名</view>
+		<view class="ul">
+			<view class='li' data-id="{{item.id}}" bindtap="bmClick" wx:for="{{bmData}}" wx:key="id" wx:for-index="index" wx:for-item="item" wx-if="{{classfyImg[item.id]}}">
+				<image wx-if="{{classfyImg[item.id]}}" src="{{classfyImg[item.id]}}" mode="widthFix"></image>
+				<view wx-if="{{!classfyImg[item.id]}}" class="all">
+					<view class="title">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class='footer-sel {{footerSelShow?"on":""}}'>
+		<view class='back' bindtap="bmTypeHide">
+		</view>
+		<view class='main' style='bottom:{{footerSelBottom}}px;transition: {{footerSelTime}}s bottom;'>
+			<view class='title'>报名类型</view>
+			<view class="content" wx-if="{{bmTypeData.length>0}}">
+				<view class='list' data-id="{{item.id}}" bindtap="bmTypeClick" wx:for="{{bmTypeData}}" wx:key="id" wx:for-index="index" wx:for-item="item">{{item.name}}</view>
+			</view>
+			<view class='not' wx-if="{{bmTypeData.length==0}}">暂无选项</view>
+		</view>
+	</view>
+	<view class='home-banner' bindtap="goShopping">
+		<image src="/assets/images/home_back.jpg" mode="widthFix" />
+	</view>
+	<view class="accounts">
+		<official-account bindload="accountLoad" binderror="accountErr"></official-account>
+	</view>
+	<footer-nav pages="0" nums="{{nums}}"></footer-nav>
 </view>

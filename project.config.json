@@ -322,6 +322,19 @@
 					"pathName": "pages/home/home",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "累计客户",
+					"pathName": "pages/userTotal/userTotal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/article/article",
+					"pathName": "pages/article/article",
+					"scene": null
 				}
 			]
 		}

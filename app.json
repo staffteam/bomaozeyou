@@ -39,7 +39,8 @@
     "pages/withdrawNotice/withdrawNotice",
     "pages/budget/budget",
     "pages/promoteOrder/promoteOrder",
-    "pages/myInvite/myInvite"
+    "pages/myInvite/myInvite",
+    "pages/userTotal/userTotal"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -52,5 +53,6 @@
     "scope.userLocation": {
       "desc": "博茂择优想获取您的位置"
     }
-  }
+  },
+  "navigateToMiniProgramAppIdList": ["wx2353300279e49f5c"]
 }

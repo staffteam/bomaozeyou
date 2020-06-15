@@ -47,6 +47,18 @@ App({
                 vm.loginSuccess();
               }
             });
+            let userInfo =  wx.getStorageSync('userInfo');
+            if(userInfo){
+              $prot.getMemberInfoSave({
+                data: {
+                  Nickname: userInfo.nickName,
+                  imgUrl:userInfo.avatarUrl
+                },
+                success(data) {
+                  console.log(data);
+                }
+              })
+            }
           }
         })
       }
@@ -77,7 +89,21 @@ App({
       success(data) {
         wx.setStorage({
           key: 'userData',
-          data: data.data
+          data: data.data,
+          success: function(){
+            let wecwhatCode = wx.getStorageSync('wecwhatCode');
+            if(wecwhatCode){
+              $prot.wecwhatAuthorization({
+                data:{
+                  code:wecwhatCode,
+                  userid:data.data.id
+                },
+                success(res){
+                  console.log(res.data);
+                }
+              })
+            }
+          }
         });
       }
     })
@@ -86,14 +112,15 @@ App({
     userInfo: null
   },
   loginRequest(info, fn) {
-    debugger;
     wx.setStorage({
       key: 'userInfo',
       data: info,
       success: function() {
+        let userInfo =  wx.getStorageSync('userInfo');
         $prot.getMemberInfoSave({
           data: {
-            Nickname: wx.getStorageSync('userInfo').nickName
+            Nickname: userInfo.nickName,
+            imgUrl:userInfo.avatarUrl
           },
           success(data) {
             console.log(data);

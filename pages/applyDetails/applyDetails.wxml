@@ -34,8 +34,8 @@
 		<view class='l'>
 			<view class='li' bindtap="share">
 				<button open-type="share"></button>
-				<text class='iconfont iconfenxiang'></text>
-				<text>分享</text>
+				<image src="/assets/images/icon_lw.png" mode="widthFix"></image>
+				<text>分享有奖</text>
 			</view>
 			<view class='li {{detail.IsFavorite?"on":""}}' bindtap="collect">
 				<text class='iconfont {{detail.IsFavorite?"iconshoucang2":"iconwuxiaoxing-kong"}}'></text>
