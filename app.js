@@ -52,7 +52,7 @@ App({
               $prot.getMemberInfoSave({
                 data: {
                   Nickname: userInfo.nickName,
-                  imgUrl:userInfo.avatarUrl
+                  ImgUrl:userInfo.avatarUrl
                 },
                 success(data) {
                   console.log(data);
@@ -120,7 +120,7 @@ App({
         $prot.getMemberInfoSave({
           data: {
             Nickname: userInfo.nickName,
-            imgUrl:userInfo.avatarUrl
+            ImgUrl:userInfo.avatarUrl
           },
           success(data) {
             console.log(data);

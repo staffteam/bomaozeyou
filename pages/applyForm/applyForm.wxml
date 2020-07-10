@@ -20,10 +20,10 @@
 		</view>
 	</view>
 	<view class='public-info' wx-if="{{!isgrade}}">
-		<view class='title'>年级选择</view>
+		<view class='title'>级别选择</view>
 		<view class='form'>
 			<view class='list'>
-				<text>年级</text>
+				<text>级别</text>
 				<view class="picker" bindtap="pickerGradeOpen">
 					<text class='line' style='{{gradeVal=="请选择"?"color:#777;":""}}'>{{gradeVal}}</text>
 					<text class='iconfont iconyou1'></text>

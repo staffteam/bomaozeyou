@@ -359,7 +359,7 @@ export default {
       }
     })
   },
-  //获取活动年级
+  //获取活动级别
   getActivityClassfy(o) {
     wx.request({
       url: `${api}/api/Article/ActivityClassfy`,
@@ -799,7 +799,7 @@ export default {
       }
     })
   },
-  //获取年级信息
+  //获取级别信息
   getClassfy(o) {
     wx.request({
       url: `${api}/api/Article/Classfy`,

@@ -20,10 +20,6 @@ Page({
       "News": "资讯"
     },
     centerList: [{
-        id: "generalizeCenter",
-        title: "推广赢奖品",
-        icon: "icontuiguang"
-      }, {
         id: "collect",
         title: "我的收藏",
         icon: "iconicon-test4"
@@ -49,7 +45,10 @@ Page({
         title: "意见反馈",
         icon: "iconicon-test1"
       }
-    ]
+    ],
+    income: "",
+    extract: "",
+    userTotal: ""
   },
   scanCode() {
     let vm = this;
@@ -66,6 +65,11 @@ Page({
           }
         });
       }
+    })
+  },
+  generalizeCenter() {
+    wx.navigateTo({
+      url: `../generalizeCenter/generalizeCenter`
     })
   },
   memberInfo() {
@@ -224,6 +228,21 @@ Page({
         }
       })
     }, 1000)
+    app.$prot.getMemberBalance({
+      success(res) {
+        vm.setData({
+          income: res.data.moneyTotal,
+          extract: res.data.money
+        })
+      }
+    });
+    app.$prot.getMyCustomerCount({
+      success(res) {
+        vm.setData({
+          userTotal: res.data,
+        })
+      }
+    })
   },
 
   /**

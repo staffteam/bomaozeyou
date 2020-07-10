@@ -36,7 +36,7 @@
         </view>
         <view class='list draw'>
           <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>
-          <view class='draw'>报名年级：{{info.group}}</view>
+          <view class='draw'>报名级别：{{info.group}}</view>
         </view>
         <view class='list draw' style='margin-top:10rpx;'>
           <image class='draw' mode="widthFix" src="/assets/images/voucher_circle.png"></image>

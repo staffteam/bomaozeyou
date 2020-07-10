@@ -11,7 +11,12 @@
 
 .main {
   position: absolute;
-  top: 93vw;
+  top: 90vw;
+  left: 5%;
+  width: 90%;
+  padding: 50rpx 0;
+  border-radius: 10rpx 100rpx 10rpx 100rpx;
+  background-color: white;
 }
 
 .main .title {

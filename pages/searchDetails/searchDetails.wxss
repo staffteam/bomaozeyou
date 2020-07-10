@@ -128,7 +128,6 @@
   font-size: 26rpx;
   color: rgba(242, 71, 36, 1);
   line-height: 40rpx;
-  float: left;
 }
 
 .article-list .ul .li .r .b .time-zx {
@@ -144,6 +143,20 @@
   font-size: 26rpx;
   color: #999;
   position: relative;
+}
+.article-list .ul .li .r .b.article-b .share {
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: rgba(242, 71, 36, 1);
+  position: relative;
+  text-align: left;
+  float: none;
+  margin-top: 5px;
+}
+.article-list .ul .li .r .b.article-b .share image{
+  width: 50rpx;
+  float:left;
+  margin-right: 5rpx;
 }
 .article-list .ul .li .r .b button {
   position: absolute;

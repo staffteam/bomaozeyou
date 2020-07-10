@@ -302,7 +302,7 @@ Page({
       ['form.date']: _time
     })
   },
-  //获取年级和类别数据
+  //获取级别和类别数据
   activityClassfy(type) {
     let vm = this;
     let objs = {
@@ -337,7 +337,7 @@ Page({
             return value.name;
           })
           if (type == 'grade') {
-            //年级选择后，替换类型选择数据
+            //级别选择后，替换类型选择数据
             vm.setData({
               activityData: activityArr,
               activityClassData: data.data.activityClasses,
@@ -455,7 +455,7 @@ Page({
       isproto: !this.data.isproto
     })
   },
-  //打开选择年级框
+  //打开选择级别框
   pickerGradeOpen(o) {
     let vm = this;
     if (vm.data.gradeData.length == 0) {
@@ -498,7 +498,7 @@ Page({
       })
     }, 200);
   },
-  //选择年级取消
+  //选择级别取消
   closeGradeOpen() {
     let vm = this;
     this.setData({
@@ -526,7 +526,7 @@ Page({
       })
     }, 300)
   },
-  //保存年级选择
+  //保存级别选择
   saveGradeOpen() {
     let vm = this;
     this.setData({
@@ -541,7 +541,7 @@ Page({
       })
     }, 300)
   },
-  //年级选择改变
+  //级别选择改变
   gradeOpenChange(o) {
     if (!this.data.isGradeDown || this.data.isNotChange) {
       return false;

@@ -41,7 +41,7 @@
       <input value='{{form[0].class_name}}' disabled></input>
     </view>
     <view class='list notline'>
-      <text>报名年级</text>
+      <text>报名级别</text>
       <input value='{{form[0].grade}}' disabled></input>
     </view>
     <!-- <view class='list'>

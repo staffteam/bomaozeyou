@@ -39,7 +39,7 @@
           <view class='b article-b'>
             <view class='time-bm' wx-if="{{item.keycode=='Activity'}}">{{item.end_time}}</view>
             <view class='time-zx' wx-if="{{item.keycode=='News'}}">{{item.publisher_time}}</view>
-            <view class='share'>
+            <view class='share' wx-if="{{item.end_time!=='已过期'}}">
               <button data-id="{{item.id}}" data-imgurl="{{item.img_url}}" data-title="{{item.title}}" data-keycode="{{item.keycode}}" open-type="share"></button>
               <image src="/assets/images/icon_lw.png" mode="widthFix"></image>分享有奖
             </view>

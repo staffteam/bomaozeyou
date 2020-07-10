@@ -8,20 +8,20 @@
   <view class='article-list'>
     <view class="ul">
       <view class='li' wx:for="{{articleListData}}" wx:key="id" wx:for-index="index" wx:for-item="item">
-        <view class='l' data-id="{{item.id}}" data-keycode="{{item.keyCode}}" bindtap="bmClick">
+        <view class='l' data-id="{{item.id}}" data-keycode="{{item.keyCode}}" data-time="{{item.end_time}}" bindtap="bmClick">
           <image src="{{item.img_url}}" mode="aspectFill"></image>
         </view>
         <view class='r'>
-          <view class='title lines' data-id="{{item.id}}" data-keycode="{{item.keyCode}}" bindtap="bmClick">{{item.title}}</view>
+          <view class='title lines' data-id="{{item.id}}" data-keycode="{{item.keyCode}}" data-time="{{item.end_time}}" bindtap="bmClick">{{item.title}}</view>
           <view class='c'>
             <view class='type {{item.keyCode}}'>{{articleType[item.keyCode]}}</view>
           </view>
-          <view class='b'>
+          <view class='b article-b'>
             <view class='time-bm' wx-if="{{item.keyCode=='Activity' || item.keyCode=='activity'}}">{{item.end_time}}</view>
             <view class='time-zx' wx-if="{{item.keyCode=='News'}}">{{item.time}}</view>
-            <view class='share'>
-              <button data-id="{{item.id}}" data-imgurl="{{item.img_url}}" data-title="{{item.title}}" data-keycode="{{item.keyCode}}" open-type="share"></button>
-              <text class='iconfont iconfenxiang'></text>
+            <view class='share' wx-if="{{item.end_time!=='已过期'}}">
+              <button data-id="{{item.id}}" data-imgurl="{{item.img_url}}" data-title="{{item.title}}" data-keycode="{{item.keycode}}" open-type="share"></button>
+              <image src="/assets/images/icon_lw.png" mode="widthFix"></image>分享有奖
             </view>
           </view>
         </view>

@@ -55,16 +55,22 @@ Page({
       });
     });
   },
-  bmClick(o) {
+  bmClick(o){
     let id = o.currentTarget.dataset.id;
+    let time = o.currentTarget.dataset.time;
     let keycode = o.currentTarget.dataset.keycode;
-    if (keycode == "Activity" || keycode == "activity") {
+    let type = o.currentTarget.dataset.type;
+    if (keycode =="Activity"){
       wx.navigateTo({
-        url: `../applyDetails/applyDetails?id=${id}`
+        url: `../applyDetails/applyDetails?id=${id}&time=${time}`
       })
-    } else {
+    }else if(keycode == 'News'){
       wx.navigateTo({
         url: `../articleDetails/articleDetails?id=${id}`
+      })
+    }else if(type == 'work'){
+      wx.navigateTo({
+        url: `../articleDetails/articleDetails?id=${id}&type=work`
       })
     }
   },

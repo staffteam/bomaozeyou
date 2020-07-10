@@ -286,3 +286,46 @@
   display: block;
   opacity: 0;
 }
+.generalize{
+  width: 686rpx;
+  margin: 30rpx auto 0;
+  border-radius: 10rpx;
+  background-color: white;
+  position: relative;
+  z-index: 9;
+  box-shadow: 0px 0px 40rpx 0px rgba(0, 0, 0, 0.05);
+}
+.generalize .title{
+  font-size: 35rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.generalize .title view{
+  float:left;
+}
+.generalize .title text{
+  float: right;
+  font-size: 30rpx;
+  color: #999;
+}
+.generalize .tabs{
+  overflow: hidden;
+}
+.generalize .tabs .li{
+  width: 33.33%;
+  float:left;
+  text-align: center;
+  padding: 20rpx 0 40rpx;
+}
+.generalize .tabs .li view:first-child{
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #1cb0f6;
+}
+.generalize .tabs .li view:last-child{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 15rpx;
+}

@@ -270,7 +270,7 @@ Page({
       }
     })
   },
-  //右侧年级选择
+  //右侧级别选择
   bmTypeClick(o) {
     var id = o.currentTarget.dataset.id;
     this.setData({
@@ -288,7 +288,7 @@ Page({
       //判断类型
       if (item.id == options.typeid) {
         let _name = item.name;
-        //判断年级
+        //判断级别
         item.childrens.forEach((value) => {
           if (value.id == options.id) {
             this.setData({

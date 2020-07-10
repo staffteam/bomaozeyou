@@ -39,6 +39,26 @@
       </view>
     </view>
   </view>
+  <view class="generalize" bindtap="generalizeCenter" >
+    <view class="title" >
+      <view>推广员中心</view>
+      <text class='iconfont iconyou1'></text>
+    </view>
+    <view class="tabs" >
+      <view class="li" >
+        <view>{{extract}}</view>
+        <view>待提现</view>
+      </view>
+      <view class="li" >
+        <view>{{income}}</view>
+        <view>累计收入</view>
+      </view>
+      <view class="li" >
+        <view>{{userTotal}}</view>
+        <view>累计客户</view>
+      </view>
+    </view>
+  </view>
   <view class='center-list'>
     <view class="ul">
       <view class='li' data-id="{{item.id}}" bindtap="centerListClick" wx:for="{{centerList}}" wx:key="id" wx:for-index="index" wx:for-item="item">

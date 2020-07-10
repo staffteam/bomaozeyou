@@ -26,26 +26,24 @@ Page({
     footerSelBottom: 0,
     footerSelTime: 0,
     selId: '16',
-    hintText:"",
-    hintImg:""
+    hintText: "",
+    hintImg: ""
   },
-  goShopping(){
+  goShopping() {
     wx.navigateToMiniProgram({
-      appId: 'wx2353300279e49f5c',//要打开的小程序 appId
-      path: '',//打开的页面路径，如果为空则打开首页
+      appId: 'wx2353300279e49f5c', //要打开的小程序 appId
+      path: '', //打开的页面路径，如果为空则打开首页
       extraData: {
-        foo: 'bar'//需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据
+        foo: 'bar' //需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据
       },
-      envVersion: 'release',//要打开的小程序版本。仅在当前小程序为开发版或体验版时此参数有效。如果当前小程序是正式版，则打开的小程序必定是正式版。
+      envVersion: 'release', //要打开的小程序版本。仅在当前小程序为开发版或体验版时此参数有效。如果当前小程序是正式版，则打开的小程序必定是正式版。
       success(res) {
         // 打开成功
       }
     })
   },
-  accountLoad(res){
-  },
-  accountErr(res){
-  },
+  accountLoad(res) {},
+  accountErr(res) {},
   cityInit(options) {
     let vm = this;
     vm.setData({
@@ -109,8 +107,8 @@ Page({
         footerSelTime: 0,
         selId: id
       });
-      this.data.bmData.forEach(value=>{
-        if (value.id == id){
+      this.data.bmData.forEach(value => {
+        if (value.id == id) {
           this.setData({
             footerSelShow: true,
             footerSelBottom: 0,
@@ -119,10 +117,10 @@ Page({
           })
         }
       })
-      
+
     }).exec();
   },
-  //报名年级选择
+  //报名级别选择
   bmTypeClick(o) {
     var id = o.currentTarget.dataset.id;
     this.bmTypeHide();
@@ -147,10 +145,29 @@ Page({
       });
       app.$prot.getMemberInfoSave({
         data: {
-          Nickname: userInfo.nickName
+          Nickname: userInfo.nickName,
+          ImgUrl: userInfo.avatarUrl
         },
         success(data) {
           console.log(data);
+        }
+      });
+    }
+    let userData = wx.getStorageSync('userData');
+    if (userData) {
+      wx.request({
+        dataType:"json",
+        url: `${app.$prot.api}/api/member/IsErtongguoxue?userid=${userData.id}`,
+        success(res){
+          let data = JSON.parse(res.data);
+          if(data.data.res==0){
+            wx.showToast({
+              title: data.data.text || '您未关注公众号，搜索博茂择优公众号关注',
+              mask: true,
+              icon: 'none',
+              duration: 3000,
+            });
+          }
         }
       })
     }
@@ -168,7 +185,7 @@ Page({
         }
       })
     }
-    setTimeout(()=>{
+    setTimeout(() => {
       // 获取订单数量  待付款
       app.$prot.getOrdersCount({
         data: {
@@ -181,23 +198,23 @@ Page({
           })
         }
       })
-    }, 1000)
+    }, 1000);
   },
-  onLoad(options){
+  onLoad(options) {
     let vm = this;
-    if(options.code){
+    if (options.code) {
       wx.setStorage({
         key: 'wecwhatCode',
         data: options.code
       });
       let userData = wx.getStorageSync('userData');
-      if(userData){
+      if (userData) {
         app.$prot.wecwhatAuthorization({
-          data:{
-            code:options.code,
-            userid:userData.id
+          data: {
+            code: options.code,
+            userid: userData.id
           },
-          success(res){
+          success(res) {
             console.log(res.data);
           }
         })
@@ -205,7 +222,7 @@ Page({
     }
     this.cityInit();
     app.$prot.getHomeHint({
-      success(data){
+      success(data) {
         data.data.img_url = app.$prot.api + data.data.img_url;
         vm.setData({
           hintText: data.data.hint,
@@ -234,7 +251,7 @@ Page({
       });
     });
   },
-  onShareAppMessage(){
-    
+  onShareAppMessage() {
+
   }
 })
