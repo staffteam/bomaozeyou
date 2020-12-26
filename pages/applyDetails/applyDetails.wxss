@@ -69,9 +69,14 @@
   color: rgba(242, 71, 36, 1);
   line-height: 47rpx;
   margin-top: 16rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
 }
-
+.info .price.on{
+  margin-top: 0;
+  line-height: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+}
 .info .time {
   margin-top: 10rpx;
   font-size: 30rpx;

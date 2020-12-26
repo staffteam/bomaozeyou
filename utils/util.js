@@ -38,7 +38,7 @@ function uploadFile(url, filePath, name, formData, cb) {
 }
 const endTime = date => {
   var date1 = new Date(); //开始时间
-  var date2 = new Date(date); //结束时间
+  var date2 = new Date(date.replace(/-/g, "/")); //结束时间
   var date3 = date2.getTime() - date1.getTime() //时间差的毫秒数
   if (date3 > 0) {
     //计算出相差天数

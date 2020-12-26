@@ -3,7 +3,7 @@
   <view class='tips'>为避免报名失败，请确保以下填写内容与真实信息保持一致。</view>
   <view class='form'>
     <view class='list'>
-      <text>照片</text>
+      <text>个人真实头像</text>
       <view class="picker" bindtap="clickImage">
         <text wx-if="{{imgUrl==''}}" style='color:#777;'>从相册中选择</text>
         <view class='top-img' wx-if="{{imgUrl!=''}}">
@@ -62,7 +62,7 @@
       </view>
     </view>
     <view class='list'>
-      <text>详细地址</text>
+      <text>详细家庭地址</text>
       <input value='{{form.Address}}' data-id="form.Address" bindinput="onInputs" placeholder='以便后续参赛选手荣誉奖项邮寄'></input>
     </view>
     <view class='formLine'></view>

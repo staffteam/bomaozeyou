@@ -1,5 +1,7 @@
 /* pages/permitDetails/permitDetails.wxss */
-
+.back image{
+  display: block;
+}
 .permit-details {
   position: relative;
   top: 0;

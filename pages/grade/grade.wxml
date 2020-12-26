@@ -21,7 +21,8 @@
     <view class='item code'>
       <text>验证码</text>
       <input value='{{form.code}}' id='inputCode' placeholder='请输入验证码' data-id='form.code' bindinput="oninput"></input>
-      <view id='checkCode' bindtap="checkClick">{{checkCode}}</view>
+      <view class="get-code {{CreatorText != '获取验证码' && CreatorText != '重新获取验证码'?'on':''}}" bindtap="getCode" >{{CreatorText}}</view>
+      <!-- <view id='checkCode' bindtap="checkClick">{{checkCode}}</view> -->
     </view>
     <view class='tip' >
       温馨提示：手机号与身份证号必须填一项

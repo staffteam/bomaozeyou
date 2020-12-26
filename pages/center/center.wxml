@@ -41,7 +41,7 @@
   </view>
   <view class="generalize" bindtap="generalizeCenter" >
     <view class="title" >
-      <view>推广员中心</view>
+      <view>成为推广大使</view>
       <text class='iconfont iconyou1'></text>
     </view>
     <view class="tabs" >

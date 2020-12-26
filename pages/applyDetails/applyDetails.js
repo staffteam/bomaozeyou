@@ -185,6 +185,7 @@ Page({
               let start_time_arr = data.data.start_time.split(':');
               data.data.start_time = start_time_arr[0] + ':' + start_time_arr[1];
               data.data.img_url = app.$prot.api + data.data.img_url;
+              // data.data.quota = 0;
               vm.setData({
                 applyid: vm.data.pid,
                 detail: data.data,

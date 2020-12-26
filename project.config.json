@@ -17,11 +17,15 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
@@ -138,7 +142,7 @@
 					"id": 11,
 					"name": "查询结果",
 					"pathName": "pages/gradeDetails/gradeDetails",
-					"query": "id=361128200903317190&name=胡一鸣",
+					"query": "name=程星烨&id=13530237894",
 					"scene": null
 				},
 				{
@@ -341,6 +345,28 @@
 					"id": -1,
 					"name": "pages/center/center",
 					"pathName": "pages/center/center",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addPothnter/addPothnter",
+					"pathName": "pages/addPothnter/addPothnter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 42,
+					"name": "pages/applyDetails/applyDetails",
+					"pathName": "pages/applyDetails/applyDetails",
+					"query": "id=4098&time=报名倒计时：3天6时44分",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/permitDetails/permitDetails",
+					"pathName": "pages/permitDetails/permitDetails",
+					"query": "id=5610",
 					"scene": null
 				}
 			]

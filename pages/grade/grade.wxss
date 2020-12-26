@@ -12,7 +12,18 @@
   margin-top: -50rpx;
   display: block;
 }
-
+.get-code{
+  position: absolute;
+  right: 32rpx;
+  top: 0;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #1cb0f6;
+  z-index: 99;
+}
+.get-code.on{
+  color: #999999;
+}
 .form {
   position: relative;
   width: 686rpx;
@@ -54,6 +65,7 @@
 }
 
 .form .code {
+  position: relative;
 }
 
 .form .code input {

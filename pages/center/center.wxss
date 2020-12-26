@@ -25,7 +25,7 @@
 }
 
 .top .head {
-  padding: 30rpx;
+  padding: 20rpx 30rpx 0;
   overflow: hidden;
   position: relative;
 }
@@ -70,7 +70,7 @@
 
 .top .list {
   overflow: hidden;
-  padding: 30rpx 50rpx;
+  padding: 30rpx 50rpx 20px;
 }
 
 .top .list .li {
@@ -85,6 +85,7 @@
   margin: 0 auto;
   position: relative;
 }
+
 .top .list .li .img view.imgs {
   width: 70rpx;
   height: 70rpx;
@@ -92,6 +93,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .top .list .li .img .badges {
   position: absolute;
   display: block;
@@ -110,26 +112,27 @@
 }
 
 .center-list {
-  margin-top: 40rpx;
-  border-bottom: 20rpx solid #f5f5f5;
+  width: 686rpx;
+  margin: 20rpx auto;
   position: relative;
   z-index: 9;
   background-color: white;
-}
+  overflow: hidden;
+  box-shadow: 0px 0px 40rpx 0px rgba(0, 0, 0, 0.05);
 
-.center-list .li:last-child {
-  border-bottom: 0px;
 }
 
 .center-list .li {
-  width: 686rpx;
-  margin: 0 auto;
+  width: 50%;
+  padding: 0 2%;
+  float: left;
   overflow: hidden;
   border-bottom: 1px solid #eee;
-  line-height: 100rpx;
+  line-height: 80rpx;
   position: relative;
 }
-.center-list .li button{
+
+.center-list .li button {
   position: absolute;
   top: 0;
   left: 0;
@@ -139,13 +142,14 @@
   display: block;
   opacity: 0;
 }
+
 .center-list .li .l {
   float: left;
 }
 
 .center-list .li .l .iconfont {
   float: left;
-  font-size: 40rpx;
+  font-size: 35rpx;
   margin-right: 24rpx;
   display: block;
   color: #999;
@@ -154,13 +158,15 @@
 }
 
 .center-list .li .l text {
-  font-size: 32rpx;
+  font-size: 28rpx;
 }
 
 .center-list .li>text {
   float: right;
   font-size: 26rpx;
   color: #999;
+  margin-right: 80rpx;
+  display: block;
 }
 
 .article-list {
@@ -168,12 +174,13 @@
   z-index: 9;
   background-color: white;
   padding-bottom: 30rpx;
+  box-shadow: 0px 0px 40rpx 0px rgba(0, 0, 0, 0.05);
 }
 
 .article-list>.title {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
-  padding: 50rpx 0 20rpx 0;
+  padding: 30rpx 0 20rpx 0;
 }
 
 .article-list .ul {
@@ -286,45 +293,55 @@
   display: block;
   opacity: 0;
 }
-.generalize{
+
+.generalize {
   width: 686rpx;
-  margin: 30rpx auto 0;
+  margin: 20rpx auto 0;
   border-radius: 10rpx;
   background-color: white;
   position: relative;
   z-index: 9;
   box-shadow: 0px 0px 40rpx 0px rgba(0, 0, 0, 0.05);
 }
-.generalize .title{
-  font-size: 35rpx;
+
+.generalize .title {
+  font-size: 32rpx;
   line-height: 35rpx;
   overflow: hidden;
-  padding: 30rpx;
+  padding: 20rpx 30rpx 10rpx;
   box-sizing: border-box;
 }
-.generalize .title view{
-  float:left;
+
+.generalize .title view {
+  float: left;
 }
-.generalize .title text{
+
+.generalize .title text {
   float: right;
-  font-size: 30rpx;
+  font-size: 25rpx;
   color: #999;
 }
-.generalize .tabs{
+
+.generalize .tabs {
   overflow: hidden;
 }
-.generalize .tabs .li{
+
+.generalize .tabs .li {
   width: 33.33%;
-  float:left;
+  float: left;
   text-align: center;
-  padding: 20rpx 0 40rpx;
+  padding: 20rpx 0 20rpx;
 }
-.generalize .tabs .li view:first-child{
+
+.generalize .tabs .li view:first-child {
   font-size: 40rpx;
+  line-height: 40rpx;
+  height: 40rpx;
   font-weight: 600;
   color: #1cb0f6;
 }
-.generalize .tabs .li view:last-child{
+
+.generalize .tabs .li view:last-child {
   font-size: 28rpx;
   color: #999;
   margin-top: 15rpx;

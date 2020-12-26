@@ -3,7 +3,10 @@
 page {
   background-color: #f7f7f7;
 }
-
+.activity_content{
+  padding: 20rpx 32rpx;
+  background-color: white;
+}
 .tips {
   height: 68rpx;
   line-height: 68rpx;
@@ -172,9 +175,12 @@ page {
   height: 88rpx;
   background: linear-gradient(90deg, rgba(33, 192, 254, 1) 0%, rgba(48, 175, 255, 1) 100%);
   border-radius: 47rpx;
-  margin: 50rpx auto 0;
+  margin: 30rpx auto 30rpx;
   font-size: 36rpx;
   text-align: center;
   color: rgba(255, 255, 255, 1);
   line-height: 88rpx;
+}
+.submit.on{
+  margin: 50rpx auto 30rpx;
 }

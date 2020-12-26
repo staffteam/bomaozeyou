@@ -9,6 +9,7 @@
 			<text class='l type{{applyListType[detail.classfy_name]}}'>{{detail.classfy_name}}</text> {{detail.title}}
 		</view>
 		<view class='price'>￥{{detail.price}}</view>
+		<view class="price on" wx:if="{{detail.IsShowQuota}}">总名额：{{detail.quota+detail.apply_quota}}　已报：{{detail.apply_quota}}　剩余：{{detail.quota}}</view>
 		<view class='time'>
 			<text class='iconfont iconshijian'></text> 报名时间：{{detail.start_time}} 至 {{detail.end_time}}
 		</view>
@@ -47,7 +48,7 @@
 			</view>
 		</view>
 		<view class='r'>
-			<view class='{{isoutTime?"off":""}}' bindtap="{{isoutTime?'':'nowApply'}}">{{isoutTime?'已过期':'立即报名'}}</view>
+			<view class='{{isoutTime||(detail.quota==0&&detail.IsShowQuota)?"off":""}}' bindtap="{{isoutTime||(detail.quota==0&&detail.IsShowQuota)?'':'nowApply'}}">{{isoutTime?'已过期':(detail.quota==0&&detail.IsShowQuota)?'名额不足':'立即报名'}}</view>
 		</view>
 	</view>
 	<view class="login-open" wx:if="{{!userid && !hasUserInfo && canIUse}}">

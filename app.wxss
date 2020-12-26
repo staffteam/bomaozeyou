@@ -1,6 +1,6 @@
 /**app.wxss**/
 @import "./assets/fonts/iconfont";
-
+@import "/wxParse/wxParse.wxss";
 view,text{
   box-sizing: border-box;
   -webkit-tab-highlight-color: rgba(0,0,0,0); 
