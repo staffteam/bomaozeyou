@@ -3,7 +3,7 @@
   <view class="search-head">
     <view class='l'>
       <text class='iconfont iconsousuo'></text>
-      <input placeholder='搜索关键字' confirm-type="search" auto-focus="true" bindconfirm="searchClick" bindinput="searchInput" value="{{searchValue}}"></input>
+      <input placeholder='搜索活动关键词' confirm-type="search" auto-focus="true" bindconfirm="searchClick" bindinput="searchInput" value="{{searchValue}}"></input>
     </view>
     <view class='r' bindtap="historyClose" >
       <navigator url="../index/index" open-type="navigateBack" hover-class="other-navigator-hover">取消</navigator>

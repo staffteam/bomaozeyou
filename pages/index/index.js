@@ -27,12 +27,14 @@ Page({
     footerSelTime: 0,
     selId: '16',
     hintText: "",
-    hintImg: ""
+    hintImg: "",
+    shopImage:"",
+    shopUrl:""
   },
   goShopping() {
     wx.navigateToMiniProgram({
       appId: 'wx2353300279e49f5c', //要打开的小程序 appId
-      path: '', //打开的页面路径，如果为空则打开首页
+      path: this.data.shopUrl||'', //打开的页面路径，如果为空则打开首页
       extraData: {
         foo: 'bar' //需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据
       },
@@ -202,6 +204,19 @@ Page({
   },
   onLoad(options) {
     let vm = this;
+    wx.request({
+      dataType:"json",
+      url: `${app.$prot.api}/api/Home/GetBottom`,
+      success(res){
+        let data = JSON.parse(res.data);
+        if(data){
+          vm.setData({
+            shopImage:app.$prot.api+data.data.image,
+            shopUrl:data.data.redire_url
+          })
+        }
+      }
+    })
     if (options.code) {
       wx.setStorage({
         key: 'wecwhatCode',

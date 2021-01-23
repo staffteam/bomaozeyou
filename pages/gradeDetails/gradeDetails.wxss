@@ -3,10 +3,64 @@
 page {
   background-color: #f7f7f7;
 }
-.activity_content{
+
+.home-search {
+  height: 110rpx;
+  padding: 20rpx 4%;
+  background-color: white;
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+.home-search-h{
+  height: 130rpx;
+}
+.home-search .r {
+  width: 15%;
+  float: right;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  color: #666666;
+  text-align: center;
+}
+
+.home-search .r text {
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #cccccc;
+}
+
+.home-search .l {
+  width: 83%;
+  float: left;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 35rpx;
+  padding: 10rpx 30rpx;
+}
+
+.home-search .l text {
+  font-size: 30rpx;
+  float: left;
+  display: block;
+  color: #999;
+  line-height: 50rpx;
+  height: 50rpx;
+}
+
+.home-search .l input {
+  font-size: 28rpx;
+  color: #999;
+  margin-left: 40rpx;
+  height: 50rpx;
+}
+
+.activity_content {
   padding: 20rpx 32rpx;
   background-color: white;
 }
+
 .tips {
   height: 68rpx;
   line-height: 68rpx;
@@ -21,15 +75,19 @@ page {
   width: 100%;
   background-color: #f7f7f7;
 }
-.form{
+
+.form {
   padding-bottom: 30rpx;
 }
+
 .form .list {
   background-color: white;
   height: 104rpx;
   border-bottom: 1px solid #eee;
 }
-
+.off{
+  display: none;
+}
 .form .list.notline {
   border-bottom: 0px;
 }
@@ -42,16 +100,26 @@ page {
   padding-left: 32rpx;
   display: block;
 }
-.form .list.title{
+
+.form .list.title {
   min-height: 104rpx;
   height: auto;
 }
-.form .list.title view{
+
+.form .list.title view {
   width: calc(100% - 260rpx);
   margin-left: 260rpx;
   font-size: 32rpx;
   line-height: 64rpx;
   padding: 10px 0;
+}
+.form .list.title>text{
+  width: calc(100% - 260rpx);
+  margin-left: 260rpx;
+  font-size: 32rpx;
+  line-height: 64rpx;
+  padding: 10px 0;
+  float:none;
 }
 .form .list .picker {
   margin-left: 260rpx;
@@ -181,6 +249,9 @@ page {
   color: rgba(255, 255, 255, 1);
   line-height: 88rpx;
 }
-.submit.on{
+.submit.shop{
+  background: #dcd302;
+}
+.submit.on {
   margin: 50rpx auto 30rpx;
 }

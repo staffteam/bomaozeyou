@@ -1,375 +1,370 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
-	"appid": "wx933897291b8217f8",
-	"projectname": "%E5%8D%9A%E8%8C%82%E6%8B%A9%E4%BC%98",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 11,
-			"list": [
-				{
-					"id": -1,
-					"name": "报名",
-					"pathName": "pages/applyForm/applyForm",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "最新发布",
-					"pathName": "pages/article/article",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "成绩",
-					"pathName": "pages/grade/grade",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的",
-					"pathName": "pages/center/center",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的收藏",
-					"pathName": "pages/collect/collect",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "消息通知",
-					"pathName": "pages/message/message",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "联系我们",
-					"pathName": "pages/aboutus/aboutus",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 7,
-					"name": "付款",
-					"pathName": "pages/applyForm/applyForm",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": 8,
-					"name": "添加个人信息",
-					"pathName": "pages/addPothnter/addPothnter",
-					"query": "typeid=其他类",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "报名详情",
-					"pathName": "pages/applyDetails/applyDetails",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "资讯详情",
-					"pathName": "pages/articleDetails/articleDetails",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": 11,
-					"name": "查询结果",
-					"pathName": "pages/gradeDetails/gradeDetails",
-					"query": "name=程星烨&id=13530237894",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "支付成功",
-					"pathName": "pages/paySuccess/paySuccess",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "代付款",
-					"pathName": "pages/delayPayment/delayPayment",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "已付款",
-					"pathName": "pages/accountPaid/accountPaid",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "报名凭证",
-					"pathName": "pages/entryPermit/entryPermit",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 16,
-					"name": "报名凭证详情",
-					"pathName": "pages/permitDetails/permitDetails",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": 17,
-					"name": "扫码签到",
-					"pathName": "pages/sign/sign",
-					"query": "scene=applyCode%3D1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "搜索",
-					"pathName": "pages/search/search",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "意见反馈",
-					"pathName": "pages/feedback/feedback",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "意见反馈s",
-					"pathName": "pages/feedbackForm/feedbackForm",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "报名活动111",
-					"pathName": "pages/applyForm/applyForm",
-					"query": "id=1031",
-					"scene": null
-				},
-				{
-					"id": 22,
-					"name": "上传作品",
-					"pathName": "pages/upWorks/upWorks",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "我的作品列表",
-					"pathName": "pages/myWorks/myWorks",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "作品展示",
-					"pathName": "pages/worksList/worksList",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/worksList/worksList",
-					"pathName": "pages/worksList/worksList",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/article/article",
-					"pathName": "pages/article/article",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 27,
-					"name": "baoming",
-					"pathName": "pages/applyForm/applyForm",
-					"query": "id=1037",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/articleDetails/articleDetails",
-					"pathName": "pages/articleDetails/articleDetails",
-					"query": "id=32&type=work",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/delayPayment/delayPayment",
-					"pathName": "pages/delayPayment/delayPayment",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "推广",
-					"pathName": "pages/generalize/generalize",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/generalizeCenter/generalizeCenter",
-					"pathName": "pages/generalizeCenter/generalizeCenter",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/withdraw/withdraw",
-					"pathName": "pages/withdraw/withdraw",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "提现通知",
-					"pathName": "pages/withdrawNotice/withdrawNotice",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "提现通知",
-					"pathName": "pages/withdrawNotice/withdrawNotice",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "活动详情111",
-					"pathName": "pages/applyDetails/applyDetails",
-					"query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "推广订单",
-					"pathName": "pages/promoteOrder/promoteOrder",
-					"query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
-					"scene": null
-				},
-				{
-					"id": 37,
-					"name": "授权首页",
-					"pathName": "pages/home/home",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "累计客户",
-					"pathName": "pages/userTotal/userTotal",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/article/article",
-					"pathName": "pages/article/article",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/center/center",
-					"pathName": "pages/center/center",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/addPothnter/addPothnter",
-					"pathName": "pages/addPothnter/addPothnter",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 42,
-					"name": "pages/applyDetails/applyDetails",
-					"pathName": "pages/applyDetails/applyDetails",
-					"query": "id=4098&time=报名倒计时：3天6时44分",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/permitDetails/permitDetails",
-					"pathName": "pages/permitDetails/permitDetails",
-					"query": "id=5610",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useApiHostProcess": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.7.0",
+  "appid": "wx933897291b8217f8",
+  "projectname": "%E5%8D%9A%E8%8C%82%E6%8B%A9%E4%BC%98",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "报名",
+          "pathName": "pages/applyForm/applyForm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "最新发布",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "成绩",
+          "pathName": "pages/grade/grade",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/center/center",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的收藏",
+          "pathName": "pages/collect/collect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "消息通知",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "联系我们",
+          "pathName": "pages/aboutus/aboutus",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "付款",
+          "pathName": "pages/applyForm/applyForm",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": 8,
+          "name": "添加个人信息",
+          "pathName": "pages/addPothnter/addPothnter",
+          "query": "typeid=其他类",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "报名详情",
+          "pathName": "pages/applyDetails/applyDetails",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "资讯详情",
+          "pathName": "pages/articleDetails/articleDetails",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "查询结果",
+          "pathName": "pages/gradeDetails/gradeDetails",
+          "query": "name=程星烨&id=13530237894",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "支付成功",
+          "pathName": "pages/paySuccess/paySuccess",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "代付款",
+          "pathName": "pages/delayPayment/delayPayment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "已付款",
+          "pathName": "pages/accountPaid/accountPaid",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "报名凭证",
+          "pathName": "pages/entryPermit/entryPermit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 16,
+          "name": "报名凭证详情",
+          "pathName": "pages/permitDetails/permitDetails",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": 17,
+          "name": "扫码签到",
+          "pathName": "pages/sign/sign",
+          "query": "scene=applyCode%3D1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "搜索",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "意见反馈",
+          "pathName": "pages/feedback/feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "意见反馈s",
+          "pathName": "pages/feedbackForm/feedbackForm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "报名活动111",
+          "pathName": "pages/applyForm/applyForm",
+          "query": "id=1031",
+          "scene": null
+        },
+        {
+          "id": 22,
+          "name": "上传作品",
+          "pathName": "pages/upWorks/upWorks",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的作品列表",
+          "pathName": "pages/myWorks/myWorks",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "作品展示",
+          "pathName": "pages/worksList/worksList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/worksList/worksList",
+          "pathName": "pages/worksList/worksList",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 27,
+          "name": "baoming",
+          "pathName": "pages/applyForm/applyForm",
+          "query": "id=1037",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/articleDetails/articleDetails",
+          "pathName": "pages/articleDetails/articleDetails",
+          "query": "id=32&type=work",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/delayPayment/delayPayment",
+          "pathName": "pages/delayPayment/delayPayment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "推广",
+          "pathName": "pages/generalize/generalize",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/generalizeCenter/generalizeCenter",
+          "pathName": "pages/generalizeCenter/generalizeCenter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/withdraw/withdraw",
+          "pathName": "pages/withdraw/withdraw",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "提现通知",
+          "pathName": "pages/withdrawNotice/withdrawNotice",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "提现通知",
+          "pathName": "pages/withdrawNotice/withdrawNotice",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "活动详情111",
+          "pathName": "pages/applyDetails/applyDetails",
+          "query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "推广订单",
+          "pathName": "pages/promoteOrder/promoteOrder",
+          "query": "id=2044&time=%E6%8A%A5%E5%90%8D%E5%80%92%E8%AE%A1%E6%97%B6%EF%BC%9A4%E5%A4%A914%E6%97%B623%E5%88%86",
+          "scene": null
+        },
+        {
+          "id": 37,
+          "name": "授权首页",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "累计客户",
+          "pathName": "pages/userTotal/userTotal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/center/center",
+          "pathName": "pages/center/center",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/addPothnter/addPothnter",
+          "pathName": "pages/addPothnter/addPothnter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 42,
+          "name": "pages/applyDetails/applyDetails",
+          "pathName": "pages/applyDetails/applyDetails",
+          "query": "id=4098&time=报名倒计时：3天6时44分",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/permitDetails/permitDetails",
+          "pathName": "pages/permitDetails/permitDetails",
+          "query": "id=5610",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

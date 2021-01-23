@@ -1,55 +1,68 @@
 <!--pages/addPothnter/addPothnter.wxml-->
 <view class='add-pothnter'>
+	<view class="home-search">
+		<view class='l'>
+			<text class='iconfont iconsousuo'></text>
+			<input placeholder='搜索关键字' confirm-type="search" bindconfirm="searchClick"
+				bindinput="searchInput" data-obj="searchValue" value="{{searchValue}}"></input>
+		</view>
+		<view class="r" bindtap="closeSearch">
+			清空
+		</view>
+	</view>
+	<view class="home-search-h"></view>
 	<view class='form'>
+		<view>
 
-		<view class='list'>
-			<text>照片</text>
-			<view class="picker" bindtap="clickImage">
-				<view class='top-img'>
-					<image mode="widthFix" src="{{form[0].img_url}}"></image>
+			<view class='list'>
+				<text>照片</text>
+				<view class="picker" bindtap="clickImage">
+					<view class='top-img'>
+						<image mode="widthFix" src="{{form[0].img_url}}"></image>
+					</view>
 				</view>
 			</view>
-		</view>
-		<view class='list'>
-			<text>姓名</text>
-			<input value='{{form[0].name}}' disabled></input>
-		</view>
-		<view class='list'>
-			<text>性别</text>
-			<input value='{{form[0].sex}}' disabled></input>
-		</view>
-		<view class='list'>
-			<text>年龄</text>
-			<input value='{{form[0].age}}' disabled></input>
-		</view>
-		<!-- <view class='list notline'>
+			<view class='list'>
+				<text>姓名</text>
+				<input value='{{form[0].name}}' disabled></input>
+			</view>
+			<view class='list'>
+				<text>性别</text>
+				<input value='{{form[0].sex}}' disabled></input>
+			</view>
+			<view class='list'>
+				<text>年龄</text>
+				<input value='{{form[0].age}}' disabled></input>
+			</view>
+			<!-- <view class='list notline'>
       <text>民族</text>
       <input value='{{form.nation}}' disabled></input>
     </view> -->
-		<view class='formLine'></view>
-		<view class='list'>
-			<text>身份证号</text>
-			<input value='{{form[0].id_card_no}}' disabled></input>
-		</view>
-		<view class='list'>
-			<text style="line-height:42rpx; text-indent:10rpx;padding:10rpx 0 10rpx 32rpx;">  学校或
-      单位名称</text>
-			<input value='{{form[0].school}}' disabled></input>
-		</view>
-		<view class='list'>
-			<text>班级</text>
-			<input value='{{form[0].class_name}}' disabled></input>
-		</view>
-		<view class='list notline'>
-			<text>报名级别</text>
-			<input value='{{form[0].grade}}' disabled></input>
+			<view class='formLine'></view>
+			<view class='list'>
+				<text>身份证号</text>
+				<input value='{{form[0].id_card_no}}' disabled></input>
+			</view>
+			<view class='list'>
+				<text style="line-height:42rpx; text-indent:10rpx;padding:10rpx 0 10rpx 32rpx;"> 学校或
+					单位名称</text>
+				<input value='{{form[0].school}}' disabled></input>
+			</view>
+			<view class='list'>
+				<text>班级</text>
+				<input value='{{form[0].class_name}}' disabled></input>
+			</view>
+			<view class='list notline'>
+				<text>报名级别</text>
+				<input value='{{form[0].grade}}' disabled></input>
+			</view>
 		</view>
 		<!-- <view class='list'>
       <text>报名编码</text>
       <input value='{{form.apply_code}}' disabled></input>
     </view> -->
 
-		<view wx:for="{{form}}" wx:key="id" wx:for-index="index" wx:for-item="item">
+		<view class="{{item.hidden?'off':''}}" wx:for="{{form}}" wx:key="id" wx:for-index="index" wx:for-item="item">
 			<view class='formLine'></view>
 			<view class='list title'>
 				<!-- <text>活动名称</text> -->
@@ -59,48 +72,37 @@
 				<!-- <text>测试成绩</text> -->
 				<input style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.test_score}}' disabled></input>
 			</view>
-			<view class='list title' wx-if="{{item.test_remark!='' && item.test_remark!=null}}">
-				<!-- <text>说明</text> -->
-				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.test_remark || ''}}</view>
-			</view>
+			<view class='list title' wx-if="{{item.test_remark!='' && item.test_remark!=null}}"><text style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.test_remark || ''}}</text></view>
 			<view class='list title' wx-if="{{item.first_contest_score!='' && item.first_contest_score!=null}}">
 				<!-- <text>初赛成绩</text> -->
 				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.first_contest_score || ''}}</view>
 			</view>
-			<view class='list title' wx-if="{{item.first_contest_remark!='' && item.first_contest_remark!=null}}">
-				<!-- <text>说明</text> -->
-				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.first_contest_remark || ''}}</view>
-			</view>
+			<view class='list title' wx-if="{{item.first_contest_remark!='' && item.first_contest_remark!=null}}"><text style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.first_contest_remark || ''}}</text></view>
 			<view class='list' wx-if="{{item.playoff_score!='' && item.playoff_score!=null}}">
 				<!-- <text>复赛成绩</text> -->
 				<input style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.playoff_score}}' disabled></input>
 			</view>
-			<view class='list title' wx-if="{{item.playoff_remark!='' && item.playoff_remark!=null}}">
-				<!-- <text>说明</text> -->
-				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.playoff_remark || ''}}</view>
-			</view>
+			<view class='list title' wx-if="{{item.playoff_remark!='' && item.playoff_remark!=null}}"><text style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.playoff_remark || ''}}</text></view>
 			<view class='list' wx-if="{{item.final_score!='' && item.final_score!=null}}">
 				<!-- <text>决赛成绩</text> -->
 				<input style='margin-left:32rpx;width:calc(100% - 64rpx);' value='{{item.final_score}}' disabled></input>
 			</view>
-			<view class='list title' wx-if="{{item.final_score!='' && item.final_score!=null}}">
-				<!-- <text>说明</text> -->
-				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.final_remark || ''}}</view>
-			</view>
+			<view class='list title' wx-if="{{item.final_score!='' && item.final_score!=null}}"><text style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.final_remark || ''}}</text></view>
 			<view class='list title' wx-if="{{item.national_finals_score!='' && item.national_finals_score!=null}}">
 				<!-- <text>总决赛成绩</text> -->
 				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.national_finals_score}}</view>
 			</view>
-			<view class='list title' wx-if="{{item.national_finals_remark!='' && item.national_finals_remark!=null}}">
-				<!-- <text>说明</text> -->
-				<view style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.national_finals_remark || ''}}</view>
-			</view>
-			<view class='activity_content'>
+			<view class='list title' wx-if="{{item.national_finals_remark!='' && item.national_finals_remark!=null}}"><text style='margin-left:32rpx;width:calc(100% - 64rpx);'>{{item.national_finals_remark || ''}}</text></view>
+			<view class='activity_content' wx-if="{{item.activity_content.nodes}}">
 				<import src="/wxParse/wxParse.wxml" />
 				<template is="wxParse" data="{{wxParseData:item.activity_content.nodes}}" />
 			</view>
-      <view class='submit on' bindtap='goActivity' data-time="{{item.activity_time}}" data-id="{{item.activity_id}}" wx-if="{{item.activity_id}}">立即报名</view>
-			<view class='submit' bindtap='saveImageToPhotosAlbum' data-id="{{item.id}}" wx-if="{{item.certificate}}">下载证书</view>
+			<view class='submit on' bindtap='goActivity' data-time="{{item.activity_time}}" data-id="{{item.activity_id}}"
+				wx-if="{{item.activity_id}}">立即报名</view>
+			<view class='submit' bindtap='saveImageToPhotosAlbum' data-id="{{item.id}}" wx-if="{{item.certificate}}">下载证书
+			</view>
+			<view class='submit shop' bindtap='goShop' data-url="{{item.redirect_shop_url||''}}" wx-if="{{item.redirect_shop}}">资料及证书申领
+			</view>
 		</view>
 	</view>
 </view>

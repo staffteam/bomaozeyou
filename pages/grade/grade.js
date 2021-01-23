@@ -16,7 +16,8 @@ Page({
       name: ''
     },
     checkCode: '',
-    authCode: ""
+    authCode: "",
+    isVerifyCode:true
   },
   //获取验证码
   getCode() {
@@ -137,12 +138,14 @@ Page({
         icon: 'none',
         duration: 2000
       })
-    } else if (this.data.authCode != this.data.form.code) {
+    } else if (this.data.authCode != this.data.form.code&&this.data.isVerifyCode) {
       wx.showToast({
         title: '短信验证码错误',
         icon: 'none',
         duration: 2000
       })
+    }else if(!this.data.isVerifyCode&&!this.validateCode()){
+      
     }else{
       wx.navigateTo({
         url: `../gradeDetails/gradeDetails?id=${this.data.form.phone || this.data.form.identity}&name=${this.data.form.name}`
@@ -220,6 +223,13 @@ Page({
         }
       })
     }
+    app.$prot.getQueryCcoreSetting({
+      success(res){
+        vm.setData({
+          isVerifyCode:res.data.is_verify_code
+        })
+      }
+    })
     setTimeout(() => {
       // 获取订单数量  待付款
       app.$prot.getOrdersCount({

@@ -25,9 +25,73 @@ Page({
       Coding: "123123",
       Performance: '100'
     },
+    searchValue: "",
+    isShowInfo: false,
     canvasHidden: false
   },
-  goActivity(e){
+  goShop(e){
+    let dataset = e.currentTarget.dataset;
+    wx.navigateToMiniProgram({
+      appId: 'wx2353300279e49f5c', //要打开的小程序 appId
+      path: dataset.url, //打开的页面路径，如果为空则打开首页
+      extraData: {
+        foo: 'bar' //需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据
+      },
+      envVersion: 'release', //要打开的小程序版本。仅在当前小程序为开发版或体验版时此参数有效。如果当前小程序是正式版，则打开的小程序必定是正式版。
+      success(res) {
+        // 打开成功
+      }
+    })
+  },
+  searchClick(e) {
+    let vm = this;
+    if (vm.data.searchValue == '') {
+      wx.showToast({
+        title: '请输入关键字',
+        mask: true,
+        image: '/assets/images/tip.png',
+      });
+      return false;
+    }
+
+    let data = this.data.form.map(item => {
+      if (item.activity_title && item.activity_title.indexOf(vm.data.searchValue) >= 0) {
+        item.hidden = false;
+      } else {
+        item.hidden = true;
+      }
+      return item;
+    });
+    this.setData({
+      form: data,
+      isShowInfo: true
+    })
+  },
+  closeSearch() {
+    this.setData({
+      searchValue: "",
+      isShowInfo: false
+    })
+    let data = this.data.form.map(item => {
+      item.hidden = false;
+      return item;
+    });
+    this.setData({
+      form: data
+    })
+  },
+  searchInput(e) {
+    let dataset = e.currentTarget.dataset;
+    let value = e.detail.value;
+    this.data[dataset.obj] = value;
+    //obj是我们使用data-传递过来的键值对的键
+    this.setData({
+      obj: this.data[dataset.obj]
+    })
+    console.log(this.data);
+
+  },
+  goActivity(e) {
     let vm = this;
     let id = e.currentTarget.dataset.id;
     let time = e.currentTarget.dataset.time;
@@ -48,8 +112,8 @@ Page({
       title: '保存中',
     })
     //  一个loading显示
-    wx.downloadFile({    //  下载图片到本地
-      url: imgSrc,    //  下载的图片地址
+    wx.downloadFile({ //  下载图片到本地
+      url: imgSrc, //  下载的图片地址
       success(res) {
         if (res.statusCode === 200) {
           wx.saveImageToPhotosAlbum({
@@ -95,7 +159,7 @@ Page({
     //       data: imgSrc.slice(22),
     //       encoding: 'base64',
     //       success: res => {
-           
+
     //         console.log(res)
     //       },
     //       fail: err => {
@@ -130,14 +194,14 @@ Page({
           var srcTop = new RegExp('src="\\/', "g");
           data.data = data.data.map(value => {
             value.img_url = app.$prot.api + value.img_url;
-            if(value.activity_content){
+            if (value.activity_content) {
               value.activity_content = value.activity_content.replace(
                 srcTop,
                 'src="' + app.$prot.api
               );
               value.activity_content = WxParse.wxParse('content', 'html', value.activity_content, vm, 5);
             }
-            value.activity_time = util.endTime(value.activity_time) == null ? '已过期' : '报名倒计时：'+util.endTime(value.activity_time);
+            value.activity_time = util.endTime(value.activity_time) == null ? '已过期' : '报名倒计时：' + util.endTime(value.activity_time);
             return value;
           })
           vm.setData({

@@ -27,6 +27,7 @@ Page({
       });
       return false;
     }
+    
     let _data = wx.getStorageSync('historyData')
     _data = _data || [];
     if (_data.length < 10) {

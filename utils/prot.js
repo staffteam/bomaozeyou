@@ -1145,5 +1145,19 @@ export default {
         }
       }
     })
+  },
+  getQueryCcoreSetting(o) {
+    wx.request({
+      url: `${api}/api/home/queryscoresetting`,
+      // method: 'POST',
+      success(data) {
+        if (data.data && typeof(data.data) === 'string') {
+          if (!errorFn(JSON.parse(data.data))) return;
+          o.success(JSON.parse(data.data));
+        } else {
+          o.success(data.data);
+        }
+      }
+    })
   }
 } 

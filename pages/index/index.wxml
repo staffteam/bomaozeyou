@@ -50,7 +50,7 @@
 		</view>
 	</view>
 	<view class='home-banner' bindtap="goShopping">
-		<image src="/assets/images/home_back.jpg" mode="widthFix" />
+		<image src="{{shopImage||'/assets/images/home_back.jpg'}}" mode="widthFix" />
 	</view>
 	<view class="accounts">
 		<official-account bindload="accountLoad" binderror="accountErr"></official-account>
