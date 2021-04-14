@@ -18,14 +18,14 @@
       <text>身份证号</text>
       <input value='{{form.identity}}' placeholder='请输入身份证号' data-id='form.identity' bindinput="oninput"></input>
     </view>
-    <view class='item code'>
+    <!-- <view class='item code'>
       <text>验证码</text>
       <input value='{{form.code}}' id='inputCode' placeholder='请输入验证码' data-id='form.code' bindinput="oninput"></input>
       <view wx:if="{{isVerifyCode}}" class="get-code {{CreatorText != '获取验证码' && CreatorText != '重新获取验证码'?'on':''}}" bindtap="getCode" >{{CreatorText}}</view>
       <view wx:if="{{!isVerifyCode}}" id='checkCode' bindtap="checkClick">{{checkCode}}</view>
-    </view>
+    </view> -->
     <view class='tip' >
-      温馨提示：手机号与身份证号必须填一项
+      温馨提示：手机号与身份证必须和报名时填写的一致
     </view>
   </view>
   <view class='btn'>

@@ -120,9 +120,15 @@ Page({
         icon: 'none',
         duration: 2000
       })
-    } else if (this.data.form.identity == '' && this.data.form.phone == '') {
+    }else if(this.data.form.phone == ''){
       wx.showToast({
-        title: '请输入手机号或身份证',
+        title: '请输入手机号',
+        icon: 'none',
+        duration: 2000
+      })
+    } else if (this.data.form.identity == '') {
+      wx.showToast({
+        title: '请输入身份证',
         icon: 'none',
         duration: 2000
       })
@@ -138,17 +144,17 @@ Page({
         icon: 'none',
         duration: 2000
       })
-    } else if (this.data.authCode != this.data.form.code&&this.data.isVerifyCode) {
-      wx.showToast({
-        title: '短信验证码错误',
-        icon: 'none',
-        duration: 2000
-      })
-    }else if(!this.data.isVerifyCode&&!this.validateCode()){
-      
-    }else{
+    }
+    //  else if (this.data.authCode != this.data.form.code&&this.data.isVerifyCode) {
+    //   wx.showToast({
+    //     title: '短信验证码错误',
+    //     icon: 'none',
+    //     duration: 2000
+    //   })
+    // }
+    else{
       wx.navigateTo({
-        url: `../gradeDetails/gradeDetails?id=${this.data.form.phone || this.data.form.identity}&name=${this.data.form.name}`
+        url: `../gradeDetails/gradeDetails?id=${this.data.form.identity}&phone=${this.data.form.phone}&name=${this.data.form.name}`
       })
     }
   },
@@ -158,6 +164,7 @@ Page({
     var checkCode = this.data.checkCode;
     //获取输入的验证码
     var inputCode = this.data.form.code;
+    return true;
     if (inputCode.length <= 0) {
       wx.showToast({
         title: '请输入验证码！',
@@ -165,7 +172,8 @@ Page({
         duration: 2000
       })
       return false;
-    } else if (inputCode.toUpperCase() != checkCode.toUpperCase()) {
+    } else 
+    if (inputCode.toUpperCase() != checkCode.toUpperCase()) {
       wx.showToast({
         title: '验证码输入有误！',
         icon: 'none',

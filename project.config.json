@@ -363,6 +363,18 @@
           "pathName": "pages/permitDetails/permitDetails",
           "query": "id=5610",
           "scene": null
+        },
+        {
+          "name": "pages/grade/grade",
+          "pathName": "pages/grade/grade",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/gradeDetails/gradeDetails",
+          "pathName": "pages/gradeDetails/gradeDetails",
+          "query": "id=430381199609259190&phone=17512840813&name=老王",
+          "scene": null
         }
       ]
     }

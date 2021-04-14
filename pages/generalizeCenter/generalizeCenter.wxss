@@ -1,5 +1,5 @@
 .generalize-center {
-  min-height: 100vh;
+  min-height: 115vh;
   position: relative;
   background-color: #ff9068;
 }

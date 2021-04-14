@@ -1,7 +1,7 @@
 .notice{
   padding: 20rpx 0;
   background-color: #f7f7f7;
-  height: calc(100vh - 40rpx);
+  min-height: 100vh;
 }
 .notice .list{
   overflow: hidden;

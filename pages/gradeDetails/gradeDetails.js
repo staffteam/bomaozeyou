@@ -11,19 +11,19 @@ Page({
     imgUrl: '/assets/images/top.png',
     form: {
       ID: 0,
-      Name: "小王", // 姓名
-      Sex: '男', // 性别
-      Age: "23", // 年龄
-      Nation: "汉", // 民族
-      School: "清华大学", // 学校
+      Name: "", // 姓名
+      Sex: '', // 性别
+      Age: "", // 年龄
+      Nation: "", // 民族
+      School: "", // 学校
       PicID: "", // 照片
-      IDCardNo: "430381199609259190", // 身份证号
-      Class: "大学四级别", // 班级
-      Phone: "17512840813", // 电话
-      Address: "北京清华大学", //地址
-      Group: "单人组",
-      Coding: "123123",
-      Performance: '100'
+      IDCardNo: "", // 身份证号
+      Class: "", // 班级
+      Phone: "", // 电话
+      Address: "", //地址
+      Group: "",
+      Coding: "",
+      Performance: ''
     },
     searchValue: "",
     isShowInfo: false,
@@ -186,7 +186,8 @@ Page({
     app.$prot.getQueryScore({
       data: {
         name: options.name,
-        key: options.id
+        phone: options.phone,
+        idcard: options.id
       },
       success(data) {
         wx.hideLoading();

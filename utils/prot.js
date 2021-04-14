@@ -1079,9 +1079,9 @@ export default {
       }
     })
   },
-  getWithdrawalList(o) {
+  getInviteList(o) {
     wx.request({
-      url: `${api}/api/Promotion/GetWithdrawalList`,
+      url: `${api}/api/promotion/GetInviteList`,
       data: {
         page: o.data.page,
         sessionKey: wx.getStorageSync('sessionKey')

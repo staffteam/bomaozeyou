@@ -7,7 +7,7 @@ Page({
    */
   data: {
     noticeData: [],
-    page: 0,
+    page: 1,
     notData: false,
     isfooter: false
   },
@@ -27,7 +27,7 @@ Page({
   },
   getListData() {
     let vm = this;
-    app.$prot.getWithdrawalList({
+    app.$prot.getInviteList({
       data: {
         page: vm.data.page
       },
